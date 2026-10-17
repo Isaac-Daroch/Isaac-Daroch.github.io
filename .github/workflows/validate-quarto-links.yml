@@ -1,0 +1,23 @@
+name: Validate notebook link adapter
+on:
+  push:
+    branches: [remediation/d1-validation]
+    paths:
+      - tools/normalize-quarto-links.mjs
+      - tests/quarto-links.test.mjs
+      - .github/workflows/validate-quarto-links.yml
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-24.04, windows-2025]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24.19.0'
+      - run: node --test tests/quarto-links.test.mjs
