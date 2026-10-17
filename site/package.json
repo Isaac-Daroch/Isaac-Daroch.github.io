@@ -1,0 +1,9 @@
+{
+  "name": "isaac-daroch-research",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=24.0.0 <25"},
+  "dependencies": {"astro":"7.4.0","gsap":"3.13.0","three":"0.186.1"},
+  "devDependencies": {"@astrojs/check":"0.9.4","typescript":"5.9.3","@playwright/test":"1.56.1","@axe-core/playwright":"4.10.2"}
+}

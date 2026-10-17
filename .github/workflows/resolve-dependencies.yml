@@ -1,0 +1,36 @@
+name: Resolve audited dependencies
+on:
+  push:
+    branches: [audit/remediation-v2]
+    paths: [site/package.json, .github/workflows/resolve-dependencies.yml]
+permissions:
+  contents: read
+jobs:
+  resolve:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24'
+      - name: Resolve real lockfile
+        working-directory: site
+        run: |
+          node --version
+          npm --version
+          npm install --package-lock-only --ignore-scripts --no-fund
+          npm ci --ignore-scripts --no-fund
+          npm audit --json > dependency-audit.json || true
+          npm ls --all --json > dependency-tree.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: resolved-dependencies
+          path: |
+            site/package-lock.json
+            site/dependency-audit.json
+            site/dependency-tree.json
+          retention-days: 7
