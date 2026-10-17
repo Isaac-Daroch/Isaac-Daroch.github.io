@@ -1,0 +1,38 @@
+name: Prepare browser and PowerShell validation tools
+on:
+  push:
+    branches: [remediation/d1-validation]
+    paths: [.github/workflows/provision-browser.yml]
+permissions:
+  contents: read
+jobs:
+  provision:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24.19.0'
+      - name: Install verified testing tools
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: /tmp/isaac-browser-tools/browsers
+        run: |
+          cd site
+          npm ci
+          npx playwright install chromium
+          mkdir -p /tmp/isaac-browser-tools/powershell
+          cp -a "$(dirname "$(readlink -f "$(command -v pwsh)")")/." /tmp/isaac-browser-tools/powershell/
+          { node --version; npx playwright --version; pwsh -NoProfile -Command '$PSVersionTable'; } > /tmp/isaac-browser-tools/ENVIRONMENT.txt
+          tar -czf ../browser-tools.tar.gz -C /tmp/isaac-browser-tools .
+          cd ..
+          sha256sum browser-tools.tar.gz > browser-tools.sha256
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: isaac-browser-tools
+          path: |
+            browser-tools.tar.gz
+            browser-tools.sha256
+          retention-days: 1
+          compression-level: 0
+          if-no-files-found: error
