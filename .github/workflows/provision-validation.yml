@@ -1,0 +1,44 @@
+name: Prepare exact Linux validation toolchain
+on:
+  push:
+    branches: [remediation/d1-validation]
+    paths: [.github/workflows/provision-validation.yml]
+permissions:
+  contents: read
+jobs:
+  provision:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24.19.0'
+      - uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b
+        with:
+          version: '1.10.18'
+      - name: Resolve native dependencies and record versions
+        env:
+          ASTRO_TELEMETRY_DISABLED: '1'
+        run: |
+          cd site
+          npm ci
+          npm ls --depth=0
+          cd ..
+          mkdir -p validation-tools/site validation-tools/node validation-tools/quarto
+          cp site/package.json site/package-lock.json site/dependency-audit.json site/resolution-environment.txt validation-tools/site/
+          mv site/node_modules validation-tools/site/
+          cp -a "$(dirname "$(dirname "$(readlink -f "$(command -v node)")")")/." validation-tools/node/
+          cp -a "$(dirname "$(dirname "$(readlink -f "$(command -v quarto)")")")/." validation-tools/quarto/
+          { node --version; npm --version; quarto --version; uname -a; } > validation-tools/ENVIRONMENT.txt
+          tar -czf validation-toolchain.tar.gz -C validation-tools .
+          sha256sum validation-toolchain.tar.gz > validation-toolchain.sha256
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: isaac-validation-toolchain
+          path: |
+            validation-toolchain.tar.gz
+            validation-toolchain.sha256
+          retention-days: 1
+          compression-level: 0
+          if-no-files-found: error
