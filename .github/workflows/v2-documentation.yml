@@ -1,0 +1,29 @@
+name: V2 materialize governing documentation (feature only)
+on:
+  push:
+    branches: [feature/v2-self-model-grafito]
+    paths: [.github/workflows/v2-documentation.yml]
+permissions:
+  contents: read
+jobs:
+  documentation:
+    if: github.ref == 'refs/heads/feature/v2-self-model-grafito'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: feature/v2-self-model-grafito
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24.19.0'
+      - name: Generate canonical documentation without marking tests performed
+        run: node tools/generate-a11y-docs.mjs
+      - name: Preserve generated documentation on feature branch only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/a11y/traceability.json docs/a11y/traceability.md docs/a11y/wcag-matrix.md docs/a11y/acceptance-plan.md
+          if git diff --cached --quiet; then echo 'Documentation already current'; else git commit -m 'docs(v2): record generated 77-requirement and 55-criterion matrices'; git push origin HEAD:feature/v2-self-model-grafito; fi
