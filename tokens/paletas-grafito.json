@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "source": "Owner PROMPT_MAESTRO(1).txt, Annex A, 2026-10-18",
+  "tokens": ["bg","surface","text","muted","primary","accent","border","control","hover","on-primary","focus"],
+  "palettes": {
+    "editorial|editorial|light": ["#F5F5F4","#FFFFFF","#1C1917","#57534E","#3F3F46","#925A06","#D6D3D1","#78716C","#27272A","#FFFFFF","#3F3F46"],
+    "editorial|editorial|dark": ["#121212","#202020","#F5F5F5","#B5B5B5","#E7E5E4","#FBBF24","#494949","#999999","#FFFFFF","#121212","#E7E5E4"],
+    "editorial|redgreen|light": ["#F5F5F4","#FFFFFF","#1C1917","#57534E","#005A9C","#8A4B08","#D6D3D1","#78716C","#004779","#FFFFFF","#005A9C"],
+    "editorial|redgreen|dark": ["#121212","#202020","#F5F5F5","#B5B5B5","#8CC8FF","#E9B872","#494949","#999999","#B8DDFF","#121212","#8CC8FF"],
+    "editorial|tritan|light": ["#F5F5F4","#FFFFFF","#1C1917","#57534E","#00636B","#9D174D","#D6D3D1","#78716C","#004B52","#FFFFFF","#00636B"],
+    "editorial|tritan|dark": ["#121212","#202020","#F5F5F5","#B5B5B5","#7ADCE2","#F5A6C7","#494949","#999999","#A2E8ED","#121212","#7ADCE2"],
+    "editorial|mono|light": ["#F5F5F5","#FFFFFF","#171717","#575757","#303030","#595959","#D4D4D4","#747474","#171717","#FFFFFF","#303030"],
+    "editorial|mono|dark": ["#121212","#202020","#F5F5F5","#B5B5B5","#E5E5E5","#BDBDBD","#494949","#999999","#F5F5F5","#121212","#E5E5E5"],
+    "high|editorial|light": ["#FFFFFF","#F2F2F2","#000000","#333333","#003B70","#684000","#595959","#595959","#002D54","#FFFFFF","#003B70"],
+    "high|editorial|dark": ["#000000","#121212","#FFFFFF","#DDDDDD","#8DD8FF","#FFE082","#BDBDBD","#BDBDBD","#C2EBFF","#000000","#8DD8FF"],
+    "high|redgreen|light": ["#FFFFFF","#F2F2F2","#000000","#333333","#003B70","#684000","#595959","#595959","#002D54","#FFFFFF","#003B70"],
+    "high|redgreen|dark": ["#000000","#121212","#FFFFFF","#DDDDDD","#8DD8FF","#FFE082","#BDBDBD","#BDBDBD","#C2EBFF","#000000","#8DD8FF"],
+    "high|tritan|light": ["#FFFFFF","#F2F2F2","#000000","#333333","#00494F","#78113A","#595959","#595959","#00373C","#FFFFFF","#00494F"],
+    "high|tritan|dark": ["#000000","#121212","#FFFFFF","#DDDDDD","#9EEBF0","#FFBDD8","#BDBDBD","#BDBDBD","#C5F8FB","#000000","#9EEBF0"],
+    "high|mono|light": ["#FFFFFF","#F2F2F2","#000000","#333333","#171717","#333333","#595959","#595959","#000000","#FFFFFF","#171717"],
+    "high|mono|dark": ["#000000","#121212","#FFFFFF","#DDDDDD","#FFFFFF","#DDDDDD","#BDBDBD","#BDBDBD","#FFFFFF","#000000","#FFFFFF"],
+    "soft|editorial|light": ["#E7DED0","#F0E7DA","#302B26","#594F45","#544536","#795316","#BCB1A1","#776955","#403329","#F0E7DA","#544536"],
+    "soft|editorial|dark": ["#202020","#2A2927","#D6CEC2","#B3AA9D","#C6B49A","#C8AB70","#5F584E","#9C9182","#D6C6AE","#202020","#C6B49A"],
+    "soft|redgreen|light": ["#E7DED0","#F0E7DA","#302B26","#594F45","#004F80","#76430B","#BCB1A1","#776955","#003B62","#F0E7DA","#004F80"],
+    "soft|redgreen|dark": ["#202020","#2A2927","#D6CEC2","#B3AA9D","#97BDDC","#CFAD7B","#5F584E","#9C9182","#B2D0E7","#202020","#97BDDC"],
+    "soft|tritan|light": ["#E7DED0","#F0E7DA","#302B26","#594F45","#005159","#811D45","#BCB1A1","#776955","#003E45","#F0E7DA","#005159"],
+    "soft|tritan|dark": ["#202020","#2A2927","#D6CEC2","#B3AA9D","#93C6C9","#DDB0C3","#5F584E","#9C9182","#AFD7D9","#202020","#93C6C9"],
+    "soft|mono|light": ["#DFDFDF","#E8E8E8","#2D2D2D","#555555","#3F3F3F","#555555","#B1B1B1","#707070","#2F2F2F","#E8E8E8","#3F3F3F"],
+    "soft|mono|dark": ["#202020","#292929","#CECECE","#AAAAAA","#BDBDBD","#B0B0B0","#595959","#909090","#D0D0D0","#202020","#BDBDBD"]
+  }
+}
