@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "documentVersion": "D2",
+  "date": "2026-10-18",
+  "owner": "Isaac Daroch",
+  "scope": "Diseño rector y reconciliación, no conformidad del producto",
+  "objectives": ["O-01", "O-02", "O-03", "O-04"],
+  "principles": ["IF-01", "IF-02", "IF-03", "IF-04", "IF-05", "IF-06"],
+  "modules": ["M-01", "M-02", "M-03", "M-04", "M-05"],
+  "decisions": ["ADR-01", "ADR-02", "ADR-03", "ADR-04", "ADR-05", "ADR-06", "ADR-07", "ADR-08", "ADR-09", "ADR-10", "ADR-11", "ADR-12"],
+  "qualityScenarios": ["QAS-01", "QAS-02", "QAS-03", "QAS-04", "QAS-05", "QAS-06", "QAS-07", "QAS-08", "QAS-09", "QAS-10", "QAS-11", "QAS-12", "QAS-13", "QAS-14", "QAS-15", "QAS-16"],
+  "contracts": ["LAB-01", "LAB-02", "LAB-03", "LAB-04", "LAB-05", "LAB-06", "CAT-01", "CAT-02", "MOT-01", "PUB-01", "PUB-02", "DEL-01", "DEL-02", "DEL-03"],
+  "sourceKeys": ["BROWN", "PATTERNS", "HARD", "D1-I", "D1-II", "PATCH-CORE", "PATCH-UI", "PATCH-BUILD", "PATCH-QUALITY", "PATCH-INSTALLER", "REMOTE-CHECKPOINT", "BASE-ZIP", "USER"],
+  "requiredDocs": ["README.md", "01-purpose-principles.md", "02-requirement-method.md", "03-quality-scenarios.md", "04-macro-elements.md", "05-hexagonal-design.md", "06-decisions.md", "07-reconciliation.md", "08-validation-delivery.md", "09-experiment-protocols.md", "10-data-security-operation.md", "11-evolution-plan.md", "SOURCES.md"],
+  "baseline": {
+    "zipSha256": "7a416e7a17da6ed177952f8d0608fcffd6b545acd303090f1aa04790f9659a3e",
+    "zipHashRecomputedInD2": false,
+    "remoteCheckpoint": "3d4a9d4c6c0a99d747a7b218e9e082e98db6fb3b",
+    "remoteTree": "abbfd278bde98a1b3d06633805e1db192c68ce3d",
+    "productCompleteInRemoteCheckpoint": false,
+    "localMachineInspectedInD2": false
+  },
+  "governance": {
+    "documentValidationIsProductValidation": false,
+    "publicDeploymentAuthorizedByThisReview": false,
+    "legacyRequirements": {"RF": 20, "RQ": 16},
+    "legacyTests": 36,
+    "expectedRequirements": 44,
+    "expectedTests": 44,
+    "implementationStates": ["historical-source", "patch-described", "remote-scope-only", "specification-only", "integrated"],
+    "verificationStates": ["pending", "historical-reference", "component-verified", "verified"],
+    "acceptanceStates": ["pending", "accepted", "rejected"],
+    "evidenceRequiredForVerified": ["testId", "sourceIdentity", "environment", "method", "result", "artifact", "executedAt"]
+  }
+}
