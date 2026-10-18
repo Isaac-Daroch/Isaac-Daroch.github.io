@@ -1,28 +1,30 @@
 ---
-title: "A notebook for inspectable intelligence"
-description: "Questions, assumptions and transparent experiments about agents, representations and adaptation."
+title: "Experience, memory and a model of the agent"
+description: "An inspectable scientific notebook distinguishing functional self-modeling, educational baselines, evidence and long-term research ambitions."
 ---
 
-This notebook accompanies Isaac Daroch’s portfolio. It separates **research interests**, **educational demonstrations**, **publication records** and **long-term ambitions**.
+This notebook accompanies Isaac Daroch's research direction. The new question is not only how an agent represents a changing world: **how does retained experience change what the agent expects of itself, and how does that affect its decisions?**
 
-## Start with the distinction
+## The new observatory
 
-The state of a world and the representation used by an agent need not agree. The portfolio’s local experiment makes that distinction visible without pretending to train a world model.
+[Read the self-model protocol](notes/self-model.qmd) or [open the interactive observatory](https://isaac-daroch.github.io/observatory/). The prototype learns bounded, task-conditioned success estimates and uses a designed decision rule. Memory retention is an adaptive heuristic, not a trained neural controller. The mechanisms, priors and limits are disclosed.
+
+## Historical educational baselines
+
+These notes describe the prior deterministic gridworld. They are kept as a separate reference, not relabeled as a self-model experiment.
 
 - [Two maps: world and representation](notes/two-maps.qmd).
 - [Protocol: what the gridworld actually does](notes/demo-protocol.qmd).
-- [Deterministic replay and two distinct comparisons](notes/episode-replay.qmd).
+- [Replay and two distinct navigation comparisons](notes/episode-replay.qmd).
 - [What reproducibility does—and does not—establish](notes/reproducibility.qmd).
-
-[Open the interactive laboratory](https://isaac-daroch.github.io/projects/#agent-lab) or [return to the portfolio](https://isaac-daroch.github.io/).
 
 ## Publication sources
 
-The portfolio separately records the clinical NL-to-SQL publication @daroch2026-governed. Its bibliographic information is generated from the same catalog used by the portfolio. These notes do not re-audit that study and the gridworld is not an experiment from it.
+The portfolio separately records the clinical NL-to-SQL publication @daroch2026-governed. The bibliography comes from the same source catalog as the editorial pages. Neither the gridworld nor the new agent simulator is an experiment from that clinical study.
 
-## Reading without extra services
+## Reading and scientific access
 
-Equations are emitted as MathML; this notebook does not depend on a remote inference service. Code samples below are explanatory and are not executed on a visitor’s device unless the visitor runs them independently.
+Equations are generated as structured MathML; that configuration does not by itself establish compatibility with every assistive technology. The notebook shares the portfolio's color, reading and motion preferences. Articles here are currently in English; [Spanish research summaries](https://isaac-daroch.github.io/es/investigations/) are separately identified.
 
 ## References
 

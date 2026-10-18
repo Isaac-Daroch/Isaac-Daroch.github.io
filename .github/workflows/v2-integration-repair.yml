@@ -1,0 +1,46 @@
+name: V2 repair exact integration paths (feature only)
+on:
+  push:
+    branches: [feature/v2-self-model-grafito]
+    paths: [.github/workflows/v2-integration-repair.yml]
+permissions:
+  contents: read
+jobs:
+  repair:
+    if: github.ref == 'refs/heads/feature/v2-self-model-grafito'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: feature/v2-self-model-grafito
+      - name: Guard and reconcile observed source paths
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const edit=(f,fn)=>{const before=fs.readFileSync(f,'utf8');const after=fn(before);if(after!==before){fs.writeFileSync(f,after);console.log('Updated '+f);}};
+          if(!fs.existsSync('site/public/images/portrait.png'))throw Error('Confirmed portrait missing');
+          for(const f of ['site/src/layouts/BaseLayout.astro','site/src/components/EditorialPage.astro'])edit(f,s=>s.replaceAll('/images/isaac-profile.jpg','/images/portrait.png').replaceAll('/publications.bib','/references.bib'));
+          edit('site/tests-v2/site.spec.mjs',s=>s.replaceAll('/research/notes/reproducible-notes.html','/research/notes/two-maps.html'));
+          edit('tools/generate-visual.mjs',s=>s.replace("console.log(await generateVisual(path.resolve('.')))","console.log(await generateVisual(path.resolve(new URL('..',import.meta.url).pathname)))"));
+          // Use fileURLToPath so Windows drive letters and spaces resolve correctly.
+          edit('tools/generate-visual.mjs',s=>s.replace("import {pathToFileURL} from 'node:url'","import {pathToFileURL,fileURLToPath} from 'node:url'").replace("path.resolve(new URL('..',import.meta.url).pathname)","fileURLToPath(new URL('..',import.meta.url))"));
+          edit('tools/verify-contrast.mjs',s=>s.replace("import {pathToFileURL} from 'node:url'","import {pathToFileURL,fileURLToPath} from 'node:url'").replace('verifyContrast(path.resolve(\'.\'))',"verifyContrast(fileURLToPath(new URL('..',import.meta.url)))"));
+          const pkg=JSON.parse(fs.readFileSync('site/package.json'));pkg.scripts.prebuild='node ../tools/generate-visual.mjs';pkg.scripts.predev='node ../tools/generate-visual.mjs';pkg.scripts['test:a11y']='playwright test --config=playwright.v2.config.mjs';fs.writeFileSync('site/package.json',JSON.stringify(pkg,null,2)+'\n');
+          const cfg=JSON.parse(fs.readFileSync('toolchain.json'));cfg.version='2.0.0-rc.1';fs.writeFileSync('toolchain.json',JSON.stringify(cfg,null,2)+'\n');
+          const policy=JSON.parse(fs.readFileSync('publication-policy.json'));for(const x of ['notes/self-model.qmd'])if(!policy.researchSources.includes(x))policy.researchSources.push(x);for(const x of ['notes/self-model.html'])if(!policy.requiredResearchOutputs.includes(x))policy.requiredResearchOutputs.push(x);fs.writeFileSync('publication-policy.json',JSON.stringify(policy,null,2)+'\n');
+          for(const f of fs.readdirSync('research/notes').filter(f=>f.endsWith('.qmd')))edit('research/notes/'+f,s=>s.replaceAll('https://isaac-daroch.github.io/projects/#agent-lab','https://github.com/Isaac-Daroch/Isaac-Daroch.github.io/tree/main/site/src/modules/agent-lab'));
+          // Preserve the historical notebook's documented fragment links at semantic source headings.
+          const aliases=[['research/notes/agent-protocol.qmd','method',/^(## .*(?:Method|method|logical tick).*)$/m],['research/notes/memory-and-models.qmd','limits',/^(## .*(?:Limits|limits|outside|boundar).*)$/m],['research/notes/reproducible-notes.qmd','formula',/^(## .*(?:Formula|formula|equation|mathem).*)$/m]];
+          for(const [f,id,re]of aliases){if(!fs.existsSync(f))continue;edit(f,s=>{if(s.includes('{#'+id+'}'))return s;const m=s.match(re);if(!m)throw Error('Cannot attach documented anchor to a meaningful source heading: '+f);return s.replace(re,m[1]+' {#'+id+'}');});}
+          NODE
+      - name: Commit the exact repaired sources, never production
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add site/src/layouts/BaseLayout.astro site/src/components/EditorialPage.astro site/tests-v2/site.spec.mjs tools/generate-visual.mjs tools/verify-contrast.mjs site/package.json toolchain.json publication-policy.json research/notes
+          git diff --cached --stat
+          git commit -m 'fix(v2): align shared assets and notebook integration with observed source inventory'
+          git push origin HEAD:feature/v2-self-model-grafito

@@ -1,0 +1,47 @@
+---
+title: "A functional self-model shaped by retained experience"
+description: "The implemented decision mechanism, memory policy, controlled interventions and limitations of the experiential agent observatory."
+---
+
+## Question
+
+An agent can receive a task without treating that request as its only source of action. In this demonstrator, current energy, simulated fatigue, uncertainty and retained experience contribute to the value of working, checking an ability or recovering resources. The model is deliberately small so that these influences can be inspected rather than inferred from a character's narration.
+
+## What is learned, and what is designed {#method}
+
+For task $k$ and energy context $c$, the agent maintains a Beta distribution with initial parameters $\alpha_{k,c}=2$, $\beta_{k,c}=2$. Retained successes and failures contribute positive, bounded weights. Its point estimate is
+
+$$\widehat p_{k,c}=\frac{\alpha_{k,c}}{\alpha_{k,c}+\beta_{k,c}}.$$
+
+Here $\widehat p$ is an estimate of success in the simulator, not a measure of self-awareness. The context divides available and depleted energy. These distributions change from observations. The action repertoire, prior, task dynamics and utility coefficients are authored assumptions.
+
+The next action maximizes an explicitly displayed sum of request value, expected competence, information value and recovery value, minus costs. A different internal state can therefore change a decision at the same external task. The numeric terms are not percentages of autonomy or a validated causal attribution.
+
+## Selective memory
+
+Memory retains at most eight episodes. The selective policy combines surprise, predictive usefulness, diversity and recency. Usefulness is adjusted when later observations arrive; retention never receives the future evaluation questions. The recent and seeded-random policies use the same capacity. **This is an adaptive heuristic, not a learned retention controller.** A research comparison against a learned controller remains future work.
+
+The model can retain observations that contradict previous expectations. It reconstructs its self estimates from retained evidence. Hiding retrieval does not erase already consolidated estimates. Explicitly removing an episode and rebuilding the model is a different intervention from reconstructing a life history in which the episode never occurred.
+
+## Controlled comparisons
+
+| Comparison | Held fixed | Changed | Interpretation |
+|---|---|---|---|
+| Energy intervention | History, request, difficulty, step and seed | Energy | Effect of this internal-state intervention in the designed model |
+| Initial self estimates | Current state and external inputs | Learned estimates replaced by the initial prior | Functional participation of accumulated estimates |
+| Retrieval hidden | Consolidated estimates and state | Accessible episodic list | Retrieval absence need not undo previous learning |
+| Memory-policy histories | Architecture, seed, capacity, training budget and final current conditions | Retention policy and resulting experience trajectory | Longitudinal comparison, not an isolated causal effect |
+
+The table reports the protocol, not invented experimental results. Run the [observatory](https://isaac-daroch.github.io/observatory/) to inspect actual values and download the session.
+
+## Replay and limits {#limits}
+
+The new record format is `isaac-self-model-session-v1` with a separate implementation identity. It is not an upgrade of an old gridworld record. A replay creates an independent session from configuration and commands and compares the computed result. Imported files are processed locally, never uploaded. Limits are 240 decision steps per session, 24 steps per programmatic batch and 500 kB per imported file.
+
+Observational histories can confound external difficulty and internal effects. This prototype does not establish generalization to robots, consciousness, emotion, free will or scientific novelty. A bounded Bayesian estimate is not a complete model of selfhood. A matching replay establishes consistency with an implementation, not authorship or scientific truth.
+
+## Source and reference context
+
+[Inspect the candidate source](https://github.com/Isaac-Daroch/Isaac-Daroch.github.io/tree/feature/v2-self-model-grafito/site/src/modules/self-model).
+
+Related primary work motivates distinct questions rather than certifying this implementation: [continuous robotic self-modeling](https://doi.org/10.1126/science.1133687), [intrinsically motivated goal exploration](https://arxiv.org/abs/1708.02190), and [episodic memory selection for future tasks](https://aclanthology.org/P19-1434/).
