@@ -1,0 +1,3036 @@
+{
+  "source": {
+    "name": "PROMPT_MAESTRO(1).txt",
+    "date": "2026-10-18",
+    "version": "1.0",
+    "scope": "Owner-supplied implementation contract including complete Annexes A–C. States here are not a conformance claim."
+  },
+  "requirements": [
+    {
+      "id": "GOV-01",
+      "sourceSection": "GOV",
+      "components": [
+        "docs/a11y/README.md",
+        "docs/a11y/implementation-plan.md"
+      ],
+      "cases": [
+        "T01"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "GOV-02",
+      "sourceSection": "GOV",
+      "components": [
+        "docs/a11y/README.md",
+        "docs/a11y/implementation-plan.md"
+      ],
+      "cases": [
+        "T01"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "GOV-03",
+      "sourceSection": "GOV",
+      "components": [
+        "docs/a11y/README.md",
+        "docs/a11y/implementation-plan.md"
+      ],
+      "cases": [
+        "T01"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "GOV-04",
+      "sourceSection": "GOV",
+      "components": [
+        "docs/a11y/README.md",
+        "docs/a11y/implementation-plan.md"
+      ],
+      "cases": [
+        "T01"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "GOV-05",
+      "sourceSection": "GOV",
+      "components": [
+        "docs/a11y/README.md",
+        "docs/a11y/implementation-plan.md"
+      ],
+      "cases": [
+        "T01"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "AUD-01",
+      "sourceSection": "AUD",
+      "components": [
+        "docs/a11y/baseline.md"
+      ],
+      "cases": [
+        "T01"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "AUD-02",
+      "sourceSection": "AUD",
+      "components": [
+        "docs/a11y/baseline.md"
+      ],
+      "cases": [
+        "T01"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "AUD-03",
+      "sourceSection": "AUD",
+      "components": [
+        "docs/a11y/baseline.md"
+      ],
+      "cases": [
+        "T01"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "IA-01",
+      "sourceSection": "IA",
+      "components": [
+        "site/src/components/EditorialPage.astro",
+        "site/src/data/editorial.mjs"
+      ],
+      "cases": [
+        "T02",
+        "T08",
+        "T42"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "IA-02",
+      "sourceSection": "IA",
+      "components": [
+        "site/src/components/EditorialPage.astro",
+        "site/src/data/editorial.mjs"
+      ],
+      "cases": [
+        "T02",
+        "T08",
+        "T42"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "IA-03",
+      "sourceSection": "IA",
+      "components": [
+        "site/src/components/EditorialPage.astro",
+        "site/src/data/editorial.mjs"
+      ],
+      "cases": [
+        "T02",
+        "T08",
+        "T42"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "VIS-01",
+      "sourceSection": "VIS",
+      "components": [
+        "tokens/paletas-grafito.json",
+        "site/src/styles/global.css",
+        "tools/generate-visual.mjs"
+      ],
+      "cases": [
+        "T09",
+        "T10",
+        "T11",
+        "T12"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "VIS-02",
+      "sourceSection": "VIS",
+      "components": [
+        "tokens/paletas-grafito.json",
+        "site/src/styles/global.css",
+        "tools/generate-visual.mjs"
+      ],
+      "cases": [
+        "T09",
+        "T10",
+        "T11",
+        "T12"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "VIS-03",
+      "sourceSection": "VIS",
+      "components": [
+        "tokens/paletas-grafito.json",
+        "site/src/styles/global.css",
+        "tools/generate-visual.mjs"
+      ],
+      "cases": [
+        "T09",
+        "T10",
+        "T11",
+        "T12"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "VIS-04",
+      "sourceSection": "VIS",
+      "components": [
+        "tokens/paletas-grafito.json",
+        "site/src/styles/global.css",
+        "tools/generate-visual.mjs"
+      ],
+      "cases": [
+        "T09",
+        "T10",
+        "T11",
+        "T12"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "VIS-05",
+      "sourceSection": "VIS",
+      "components": [
+        "tokens/paletas-grafito.json",
+        "site/src/styles/global.css",
+        "tools/generate-visual.mjs"
+      ],
+      "cases": [
+        "T09",
+        "T10",
+        "T11",
+        "T12"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "VIS-06",
+      "sourceSection": "VIS",
+      "components": [
+        "tokens/paletas-grafito.json",
+        "site/src/styles/global.css",
+        "tools/generate-visual.mjs"
+      ],
+      "cases": [
+        "T09",
+        "T10",
+        "T11",
+        "T12"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "VIS-07",
+      "sourceSection": "VIS",
+      "components": [
+        "tokens/paletas-grafito.json",
+        "site/src/styles/global.css",
+        "tools/generate-visual.mjs"
+      ],
+      "cases": [
+        "T09",
+        "T10",
+        "T11",
+        "T12"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "VIS-08",
+      "sourceSection": "VIS",
+      "components": [
+        "tokens/paletas-grafito.json",
+        "site/src/styles/global.css",
+        "tools/generate-visual.mjs"
+      ],
+      "cases": [
+        "T09",
+        "T10",
+        "T11",
+        "T12"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "PREF-01",
+      "sourceSection": "PREF",
+      "components": [
+        "site/src/modules/preferences/domain.mjs",
+        "site/src/modules/preferences/browser.mjs",
+        "site/src/components/Preferences.astro"
+      ],
+      "cases": [
+        "T06",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "PREF-02",
+      "sourceSection": "PREF",
+      "components": [
+        "site/src/modules/preferences/domain.mjs",
+        "site/src/modules/preferences/browser.mjs",
+        "site/src/components/Preferences.astro"
+      ],
+      "cases": [
+        "T06",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "PREF-03",
+      "sourceSection": "PREF",
+      "components": [
+        "site/src/modules/preferences/domain.mjs",
+        "site/src/modules/preferences/browser.mjs",
+        "site/src/components/Preferences.astro"
+      ],
+      "cases": [
+        "T06",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "PREF-04",
+      "sourceSection": "PREF",
+      "components": [
+        "site/src/modules/preferences/domain.mjs",
+        "site/src/modules/preferences/browser.mjs",
+        "site/src/components/Preferences.astro"
+      ],
+      "cases": [
+        "T06",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "PREF-05",
+      "sourceSection": "PREF",
+      "components": [
+        "site/src/modules/preferences/domain.mjs",
+        "site/src/modules/preferences/browser.mjs",
+        "site/src/components/Preferences.astro"
+      ],
+      "cases": [
+        "T06",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "PREF-06",
+      "sourceSection": "PREF",
+      "components": [
+        "site/src/modules/preferences/domain.mjs",
+        "site/src/modules/preferences/browser.mjs",
+        "site/src/components/Preferences.astro"
+      ],
+      "cases": [
+        "T06",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "READ-01",
+      "sourceSection": "READ",
+      "components": [
+        "site/src/styles/global.css"
+      ],
+      "cases": [
+        "T24",
+        "T25",
+        "T26",
+        "T27"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "READ-02",
+      "sourceSection": "READ",
+      "components": [
+        "site/src/styles/global.css"
+      ],
+      "cases": [
+        "T24",
+        "T25",
+        "T26",
+        "T27"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "READ-03",
+      "sourceSection": "READ",
+      "components": [
+        "site/src/styles/global.css"
+      ],
+      "cases": [
+        "T24",
+        "T25",
+        "T26",
+        "T27"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "READ-04",
+      "sourceSection": "READ",
+      "components": [
+        "site/src/styles/global.css"
+      ],
+      "cases": [
+        "T24",
+        "T25",
+        "T26",
+        "T27"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "SEM-01",
+      "sourceSection": "SEM",
+      "components": [
+        "site/src/layouts/BaseLayout.astro",
+        "site/src/components/SelfObservatory.astro"
+      ],
+      "cases": [
+        "T02",
+        "T03",
+        "T05",
+        "T29"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "SEM-02",
+      "sourceSection": "SEM",
+      "components": [
+        "site/src/layouts/BaseLayout.astro",
+        "site/src/components/SelfObservatory.astro"
+      ],
+      "cases": [
+        "T02",
+        "T03",
+        "T05",
+        "T29"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "SEM-03",
+      "sourceSection": "SEM",
+      "components": [
+        "site/src/layouts/BaseLayout.astro",
+        "site/src/components/SelfObservatory.astro"
+      ],
+      "cases": [
+        "T02",
+        "T03",
+        "T05",
+        "T29"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "SEM-04",
+      "sourceSection": "SEM",
+      "components": [
+        "site/src/layouts/BaseLayout.astro",
+        "site/src/components/SelfObservatory.astro"
+      ],
+      "cases": [
+        "T02",
+        "T03",
+        "T05",
+        "T29"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "INPUT-01",
+      "sourceSection": "INPUT",
+      "components": [
+        "site/src/layouts/BaseLayout.astro",
+        "site/src/scripts/editorial.mjs",
+        "site/src/scripts/self-observatory.mjs"
+      ],
+      "cases": [
+        "T03",
+        "T35",
+        "T36",
+        "T37"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "INPUT-02",
+      "sourceSection": "INPUT",
+      "components": [
+        "site/src/layouts/BaseLayout.astro",
+        "site/src/scripts/editorial.mjs",
+        "site/src/scripts/self-observatory.mjs"
+      ],
+      "cases": [
+        "T03",
+        "T35",
+        "T36",
+        "T37"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "INPUT-03",
+      "sourceSection": "INPUT",
+      "components": [
+        "site/src/layouts/BaseLayout.astro",
+        "site/src/scripts/editorial.mjs",
+        "site/src/scripts/self-observatory.mjs"
+      ],
+      "cases": [
+        "T03",
+        "T35",
+        "T36",
+        "T37"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "INPUT-04",
+      "sourceSection": "INPUT",
+      "components": [
+        "site/src/layouts/BaseLayout.astro",
+        "site/src/scripts/editorial.mjs",
+        "site/src/scripts/self-observatory.mjs"
+      ],
+      "cases": [
+        "T03",
+        "T35",
+        "T36",
+        "T37"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "COMP-01",
+      "sourceSection": "COMP",
+      "components": [
+        "site/src/components/ArchiveFilters.astro",
+        "site/src/components/Preferences.astro",
+        "site/src/scripts/editorial.mjs"
+      ],
+      "cases": [
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T38",
+        "T39"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "COMP-02",
+      "sourceSection": "COMP",
+      "components": [
+        "site/src/components/ArchiveFilters.astro",
+        "site/src/components/Preferences.astro",
+        "site/src/scripts/editorial.mjs"
+      ],
+      "cases": [
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T38",
+        "T39"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "COMP-03",
+      "sourceSection": "COMP",
+      "components": [
+        "site/src/components/ArchiveFilters.astro",
+        "site/src/components/Preferences.astro",
+        "site/src/scripts/editorial.mjs"
+      ],
+      "cases": [
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T38",
+        "T39"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "COMP-04",
+      "sourceSection": "COMP",
+      "components": [
+        "site/src/components/ArchiveFilters.astro",
+        "site/src/components/Preferences.astro",
+        "site/src/scripts/editorial.mjs"
+      ],
+      "cases": [
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T38",
+        "T39"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "COMP-05",
+      "sourceSection": "COMP",
+      "components": [
+        "site/src/components/ArchiveFilters.astro",
+        "site/src/components/Preferences.astro",
+        "site/src/scripts/editorial.mjs"
+      ],
+      "cases": [
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T38",
+        "T39"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "COMP-06",
+      "sourceSection": "COMP",
+      "components": [
+        "site/src/components/ArchiveFilters.astro",
+        "site/src/components/Preferences.astro",
+        "site/src/scripts/editorial.mjs"
+      ],
+      "cases": [
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T38",
+        "T39"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "COMP-07",
+      "sourceSection": "COMP",
+      "components": [
+        "site/src/components/ArchiveFilters.astro",
+        "site/src/components/Preferences.astro",
+        "site/src/scripts/editorial.mjs"
+      ],
+      "cases": [
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T38",
+        "T39"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "MEDIA-01",
+      "sourceSection": "MEDIA",
+      "components": [
+        "docs/a11y/content-guide.md",
+        "site/src/components/EditorialPage.astro"
+      ],
+      "cases": [
+        "T18",
+        "T19",
+        "T20",
+        "T21",
+        "T22",
+        "T23"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "MEDIA-02",
+      "sourceSection": "MEDIA",
+      "components": [
+        "docs/a11y/content-guide.md",
+        "site/src/components/EditorialPage.astro"
+      ],
+      "cases": [
+        "T18",
+        "T19",
+        "T20",
+        "T21",
+        "T22",
+        "T23"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "MEDIA-03",
+      "sourceSection": "MEDIA",
+      "components": [
+        "docs/a11y/content-guide.md",
+        "site/src/components/EditorialPage.astro"
+      ],
+      "cases": [
+        "T18",
+        "T19",
+        "T20",
+        "T21",
+        "T22",
+        "T23"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "SCI-01",
+      "sourceSection": "SCI",
+      "components": [
+        "research/_quarto.yml",
+        "research/notebook.css",
+        "site/src/components/SelfObservatory.astro",
+        "site/src/data/editorial.mjs"
+      ],
+      "cases": [
+        "T29",
+        "T30",
+        "T31",
+        "T32"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "SCI-02",
+      "sourceSection": "SCI",
+      "components": [
+        "research/_quarto.yml",
+        "research/notebook.css",
+        "site/src/components/SelfObservatory.astro",
+        "site/src/data/editorial.mjs"
+      ],
+      "cases": [
+        "T29",
+        "T30",
+        "T31",
+        "T32"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "SCI-03",
+      "sourceSection": "SCI",
+      "components": [
+        "research/_quarto.yml",
+        "research/notebook.css",
+        "site/src/components/SelfObservatory.astro",
+        "site/src/data/editorial.mjs"
+      ],
+      "cases": [
+        "T29",
+        "T30",
+        "T31",
+        "T32"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "SCI-04",
+      "sourceSection": "SCI",
+      "components": [
+        "research/_quarto.yml",
+        "research/notebook.css",
+        "site/src/components/SelfObservatory.astro",
+        "site/src/data/editorial.mjs"
+      ],
+      "cases": [
+        "T29",
+        "T30",
+        "T31",
+        "T32"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "SCI-05",
+      "sourceSection": "SCI",
+      "components": [
+        "research/_quarto.yml",
+        "research/notebook.css",
+        "site/src/components/SelfObservatory.astro",
+        "site/src/data/editorial.mjs"
+      ],
+      "cases": [
+        "T29",
+        "T30",
+        "T31",
+        "T32"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "SCI-06",
+      "sourceSection": "SCI",
+      "components": [
+        "research/_quarto.yml",
+        "research/notebook.css",
+        "site/src/components/SelfObservatory.astro",
+        "site/src/data/editorial.mjs"
+      ],
+      "cases": [
+        "T29",
+        "T30",
+        "T31",
+        "T32"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "COG-01",
+      "sourceSection": "COG",
+      "components": [
+        "site/src/components/EditorialPage.astro",
+        "site/src/components/SelfObservatory.astro"
+      ],
+      "cases": [
+        "T37",
+        "T41"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "LANG-01",
+      "sourceSection": "LANG",
+      "components": [
+        "site/src/components/EditorialPage.astro",
+        "site/src/pages/es/[...slug].astro"
+      ],
+      "cases": [
+        "T28"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "TECH-01",
+      "sourceSection": "TECH",
+      "components": [
+        "site/src/layouts/BaseLayout.astro",
+        "tools/generate-visual.mjs",
+        "tools/build-v2.mjs"
+      ],
+      "cases": [
+        "T22",
+        "T23",
+        "T33",
+        "T34"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "TECH-02",
+      "sourceSection": "TECH",
+      "components": [
+        "site/src/layouts/BaseLayout.astro",
+        "tools/generate-visual.mjs",
+        "tools/build-v2.mjs"
+      ],
+      "cases": [
+        "T22",
+        "T23",
+        "T33",
+        "T34"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "TECH-03",
+      "sourceSection": "TECH",
+      "components": [
+        "site/src/layouts/BaseLayout.astro",
+        "tools/generate-visual.mjs",
+        "tools/build-v2.mjs"
+      ],
+      "cases": [
+        "T22",
+        "T23",
+        "T33",
+        "T34"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "TECH-04",
+      "sourceSection": "TECH",
+      "components": [
+        "site/src/layouts/BaseLayout.astro",
+        "tools/generate-visual.mjs",
+        "tools/build-v2.mjs"
+      ],
+      "cases": [
+        "T22",
+        "T23",
+        "T33",
+        "T34"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "ARCH-01",
+      "sourceSection": "ARCH",
+      "components": [
+        "docs/adr/013-experiential-self-model.md",
+        "docs/adr/014-grafito-source-and-native-controls.md",
+        "docs/adr/015-shared-scientific-publishing.md"
+      ],
+      "cases": [
+        "T01",
+        "T15",
+        "T31",
+        "T42"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "ARCH-02",
+      "sourceSection": "ARCH",
+      "components": [
+        "docs/adr/013-experiential-self-model.md",
+        "docs/adr/014-grafito-source-and-native-controls.md",
+        "docs/adr/015-shared-scientific-publishing.md"
+      ],
+      "cases": [
+        "T01",
+        "T15",
+        "T31",
+        "T42"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "ARCH-03",
+      "sourceSection": "ARCH",
+      "components": [
+        "docs/adr/013-experiential-self-model.md",
+        "docs/adr/014-grafito-source-and-native-controls.md",
+        "docs/adr/015-shared-scientific-publishing.md"
+      ],
+      "cases": [
+        "T01",
+        "T15",
+        "T31",
+        "T42"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "DATA-01",
+      "sourceSection": "DATA",
+      "components": [
+        "site/src/data/editorial.mjs",
+        "site/src/data/publications.json",
+        "docs/a11y/content-guide.md"
+      ],
+      "cases": [
+        "T29",
+        "T32",
+        "T42"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "DATA-02",
+      "sourceSection": "DATA",
+      "components": [
+        "site/src/data/editorial.mjs",
+        "site/src/data/publications.json",
+        "docs/a11y/content-guide.md"
+      ],
+      "cases": [
+        "T29",
+        "T32",
+        "T42"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "QA-01",
+      "sourceSection": "QA",
+      "components": [
+        "site/playwright.v2.config.mjs",
+        "site/tests-v2/site.spec.mjs",
+        "tools/verify-contrast.mjs"
+      ],
+      "cases": [
+        "T01",
+        "T09",
+        "T24",
+        "T25",
+        "T28"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "QA-02",
+      "sourceSection": "QA",
+      "components": [
+        "site/playwright.v2.config.mjs",
+        "site/tests-v2/site.spec.mjs",
+        "tools/verify-contrast.mjs"
+      ],
+      "cases": [
+        "T01",
+        "T09",
+        "T24",
+        "T25",
+        "T28"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "QA-03",
+      "sourceSection": "QA",
+      "components": [
+        "site/playwright.v2.config.mjs",
+        "site/tests-v2/site.spec.mjs",
+        "tools/verify-contrast.mjs"
+      ],
+      "cases": [
+        "T01",
+        "T09",
+        "T24",
+        "T25",
+        "T28"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "QA-04",
+      "sourceSection": "QA",
+      "components": [
+        "site/playwright.v2.config.mjs",
+        "site/tests-v2/site.spec.mjs",
+        "tools/verify-contrast.mjs"
+      ],
+      "cases": [
+        "T01",
+        "T09",
+        "T24",
+        "T25",
+        "T28"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "QA-05",
+      "sourceSection": "QA",
+      "components": [
+        "site/playwright.v2.config.mjs",
+        "site/tests-v2/site.spec.mjs",
+        "tools/verify-contrast.mjs"
+      ],
+      "cases": [
+        "T01",
+        "T09",
+        "T24",
+        "T25",
+        "T28"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "QA-06",
+      "sourceSection": "QA",
+      "components": [
+        "site/playwright.v2.config.mjs",
+        "site/tests-v2/site.spec.mjs",
+        "tools/verify-contrast.mjs"
+      ],
+      "cases": [
+        "T01",
+        "T09",
+        "T24",
+        "T25",
+        "T28"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "CI-01",
+      "sourceSection": "CI",
+      "components": [
+        ".github/workflows/v2-candidate.yml"
+      ],
+      "cases": [
+        "T01",
+        "T09"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "CI-02",
+      "sourceSection": "CI",
+      "components": [
+        ".github/workflows/v2-candidate.yml"
+      ],
+      "cases": [
+        "T01",
+        "T09"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "OUT-01",
+      "sourceSection": "OUT",
+      "components": [
+        "docs/a11y/test-report.md",
+        "site/src/components/EditorialPage.astro"
+      ],
+      "cases": [
+        "T42"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "OUT-02",
+      "sourceSection": "OUT",
+      "components": [
+        "docs/a11y/test-report.md",
+        "site/src/components/EditorialPage.astro"
+      ],
+      "cases": [
+        "T42"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "PLAN-01",
+      "sourceSection": "PLAN",
+      "components": [
+        "docs/a11y/implementation-plan.md"
+      ],
+      "cases": [
+        "T01"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "DONE-01",
+      "sourceSection": "DONE",
+      "components": [
+        "docs/a11y/test-report.md"
+      ],
+      "cases": [
+        "T01",
+        "T42"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    },
+    {
+      "id": "DONE-02",
+      "sourceSection": "DONE",
+      "components": [
+        "docs/a11y/test-report.md"
+      ],
+      "cases": [
+        "T01",
+        "T42"
+      ],
+      "automaticEvidence": [
+        "evidence/v2-unit.log",
+        "evidence/contrast-tokens.json",
+        "evidence/v2-browser.json"
+      ],
+      "manualEvidence": null,
+      "acceptance": "NO_EVALUADO",
+      "note": "Linked automation is a scoped plan; consult the executed candidate report. Manual acceptance is not inferred."
+    }
+  ],
+  "wcag": [
+    {
+      "id": "1.1.1",
+      "level": "A",
+      "topic": "Non-text content",
+      "requirements": [
+        "SEM-04",
+        "SCI-02",
+        "SCI-05"
+      ],
+      "cases": [
+        "T29",
+        "T32"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "1.2.1",
+      "level": "A",
+      "topic": "Audio/video-only prerecorded",
+      "requirements": [
+        "MEDIA-02"
+      ],
+      "cases": [
+        "T20"
+      ],
+      "status": "NO_APLICA",
+      "reason": "No local audio or video records or players in the candidate.",
+      "inventoryEvidence": "docs/a11y/baseline.md; candidate components and editorial records",
+      "evidence": null
+    },
+    {
+      "id": "1.2.2",
+      "level": "A",
+      "topic": "Prerecorded captions",
+      "requirements": [
+        "MEDIA-02"
+      ],
+      "cases": [
+        "T18"
+      ],
+      "status": "NO_APLICA",
+      "reason": "No prerecorded synchronized media in the candidate.",
+      "inventoryEvidence": "docs/a11y/baseline.md; candidate components and editorial records",
+      "evidence": null
+    },
+    {
+      "id": "1.2.3",
+      "level": "A",
+      "topic": "Audio description or media alternative",
+      "requirements": [
+        "MEDIA-02"
+      ],
+      "cases": [
+        "T19"
+      ],
+      "status": "NO_APLICA",
+      "reason": "No prerecorded synchronized media in the candidate.",
+      "inventoryEvidence": "docs/a11y/baseline.md; candidate components and editorial records",
+      "evidence": null
+    },
+    {
+      "id": "1.2.4",
+      "level": "AA",
+      "topic": "Live captions",
+      "requirements": [
+        "MEDIA-02"
+      ],
+      "cases": [
+        "T21"
+      ],
+      "status": "NO_APLICA",
+      "reason": "No live audiovisual stream in the candidate.",
+      "inventoryEvidence": "docs/a11y/baseline.md; candidate components and editorial records",
+      "evidence": null
+    },
+    {
+      "id": "1.2.5",
+      "level": "AA",
+      "topic": "Prerecorded audio description",
+      "requirements": [
+        "MEDIA-02"
+      ],
+      "cases": [
+        "T19"
+      ],
+      "status": "NO_APLICA",
+      "reason": "No prerecorded synchronized media in the candidate.",
+      "inventoryEvidence": "docs/a11y/baseline.md; candidate components and editorial records",
+      "evidence": null
+    },
+    {
+      "id": "1.3.1",
+      "level": "A",
+      "topic": "Information and relationships",
+      "requirements": [
+        "SEM-01",
+        "SCI-03",
+        "SCI-04"
+      ],
+      "cases": [
+        "T02",
+        "T30",
+        "T31"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "1.3.2",
+      "level": "A",
+      "topic": "Meaningful sequence",
+      "requirements": [
+        "SEM-03"
+      ],
+      "cases": [
+        "T02",
+        "T27"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "1.3.3",
+      "level": "A",
+      "topic": "Sensory characteristics",
+      "requirements": [
+        "SEM-04",
+        "COG-01"
+      ],
+      "cases": [
+        "T10",
+        "T37"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "1.3.4",
+      "level": "AA",
+      "topic": "Orientation",
+      "requirements": [
+        "INPUT-03"
+      ],
+      "cases": [
+        "T36"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "1.3.5",
+      "level": "AA",
+      "topic": "Identify input purpose",
+      "requirements": [
+        "COMP-07"
+      ],
+      "cases": [
+        "T07",
+        "T40"
+      ],
+      "status": "NO_APLICA",
+      "reason": "No visitor personal-data collection fields. Preference and experiment fields are not personal-data forms.",
+      "inventoryEvidence": "docs/a11y/baseline.md; candidate components and editorial records",
+      "evidence": null
+    },
+    {
+      "id": "1.4.1",
+      "level": "A",
+      "topic": "Use of color",
+      "requirements": [
+        "VIS-05",
+        "VIS-07"
+      ],
+      "cases": [
+        "T10",
+        "T29"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "1.4.2",
+      "level": "A",
+      "topic": "Audio control",
+      "requirements": [
+        "MEDIA-01"
+      ],
+      "cases": [
+        "T18",
+        "T20"
+      ],
+      "status": "NO_APLICA",
+      "reason": "No audio playback, automatic or manual, is included.",
+      "inventoryEvidence": "docs/a11y/baseline.md; candidate components and editorial records",
+      "evidence": null
+    },
+    {
+      "id": "1.4.3",
+      "level": "AA",
+      "topic": "Contrast minimum",
+      "requirements": [
+        "VIS-05"
+      ],
+      "cases": [
+        "T09",
+        "T10"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "1.4.4",
+      "level": "AA",
+      "topic": "Resize text",
+      "requirements": [
+        "READ-03"
+      ],
+      "cases": [
+        "T24"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "1.4.5",
+      "level": "AA",
+      "topic": "Images of text",
+      "requirements": [
+        "SEM-04",
+        "SCI-05"
+      ],
+      "cases": [
+        "T29",
+        "T32"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "1.4.10",
+      "level": "AA",
+      "topic": "Reflow",
+      "requirements": [
+        "READ-03"
+      ],
+      "cases": [
+        "T25"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "1.4.11",
+      "level": "AA",
+      "topic": "Non-text contrast",
+      "requirements": [
+        "VIS-05",
+        "VIS-06"
+      ],
+      "cases": [
+        "T09",
+        "T12"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "1.4.12",
+      "level": "AA",
+      "topic": "Text spacing",
+      "requirements": [
+        "READ-04"
+      ],
+      "cases": [
+        "T26"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "1.4.13",
+      "level": "AA",
+      "topic": "Hover/focus content",
+      "requirements": [
+        "COMP-05"
+      ],
+      "cases": [
+        "T38"
+      ],
+      "status": "NO_APLICA",
+      "reason": "No custom tooltip or content opened on hover/focus. Disclosure opens by deliberate activation.",
+      "inventoryEvidence": "docs/a11y/baseline.md; candidate components and editorial records",
+      "evidence": null
+    },
+    {
+      "id": "2.1.1",
+      "level": "A",
+      "topic": "Keyboard",
+      "requirements": [
+        "INPUT-01"
+      ],
+      "cases": [
+        "T03",
+        "T04",
+        "T06"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "2.1.2",
+      "level": "A",
+      "topic": "No keyboard trap",
+      "requirements": [
+        "INPUT-01",
+        "COMP-04"
+      ],
+      "cases": [
+        "T03",
+        "T06",
+        "T18"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "2.1.4",
+      "level": "A",
+      "topic": "Character shortcuts",
+      "requirements": [
+        "INPUT-01"
+      ],
+      "cases": [
+        "T03"
+      ],
+      "status": "NO_APLICA",
+      "reason": "No single-character application shortcuts; only native controls and local Escape handling.",
+      "inventoryEvidence": "docs/a11y/baseline.md; candidate components and editorial records",
+      "evidence": null
+    },
+    {
+      "id": "2.2.1",
+      "level": "A",
+      "topic": "Timing adjustable",
+      "requirements": [
+        "COG-01",
+        "TECH-04"
+      ],
+      "cases": [
+        "T41"
+      ],
+      "status": "NO_APLICA",
+      "reason": "No visitor response deadlines, expiring sessions or timed tasks. Logical step count is not a time limit.",
+      "inventoryEvidence": "docs/a11y/baseline.md; candidate components and editorial records",
+      "evidence": null
+    },
+    {
+      "id": "2.2.2",
+      "level": "A",
+      "topic": "Pause stop hide",
+      "requirements": [
+        "MEDIA-03",
+        "TECH-01"
+      ],
+      "cases": [
+        "T22"
+      ],
+      "status": "NO_APLICA",
+      "reason": "No automatic moving or auto-updating content; experiment steps require deliberate actions.",
+      "inventoryEvidence": "docs/a11y/baseline.md; candidate components and editorial records",
+      "evidence": null
+    },
+    {
+      "id": "2.3.1",
+      "level": "A",
+      "topic": "Flashes and threshold",
+      "requirements": [
+        "MEDIA-03"
+      ],
+      "cases": [
+        "T23"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "2.4.1",
+      "level": "A",
+      "topic": "Bypass blocks",
+      "requirements": [
+        "SEM-03"
+      ],
+      "cases": [
+        "T05"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "2.4.2",
+      "level": "A",
+      "topic": "Page title",
+      "requirements": [
+        "SEM-01",
+        "LANG-01"
+      ],
+      "cases": [
+        "T02",
+        "T28"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "2.4.3",
+      "level": "A",
+      "topic": "Focus order",
+      "requirements": [
+        "SEM-03",
+        "INPUT-01"
+      ],
+      "cases": [
+        "T03",
+        "T04"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "2.4.4",
+      "level": "A",
+      "topic": "Link purpose in context",
+      "requirements": [
+        "COMP-02"
+      ],
+      "cases": [
+        "T02",
+        "T39"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "2.4.5",
+      "level": "AA",
+      "topic": "Multiple ways",
+      "requirements": [
+        "IA-02",
+        "COMP-03"
+      ],
+      "cases": [
+        "T08",
+        "T42"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "2.4.6",
+      "level": "AA",
+      "topic": "Headings and labels",
+      "requirements": [
+        "SEM-01",
+        "SEM-02"
+      ],
+      "cases": [
+        "T02",
+        "T07"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "2.4.7",
+      "level": "AA",
+      "topic": "Focus visible",
+      "requirements": [
+        "VIS-06"
+      ],
+      "cases": [
+        "T03",
+        "T09"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "2.4.11",
+      "level": "AA",
+      "topic": "Focus not obscured minimum",
+      "requirements": [
+        "VIS-06",
+        "COMP-01"
+      ],
+      "cases": [
+        "T03",
+        "T25"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "2.5.1",
+      "level": "A",
+      "topic": "Pointer gestures",
+      "requirements": [
+        "INPUT-03"
+      ],
+      "cases": [
+        "T35",
+        "T36"
+      ],
+      "status": "NO_APLICA",
+      "reason": "No multipoint or path-based gestures.",
+      "inventoryEvidence": "docs/a11y/baseline.md; candidate components and editorial records",
+      "evidence": null
+    },
+    {
+      "id": "2.5.2",
+      "level": "A",
+      "topic": "Pointer cancellation",
+      "requirements": [
+        "INPUT-03"
+      ],
+      "cases": [
+        "T36"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "2.5.3",
+      "level": "A",
+      "topic": "Label in name",
+      "requirements": [
+        "SEM-02"
+      ],
+      "cases": [
+        "T37"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "2.5.4",
+      "level": "A",
+      "topic": "Motion actuation",
+      "requirements": [
+        "INPUT-03"
+      ],
+      "cases": [
+        "T36"
+      ],
+      "status": "NO_APLICA",
+      "reason": "No device motion or orientation sensor activation.",
+      "inventoryEvidence": "docs/a11y/baseline.md; candidate components and editorial records",
+      "evidence": null
+    },
+    {
+      "id": "2.5.7",
+      "level": "AA",
+      "topic": "Dragging movements",
+      "requirements": [
+        "INPUT-03"
+      ],
+      "cases": [
+        "T35"
+      ],
+      "status": "NO_APLICA",
+      "reason": "No drag interaction; file import uses a native file chooser.",
+      "inventoryEvidence": "docs/a11y/baseline.md; candidate components and editorial records",
+      "evidence": null
+    },
+    {
+      "id": "2.5.8",
+      "level": "AA",
+      "topic": "Target size minimum",
+      "requirements": [
+        "INPUT-02"
+      ],
+      "cases": [
+        "T36"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "3.1.1",
+      "level": "A",
+      "topic": "Language of page",
+      "requirements": [
+        "LANG-01"
+      ],
+      "cases": [
+        "T28"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "3.1.2",
+      "level": "AA",
+      "topic": "Language of parts",
+      "requirements": [
+        "LANG-01"
+      ],
+      "cases": [
+        "T28",
+        "T31"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "3.2.1",
+      "level": "A",
+      "topic": "On focus",
+      "requirements": [
+        "COMP-03",
+        "PREF-05"
+      ],
+      "cases": [
+        "T03",
+        "T08"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "3.2.2",
+      "level": "A",
+      "topic": "On input",
+      "requirements": [
+        "COMP-03",
+        "PREF-05"
+      ],
+      "cases": [
+        "T08",
+        "T14"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "3.2.3",
+      "level": "AA",
+      "topic": "Consistent navigation",
+      "requirements": [
+        "IA-02"
+      ],
+      "cases": [
+        "T04",
+        "T42"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "3.2.4",
+      "level": "AA",
+      "topic": "Consistent identification",
+      "requirements": [
+        "SEM-02",
+        "COMP-02"
+      ],
+      "cases": [
+        "T02",
+        "T42"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "3.2.6",
+      "level": "A",
+      "topic": "Consistent help",
+      "requirements": [
+        "COG-01",
+        "OUT-02"
+      ],
+      "cases": [
+        "T41"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "3.3.1",
+      "level": "A",
+      "topic": "Error identification",
+      "requirements": [
+        "COMP-07"
+      ],
+      "cases": [
+        "T07"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "3.3.2",
+      "level": "A",
+      "topic": "Labels or instructions",
+      "requirements": [
+        "COMP-07"
+      ],
+      "cases": [
+        "T07"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "3.3.3",
+      "level": "AA",
+      "topic": "Error suggestion",
+      "requirements": [
+        "COMP-07"
+      ],
+      "cases": [
+        "T07"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "3.3.4",
+      "level": "AA",
+      "topic": "Error prevention with consequences",
+      "requirements": [
+        "COMP-07"
+      ],
+      "cases": [
+        "T07",
+        "T40"
+      ],
+      "status": "NO_APLICA",
+      "reason": "No legal/financial transactions, visitor personal data deletion or test-answer submission. Local experimental state can be reset or replayed.",
+      "inventoryEvidence": "docs/a11y/baseline.md; candidate components and editorial records",
+      "evidence": null
+    },
+    {
+      "id": "3.3.7",
+      "level": "A",
+      "topic": "Redundant entry",
+      "requirements": [
+        "COMP-07"
+      ],
+      "cases": [
+        "T07",
+        "T40"
+      ],
+      "status": "NO_APLICA",
+      "reason": "No multi-step personal-information process requiring repeated entry.",
+      "inventoryEvidence": "docs/a11y/baseline.md; candidate components and editorial records",
+      "evidence": null
+    },
+    {
+      "id": "3.3.8",
+      "level": "AA",
+      "topic": "Accessible authentication",
+      "requirements": [
+        "COMP-07"
+      ],
+      "cases": [
+        "T40"
+      ],
+      "status": "NO_APLICA",
+      "reason": "No authentication or CAPTCHA.",
+      "inventoryEvidence": "docs/a11y/baseline.md; candidate components and editorial records",
+      "evidence": null
+    },
+    {
+      "id": "4.1.2",
+      "level": "A",
+      "topic": "Name role value",
+      "requirements": [
+        "SEM-02",
+        "COMP-04"
+      ],
+      "cases": [
+        "T02",
+        "T06",
+        "T07"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    },
+    {
+      "id": "4.1.3",
+      "level": "AA",
+      "topic": "Status messages",
+      "requirements": [
+        "SEM-02",
+        "COMP-03"
+      ],
+      "cases": [
+        "T08",
+        "T16",
+        "T39"
+      ],
+      "status": "PENDIENTE_MANUAL",
+      "reason": "Automated observations are separate; full criterion acceptance requires relevant manual tasks and content review.",
+      "inventoryEvidence": null,
+      "evidence": null
+    }
+  ],
+  "acceptanceCases": [
+    {
+      "id": "T01",
+      "title": "Inventory and reference build",
+      "procedureSource": "Owner master Annex C, T01",
+      "procedure": "Record checkout, tracked changes, package/lock versions, instructions and source routes. Execute the existing build unchanged before feature work.",
+      "expected": "Retain exact SHA, command logs, errors and a source/runtime/pending inventory; no inference from screenshots.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T02",
+      "title": "Structure names and reading order",
+      "procedureSource": "Owner master Annex C, T02",
+      "procedure": "On each editorial and notebook template, traverse headings/regions with a real screen reader; compare DOM and visual order, names, image alternatives and titles.",
+      "expected": "One identifiable main; meaningful names, relations and sequence; no icon-only essential action.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T03",
+      "title": "Global keyboard-only journey",
+      "procedureSource": "Owner master Annex C, T03",
+      "procedure": "From a fresh page use only Tab, Shift+Tab, Enter, Space and local Escape to read research, follow article/code links, copy a citation and return. Repeat enlarged/narrow.",
+      "expected": "No trap, unexpected navigation or hidden focus. Record the actual focus sequence.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T04",
+      "title": "Mobile menu and consistent navigation",
+      "procedureSource": "Owner master Annex C, T04",
+      "procedure": "Open and close the navigation disclosure with keyboard and touch; visit another language/template; repeat with enlarged text and little viewport height.",
+      "expected": "Closed links are out of focus order. The nonmodal disclosure does not trap or claim modality.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T05",
+      "title": "Skip to main content",
+      "procedureSource": "Owner master Annex C, T05",
+      "procedure": "Activate Skip to main content as the first useful keyboard link; continue reading and tabbing in the destination on both generators.",
+      "expected": "Visible skip link moves focus/reading to main, not merely visual scroll; no covered destination.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T06",
+      "title": "Preferences page or dialog",
+      "procedureSource": "Owner master Annex C, T06",
+      "procedure": "Open the full preference page through its visible link and use all groups, reset and return navigation. A modal is not present.",
+      "expected": "No focus trap; names and groups are clear. If a future modal is added, separately test initial focus, inert background, Escape and focus return.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T07",
+      "title": "Input error and recovery",
+      "procedureSource": "Owner master Annex C, T07",
+      "procedure": "Submit out-of-range seed/energy, unsupported or corrupted episode file, and a recoverable clipboard failure; inspect persistent labels and corrective messages.",
+      "expected": "No active session is replaced after failed import; entered data remains; errors are textual and connected to the relevant input. No fake contact success.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T08",
+      "title": "Search filters results and history",
+      "procedureSource": "Owner master Annex C, T08",
+      "procedure": "Search by text and filters, obtain zero results, clear and use browser Back/Forward; repeat with a real screen reader.",
+      "expected": "Focus remains on the initiating control; concise result count; URL keeps search state but no visual preferences. Base list remains without script.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T09",
+      "title": "Rendered palettes and contrast",
+      "procedureSource": "Owner master Annex C, T09",
+      "procedure": "Run all384 token checks; in /components/ choose each of24 palettes, exercise default/hover/focus/selected/expanded/invalid/disabled states and examine computed colors.",
+      "expected": "Informative text≥4.5 or≥7 in high contrast; functional boundaries≥3 on actual backgrounds. Token results remain separate from rendered evidence.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T10",
+      "title": "Meaning without color discrimination",
+      "procedureSource": "Owner master Annex C, T10",
+      "procedure": "Use monochrome and supplementary color-deficiency simulation; identify statuses, links, selected controls, errors and data without hue.",
+      "expected": "Meaning survives through words, borders, shape or associated values; scientific images are not globally filtered. Human discrimination is not inferred.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T11",
+      "title": "High contrast",
+      "procedureSource": "Owner master Annex C, T11",
+      "procedure": "Select high appearance for four profiles and two themes; inspect metadata, code, controls, errors and all informative text.",
+      "expected": "Informative text on actual surfaces≥7:1; profile and theme remain independent. This does not assert global AAA.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T12",
+      "title": "System forced colors",
+      "procedureSource": "Owner master Annex C, T12",
+      "procedure": "Use both browser emulation and actual Windows forced-color settings in a test profile, operate controls and then restore OS settings.",
+      "expected": "Focus, boundaries and selected states remain recognizable; OS colors prevail without global forced-color-adjust:none. Emulation is not an OS task.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T13",
+      "title": "System and local motion preference",
+      "procedureSource": "Owner master Annex C, T13",
+      "procedure": "Change system theme/contrast/motion where supported; select explicit site settings; change OS again.",
+      "expected": "Explicit choices are respected except that OS reduced motion always wins; no animated theme change or automatic media.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T14",
+      "title": "Independent visual preferences",
+      "procedureSource": "Owner master Annex C, T14",
+      "procedure": "Change each preference separately and in combinations, keeping focus on the activated control.",
+      "expected": "No unrelated setting is reset; no reload, scroll-to-top or unexpected context switch.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T15",
+      "title": "Persistence across routes and generators",
+      "procedureSource": "Owner master Annex C, T15",
+      "procedure": "Set dark/profile/reading, navigate across Astro, Quarto, Spanish and English, then Back/Forward and a second tab.",
+      "expected": "Valid stored preferences survive same-origin navigation. Unsupplied translations are honestly identified.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T16",
+      "title": "Corrupt or denied storage",
+      "procedureSource": "Owner master Annex C, T16",
+      "procedure": "Deny storage reads/writes, fill storage, insert invalid JSON/unknown values/old supported key and reload in isolated profiles.",
+      "expected": "Safe defaults and validated migration; changes apply in memory; saved is not announced after write failure. Cross-document denial limitations are disclosed.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T17",
+      "title": "Reset and cross-tab preference changes",
+      "procedureSource": "Owner master Annex C, T17",
+      "procedure": "Set preferences, add an unrelated fixture storage key, reset while focused and synchronize another tab.",
+      "expected": "Only owned keys removed; defaults restored; focus retained; one truthful confirmation and unrelated key preserved.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T18",
+      "title": "Prerecorded video captions and controls",
+      "procedureSource": "Owner master Annex C, T18",
+      "procedure": "When a real synchronized video is added, check reviewed captions, language/names/formulas, all playback controls and entering/leaving iframe by keyboard.",
+      "expected": "Accurate synchronized captions, accessible operation and no autoplay; current absence of video is inventoried, not a fabricated test.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T19",
+      "title": "Essential visual audio description",
+      "procedureSource": "Owner master Annex C, T19",
+      "procedure": "For each supplied video compare essential visible information with the spoken narration; examine a described version where needed.",
+      "expected": "Visual information is audibly available for1.2.5. Transcript alone is not a substitute for required audio description.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T20",
+      "title": "Audio-only and silent video alternatives",
+      "procedureSource": "Owner master Annex C, T20",
+      "procedure": "For audio-only or silent-video records compare the complete source with its faithful structured alternative.",
+      "expected": "Speakers and meaningful sounds/actions are preserved, not a generic summary. Conditional until such records exist.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T21",
+      "title": "Live synchronized media",
+      "procedureSource": "Owner master Annex C, T21",
+      "procedure": "If live media is introduced, rehearse with the actual captioning service and check keyboard/player/latency under representative conditions.",
+      "expected": "Live captions actually exist; no claim based on a future plan.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T22",
+      "title": "Pause stop hide moving content",
+      "procedureSource": "Owner master Annex C, T22",
+      "procedure": "Observe all pages without interaction, then operate explicit simulation steps and any future animated media; try pause/stop where relevant.",
+      "expected": "No uncontrolled moving/updating content; informative simulation updates occur only when requested.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T23",
+      "title": "Flashing content",
+      "procedureSource": "Owner master Annex C, T23",
+      "procedure": "Inspect all generated motion and each future media asset for flashes; use appropriate analysis where relevant.",
+      "expected": "No hazardous decorative flashes; warnings alone do not repair a failing asset. No clinical guarantee is inferred.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T24",
+      "title": "Text and real zoom enlargement",
+      "procedureSource": "Owner master Annex C, T24",
+      "procedure": "On a real browser use200% text enlargement and200%/400% browser zoom, recording actual settings and task completion.",
+      "expected": "No loss of content or operation. CSS viewport emulation does not close real zoom acceptance.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T25",
+      "title": "Reflow at narrow CSS width and real zoom",
+      "procedureSource": "Owner master Annex C, T25",
+      "procedure": "Use320CSSpx width and separately1280window with actual400% zoom; test long labels, DOI and notebook content.",
+      "expected": "No page-level horizontal scrolling; essential2D tables use labeled keyboard-operable local scroll.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T26",
+      "title": "User text spacing",
+      "procedureSource": "Owner master Annex C, T26",
+      "procedure": "Apply line-height1.5, paragraph margin2em, letter-spacing.12em and word-spacing.16em together, including long controls.",
+      "expected": "No truncation, overlap or loss; fixed-height components do not hide text.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T27",
+      "title": "Reading mode",
+      "procedureSource": "Owner master Annex C, T27",
+      "procedure": "Toggle reading mode in a long article and the experiment, enter/exit using native controls and repeat at enlarged text.",
+      "expected": "Single-column reading preserves sources, limitations, equations, tables and essential navigation; no duplicate content IDs.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T28",
+      "title": "Languages and equivalent routes",
+      "procedureSource": "Owner master Annex C, T28",
+      "procedure": "Navigate English/Spanish equivalents and English-only notebook notices; read controls, validation and status messages in their actual language.",
+      "expected": "html lang and substantial fragments accurate; no flag-only or falsely translated page; scientific translation reviewed separately.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T29",
+      "title": "Images figures and data alternatives",
+      "procedureSource": "Owner master Annex C, T29",
+      "procedure": "Compare every informative image, SVG, scientific diagram and future data plot with its concise alt and structured explanation.",
+      "expected": "Faithful relationships, units, data/uncertainty and purpose; no invented exact values; decorative images properly ignored.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T30",
+      "title": "Scientific tables",
+      "procedureSource": "Owner master Annex C, T30",
+      "procedure": "Use a real screen reader to navigate table headers/cells at desktop and narrow widths; operate any sorting.",
+      "expected": "Captions and associated headers persist; local scrolling does not destroy semantic relations.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T31",
+      "title": "Structured mathematics",
+      "procedureSource": "Owner master Annex C, T31",
+      "procedure": "Read and explore notebook MathML using real target AT/browser, compare variables and source LaTeX, inspect for duplicated speech.",
+      "expected": "One usable mathematical representation and explanatory variables. MathML presence alone does not prove speech navigation.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T32",
+      "title": "PDF and download alternatives",
+      "procedureSource": "Owner master Annex C, T32",
+      "procedure": "Inventory each actual downloadable document; examine source, selectable text, tags, language, order, headings, tables and alternatives.",
+      "expected": "HTML equivalent where appropriate; no inference that export/scan/OCR equals accessible PDF. No fictitious CV file.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T33",
+      "title": "No-JavaScript and blocked resources",
+      "procedureSource": "Owner master Annex C, T33",
+      "procedure": "Disable JavaScript, block relevant external resources and simulate module/iframe failure on editorial and notebook paths.",
+      "expected": "Essential content/routes stay usable; inactive experiment is explained with disabled controls; no blank page or fake success.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T34",
+      "title": "Reduced data and loading",
+      "procedureSource": "Owner master Annex C, T34",
+      "procedure": "Enable low data, inspect network requests, delay external services and compare initial versus explicitly requested resources.",
+      "expected": "No automatic media/feed payload; core route works on low data; measured bytes distinguished from proposed budgets.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T35",
+      "title": "Pointer alternatives to dragging",
+      "procedureSource": "Owner master Annex C, T35",
+      "procedure": "Inventory drag/multipoint interactions; for any future one perform the same task with keyboard AND pointer without dragging.",
+      "expected": "Both alternatives available where needed. No current drag control is invented merely to test this case.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T36",
+      "title": "Touch orientation and target sizes",
+      "procedureSource": "Owner master Annex C, T36",
+      "procedure": "Use actual touch/landscape, cancellation and keyboard concurrently; measure principal control hit regions at small base fonts.",
+      "expected": "At least44×44CSSpx for project controls; no forced device motion or hidden keyboard support.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T37",
+      "title": "Voice operation and clear instructions",
+      "procedureSource": "Owner master Annex C, T37",
+      "procedure": "Use real voice-control software to activate visible labels and complete research/contact/experiment actions; ask a reader to follow instructions.",
+      "expected": "Visible names match accessible names; instructions do not require remembering icon/color metaphors; no microphone-only path.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T38",
+      "title": "Tooltip hover/focus behavior",
+      "procedureSource": "Owner master Annex C, T38",
+      "procedure": "Inventory tooltips or hover/focus overlays; if present test dismissible, hoverable and persistent behavior without moving focus unnecessarily.",
+      "expected": "Essential help is always available. Native click disclosure is not misrepresented as a tooltip.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T39",
+      "title": "Copy citations code and clipboard failure",
+      "procedureSource": "Owner master Annex C, T39",
+      "procedure": "Copy citation/code/email normally and with denied clipboard API; compare exact selected text and focus.",
+      "expected": "Accurate text, no hidden prompts or line numbers, one status and a selectable fallback on failure.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T40",
+      "title": "Authentication and consequential processes",
+      "procedureSource": "Owner master Annex C, T40",
+      "procedure": "Inventory authentication, CAPTCHA, personal data and consequential/multistep submissions; test applicable recovery/review/redundant-entry conditions.",
+      "expected": "Current static site has none of these processes; future additions must update scope, not inherit N/A.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T41",
+      "title": "Help consistency and timing",
+      "procedureSource": "Owner master Annex C, T41",
+      "procedure": "Find help/contact from each template and inspect time limits; complete a task without time pressure.",
+      "expected": "Consistent help placement, preserved state and no invented response deadline or support SLA.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    },
+    {
+      "id": "T42",
+      "title": "End-to-end research to article code explanation contact",
+      "procedureSource": "Owner master Annex C, T42",
+      "procedure": "Complete research→plain/technical explanation→publication→genuine code when supplied→text-backed demonstration→contact, using multiple paths and target AT.",
+      "expected": "End-to-end useful journey with factual empty states and external limitations. Do not claim code/video exists where the source does not supply it.",
+      "automaticScope": "See site/tests-v2/site.spec.mjs and evidence/v2-browser.json; automated subsets do not replace the manual procedure.",
+      "status": "PENDIENTE_MANUAL",
+      "evidence": null
+    }
+  ]
+}
