@@ -16,21 +16,21 @@ jobs:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
           ref: feature/v2-self-model-grafito
-      - name: Preserve old published anchor without weakening link verification
+      - name: Preserve old published anchor without weakening verification
         run: |
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           const file='site/src/components/EditorialPage.astro';const s=fs.readFileSync(file,'utf8');
           const target='<section class="section" id="lab"><div class="shell grid two">';
-          if(!s.includes(target))throw Error('Expected semantic observatory introduction not found');
-          fs.writeFileSync(file,s.replace(target,'<section class="section" id="lab"><div class="shell grid two" id="demo">'));
-          console.log('The existing #demo link now identifies the actual observatory introduction. The #lab anchor remains valid.');
-          for(const f of ['tools/build-site.mjs','tools/verify-dist.mjs','research/_quarto.yml'])console.log('\n===== '+f+' =====\n'+fs.readFileSync(f,'utf8'));
+          if(s.includes(target))fs.writeFileSync(file,s.replace(target,'<section class="section" id="lab"><div class="shell grid two" id="demo">'));
+          else if(!s.includes('id="demo"'))throw Error('Expected semantic observatory introduction not found');
+          console.log('The existing #demo link identifies the actual observatory introduction. #lab remains valid.');
+          console.log('Actual tools: '+fs.readdirSync('tools').join(', '));
+          for(const f of ['site/package.json','tools/verify-dist.mjs','research/_quarto.yml','research/_includes/before-body.html'])if(fs.existsSync(f))console.log('\n===== '+f+' =====\n'+fs.readFileSync(f,'utf8'));
           NODE
       - name: Record change only on feature branch
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add site/src/components/EditorialPage.astro
-          git commit -m 'fix(v2): preserve inbound demo fragment at the real observatory introduction'
-          git push origin HEAD:feature/v2-self-model-grafito
+          if git diff --cached --quiet; then echo 'Anchor already present'; else git commit -m 'fix(v2): preserve inbound demo fragment at real observatory introduction'; git push origin HEAD:feature/v2-self-model-grafito; fi
