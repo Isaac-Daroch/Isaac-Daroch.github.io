@@ -1,0 +1,52 @@
+---
+import ResearchHero from './ResearchHero.astro';
+import ResearchShowcase from './ResearchShowcase.astro';
+import TeachingStudio from './TeachingStudio.astro';
+import ResearchLibrary from './ResearchLibrary.astro';
+import {STUDIO} from '../data/studio.mjs';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ExperienceAgent from './ExperienceAgent.astro';
+import PreferencesForm from './PreferencesForm.astro';
+import {CONTENT,PAPER,localize} from '../data/content.mjs';
+import {UI,ROUTE_KEYS,href} from '../../public/assets/i18n.mjs';
+import {SITE} from '../data/site.mjs';
+import publications from '../data/publications.json';
+import editorialData from '../data/editorial.json';
+import InteractiveCV from './InteractiveCV.astro';
+import {isEnabled} from '../data/modules.mjs';
+const editorial=editorialData as Record<string,{status:string;title:string|Record<string,string>;description:string|Record<string,string>;sourceUrl:string;translations:Record<string,Record<string,string>>;place?:string;role?:string;startsAt?:string;endsAt?:string;eventDate?:string;publishedAt?:string;transcriptUrl?:string;captionsUrl?:string;descriptionUrl?:string}[]>;
+type PageContent={title:string;lead:string;eyebrow?:string;identity?:string;mission?:string;sections:{h:string;p:string[]}[]};
+const pageData=CONTENT as Record<string,unknown>;
+import {formatBibliography} from '../data/bibliography.mjs';
+interface Props{page?:string;lang?:'en'|'de'|'nl'|'es'}
+const {page='',lang='en'}=Astro.props,t=UI[lang],content=localize(pageData[page||'home'],lang) as PageContent,paper=localize(PAPER,lang),bib=formatBibliography(publications);
+const guidedRoutes=[['investigation','research'],['self-model','observatory'],['publications','publications'],['projects','projects'],['cv','cv'],['contact','contact']];
+const sections=['events','news','media','teaching','self-model'].includes(page)?[]:content.sections||[];
+if(page==='teaching'){content.title=STUDIO.teaching[lang];content.lead=STUDIO.teachingLead[lang];}
+---
+<BaseLayout title={content.title} description={content.lead} lang={lang}>
+{page===''?<>
+<ResearchHero lang={lang}/><ResearchShowcase lang={lang}/><div class="shell"><ResearchLibrary lang={lang} compact/></div>
+<section class="shell section" data-complementary><div class="section-heading"><h2>{t.onThisSite}</h2><a href={href(lang,'explore')}>{t.explore} ↗</a></div><div class="destination-grid">{guidedRoutes.filter(([r])=>r!=='self-model').map(([route,key],i)=><article class="destination-card"><span class="card-index" aria-hidden="true">0{i+1}</span><h3><a href={href(lang,route)}>{t[key]}</a></h3><p>{localize(pageData[route],lang).lead}</p></article>)}</div></section>
+</>:<>
+<section class="shell page-intro"><p class="eyebrow">{t[ROUTE_KEYS[page as keyof typeof ROUTE_KEYS]]}</p><h1>{content.title}</h1><p class="lead">{content.lead}</p></section>
+<div class="shell wide-content">
+{page==='self-model'&&<ExperienceAgent lang={lang}/>}
+{page==='teaching'&&<TeachingStudio lang={lang}/>}
+{page==='library'&&<ResearchLibrary lang={lang}/>}
+{page==='cv'&&<InteractiveCV lang={lang}/>}
+{page==='accessibility'&&<PreferencesForm lang={lang}/>}
+{sections.length>2&&<nav class="page-toc" aria-label={t.toc}><strong>{t.toc}</strong><ol>{sections.map((section,i)=><li><a href={'#section-'+i}>{section.h}</a></li>)}</ol></nav>}
+{sections.map((section,i)=><section class="narrative-section" id={'section-'+i}><h2>{section.h}</h2>{section.p.map(p=><p>{p}</p>)}</section>)}
+{page==='publications'&&publications.filter(p=>p.status!=='draft').map(publication=><article class="paper-feature"><div class="paper-meta"><span class="badge">{t.published} · {publication.year}</span><span>{publication.journal} · {publication.volume}({publication.number}) · {publication.articleNumber}</span></div><h2>{paper.title}</h2><p class="original-title"><span>{t.originalTitle}: </span><cite lang="en">{publication.title}</cite></p><p>{publication.authors.join(', ')}</p><div class="paper-summaries"><section><h3>{t.summary}</h3><p>{paper.plain}</p></section><section><h3>{t.technical}</h3><p>{paper.technical}</p></section></div><div class="actions"><a class="button button-primary" href={publication.evidenceUrl}>DOI: {publication.doi} ↗</a><a class="button" href={publication.institutionalUrl}>{t.source} ↗</a><a class="button" href="/references.bib" download>{t.downloadBib}</a></div><p class="method-note">{paper.verification}</p><details><summary>BibTeX</summary><pre id="publication-citation">{bib}</pre><button data-copy-target="publication-citation" data-copy-status="citation-status" disabled>{t.copyCitation}</button><p id="citation-status" role="status"></p></details></article>)}
+{page==='projects'&&<><article class="repository-card"><span class="eyebrow">GitHub</span><h2><a href="https://github.com/Isaac-Daroch/Isaac-Daroch.github.io">Isaac-Daroch.github.io ↗</a></h2><p>{CONTENT.projects.sections[0].p[0][lang]}</p><div class="actions"><a class="button button-primary" href="https://github.com/Isaac-Daroch/Isaac-Daroch.github.io">{t.openCode}</a><a class="button" href={href(lang,'engineering')}>{t.engineering}</a><a class="button" href={href(lang,'self-model')}>{t.observatory}</a></div></article><p><a href={SITE.github}>{t.projects} · GitHub ↗</a></p></>}
+{['contact','media','accessibility'].includes(page)&&<section class="contact-card"><h2>{t.contact}</h2><a id="contact-email" class="email-address" href={`mailto:${SITE.email}`}>{SITE.email}</a><div class="actions"><button data-copy-target="contact-email" data-copy-status="contact-status" disabled>{t.copyEmail}</button></div><p id="contact-status" role="status"></p><nav class="social-links" aria-label={t.contact}><a href={SITE.github}>GitHub · {t.projects} ↗</a><a href={SITE.orcid}>ORCID · {t.publications} ↗</a><a href={SITE.linkedin}>LinkedIn · {t.media} ↗</a></nav></section>}
+{['events','news','media'].includes(page)&&<div class="editorial-archive">{editorial[page==='events'?'events':page==='news'?'news':'media'].filter(item=>item.status!=='draft').map(item=><article class="destination-card"><h2>{item.translations[lang].title}</h2><p>{item.translations[lang].description}</p>{page==='events'&&<p>{item.startsAt} – {item.endsAt} · {item.place}</p>}{page==='news'&&<><p>{item.eventDate} / {item.publishedAt}</p><h3>{t.summary}</h3><p>{item.translations[lang].summary}</p><h3>{t.commentary}</h3><p>{item.translations[lang].commentary}</p></>}{page==='media'&&<nav aria-label={t.media}><a href={item.translations[lang].transcriptUrl}>{t.transcript}</a>{item.captionsUrl&&<a href={item.translations[lang].captionsUrl}>{t.captions}</a>}{item.descriptionUrl&&<a href={item.translations[lang].descriptionUrl}>{t.description}</a>}</nav>}<a href={item.sourceUrl}>{t.source} ↗</a></article>)}</div>}
+{page==='about'&&<figure class="about-portrait"><img src="/images/portrait.png" alt="Isaac Daroch" width="512" height="512" loading="lazy"/></figure>}
+{['investigation','teaching'].includes(page)&&<div class="actions"><a class="button button-primary" href={href(lang,'self-model')}>{t.startAgent}</a><a class="button" href={href(lang,'research')}>{t.notebook}</a><a class="button" href={href(lang,'publications')}>{t.publications}</a></div>}
+{page==='explore'&&<><ol class="guided-journey">{guidedRoutes.map(([route,key],i)=><li><span aria-hidden="true">{String(i+1).padStart(2,'0')}</span><a href={href(lang,route)}>{t[key]}</a></li>)}</ol><div class="destination-grid">{Object.entries(ROUTE_KEYS).filter(([route])=>route&&route!=='explore'&&isEnabled(route)).map(([route,key])=><article class="destination-card"><h2><a href={href(lang,route)}>{t[key]} ↗</a></h2><p>{localize(pageData[route],lang).lead}</p></article>)}</div></>}
+{['self-model','investigation'].includes(page)&&<ResearchLibrary lang={lang} compact/>}
+{page==='publications'&&<ResearchLibrary lang={lang} papersOnly/>}
+{page==='engineering'&&<div class="actions"><a class="button" href="/release.json">JSON · {t.engineering}</a><a class="button" href="/artifact-manifest.json">JSON · {t.source}</a><a class="button" href="https://github.com/Isaac-Daroch/Isaac-Daroch.github.io">GitHub ↗</a></div>}
+</div></>}
+</BaseLayout>

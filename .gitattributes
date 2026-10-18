@@ -8,3 +8,6 @@
 *.ps1 text eol=crlf
 *.png binary
 *.webp binary
+# Exact owner-supplied attachments: preserve bytes and intentional Markdown breaks.
+docs/a11y/source-specification.txt -text whitespace=-blank-at-eol
+docs/a11y/source-startup.txt -text

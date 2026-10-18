@@ -1,13 +1,26 @@
 ---
 title: "Two maps: the world and its representation"
 description: "An educational distinction between environment state, local observation and the model used to plan."
+include-before-body: headers/two-maps.html
 ---
 
 ## A representation is not the environment
 
 Let $W_t$ denote the true environment, $M_t$ the map used for planning, and $o_t$ the local observation. In the educational demonstration, an operator can change $W_t$ without directly changing $M_t$.
 
+::: {.math-scroll role="region" tabindex="0" aria-label="Model revision equation; scroll horizontally when needed"}
 $$o_t = \operatorname{observe}(W_t, p_t), \qquad M_{t+1}=\operatorname{revise}(M_t,o_t).$$
+:::
+
+Here, $p_t$ is the agent's position and $t$ counts logical steps. Observation reads a local neighborhood of the environment; revision changes only cells contradicted by that observation. Neither function is a learned neural network.
+
+<details><summary>Selectable LaTeX source for the equation</summary>
+
+```latex
+o_t = \operatorname{observe}(W_t, p_t), \qquad M_{t+1}=\operatorname{revise}(M_t,o_t).
+```
+
+</details>
 
 These are descriptive functions for a programmed example, not learned neural networks. The initial map is supplied by the programmer; no autonomous mapping is claimed.
 

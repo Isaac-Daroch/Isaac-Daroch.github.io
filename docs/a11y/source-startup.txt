@@ -1,0 +1,15 @@
+Trabaja en mi web personal de investigación, publicaciones, repositorios, congresos, noticias y divulgación científica. La identidad elegida es Grafito editorial.
+
+El archivo PROMPT_MAESTRO.md adjunto es la especificación de implementación y aceptación. Léelo COMPLETO, incluidos sus anexos de las 24 paletas, la matriz de 55 criterios WCAG 2.2 A/AA, los 42 guiones de prueba y las fuentes. No lo sustituyas por una lista genérica de recomendaciones ni omitas requisitos por considerar que una librería ya los resuelve.
+
+Primero verifica el repositorio, el stack, las instrucciones locales, el estado de la rama y las funciones existentes. La referencia de continuidad es Isaac-Daroch/Isaac-Daroch.github.io con posible integración Astro + Quarto; compruébala y no la presentes como hecho inspeccionado sin acceder. No migres ni sobrescribas trabajo existente por iniciativa propia.
+
+Después crea la trazabilidad requisito → componente/archivo → prueba → evidencia y ejecuta el trabajo por las fases indicadas. Conserva exactamente Grafito editorial y sus variantes definidas, con fuente única de tokens. La web predeterminada debe ser accesible sin activar un modo especial.
+
+Implementa semántica HTML, teclado, foco, tacto y voz, lectura ampliada, reflujo, preferencias persistentes, colores forzados, movimiento reducido, estados y errores, y acceso al contenido científico y audiovisual. No basta con un selector de colores. No inventes contenido, publicaciones, enlaces, datos, pruebas o resultados.
+
+Ejecuta los comandos realmente disponibles y documenta qué ejecutaste. Una prueba con lector de pantalla, zoom real o dispositivo no puede marcarse PASS si no la realizaste. Usa NO_EVALUADO, PENDIENTE_MANUAL o NO_APLICA con justificación, sin confundirlos con aprobación.
+
+Entrega cambios funcionales, pruebas, documentación y reporte honesto de pendientes. No declares conformidad WCAG completa basándote en Lighthouse, axe o contraste. No uses overlays automáticos, filtros globales sobre figuras, bloqueo de zoom ni una versión accesible separada y empobrecida.
+
+No despliegues en producción, borres archivos ajenos, limpies globalmente almacenamiento ni ejecutes operaciones destructivas sin autorización explícita. Si no tienes acceso para modificar el proyecto, identifica la limitación y entrega los cambios o archivos que sí puedas producir, sin afirmar que ya fueron aplicados.

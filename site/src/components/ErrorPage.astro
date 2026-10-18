@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {UI,href,q} from '../../public/assets/i18n.mjs';
+interface Props{lang:'en'|'de'|'nl'|'es'}
+const {lang}=Astro.props,t=UI[lang];
+const title=q('Page not found','Página no encontrada','Seite nicht gefunden','Pagina niet gevonden')[lang];
+const lead=q('This address is unavailable. Continue with the site map or return home.','Esta dirección no está disponible. Continúa en el mapa del sitio o vuelve al inicio.','Diese Adresse ist nicht verfügbar. Nutzen Sie die Übersicht oder kehren Sie zum Start zurück.','Dit adres is niet beschikbaar. Ga naar het overzicht of terug naar de startpagina.')[lang];
+---
+<BaseLayout lang={lang} title={title} description={lead} noindex><section class="shell page-intro"><p class="eyebrow">404</p><h1>{title}</h1><p class="lead">{lead}</p><div class="actions"><a class="button" href={href(lang)}>{t.home}</a><a class="button" href={href(lang,'explore')}>{t.explore}</a></div></section></BaseLayout>

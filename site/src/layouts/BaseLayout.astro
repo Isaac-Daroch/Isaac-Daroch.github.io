@@ -1,30 +1,19 @@
 ---
-import {SITE,active} from '../data/site.mjs';
-interface Props {title?:string;description:string;noindex?:boolean;lang?:'en'|'es';equivalent?:string;}
-const {title=SITE.title,description,noindex=false,lang='en',equivalent}=Astro.props;
-const es=lang==='es', prefix=es?'/es':'';
-const t=(en:string,sp:string)=>es?sp:en;
-const nav=[{href:prefix+'/investigation/',label:t('Research','Investigación')},{href:prefix+'/publications/',label:t('Publications','Publicaciones')},{href:prefix+'/self-model/',label:t('Observatory','Observatorio')},{href:prefix+'/explore/',label:t('Explore','Explorar')}];
-const extra=[{href:'/research/',label:t('Scientific notebook','Cuaderno científico')},{href:prefix+'/projects/',label:t('Projects & code','Proyectos y código')},{href:prefix+'/events/',label:t('Conferences','Congresos')},{href:prefix+'/news/',label:t('News','Noticias')},{href:prefix+'/media/',label:t('Science communication','Divulgación')},{href:prefix+'/about/',label:t('About Isaac','Sobre Isaac')},{href:prefix+'/contact/',label:t('Contact','Contacto')}];
-const canonical=new URL(Astro.url.pathname,SITE.url).href;
+import {SITE} from '../data/site.mjs';
+import {LOCALES,localeOf,logicalPath,href} from '../../public/assets/i18n.mjs';
+import {renderChrome,renderFooter} from '../data/chrome.mjs';
+interface Props {title?:string;description:string;noindex?:boolean;lang?:'en'|'de'|'nl'|'es';equivalent?:string;}
+const {title=SITE.title,description,noindex=false}=Astro.props;
+const lang=Astro.props.lang??localeOf(Astro.url.pathname),path=logicalPath(Astro.url.pathname);
+const canonical=new URL(href(lang,path),SITE.url).href;
 ---
 <!doctype html><html lang={lang} data-motion="reduced"><head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>{title} | Isaac Daroch</title><meta name="description" content={description}/><link rel="canonical" href={canonical}/>
-<link rel="stylesheet" href="/assets/paletas.css"/><link rel="stylesheet" href="/assets/editorial.css"/>
+<link rel="stylesheet" href="/assets/paletas.css"/><link rel="stylesheet" href="/assets/editorial.css"/><link rel="stylesheet" href="/assets/studio.css"/>
 <link rel="modulepreload" href="/assets/preferences-core.mjs"/><script is:inline type="module" src="/assets/preferences-runtime.mjs"></script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/><meta name="referrer" content="strict-origin-when-cross-origin"/>
 {noindex&&<meta name="robots" content="noindex"/>}<meta property="og:type" content="website"/><meta property="og:title" content={`${title} | Isaac Daroch`}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/>
-{equivalent&&<link rel="alternate" hreflang={es?'en':'es'} href={new URL(equivalent,SITE.url).href}/>}
+{LOCALES.map(locale=><link rel="alternate" hreflang={locale} href={new URL(href(locale,path),SITE.url).href}/>)}
 <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'Person',name:SITE.name,url:SITE.url,sameAs:[SITE.github,SITE.orcid,SITE.linkedin]}).replace(/</g,'\u003c')}/>
-</head><body>
-<a href="#main" class="skip-link">{t('Skip to main content','Saltar al contenido')}</a>
-<header class="site-header"><div class="shell header-inner"><a class="wordmark" href={es?'/es/':'/'}><span class="monogram" aria-hidden="true">ID</span><span>Isaac Daroch</span></a>
-<nav class="desktop-nav" aria-label={t('Main navigation','Navegación principal')}>{nav.map(n=><a href={n.href} aria-current={active(n.href,Astro.url.pathname)?'page':undefined}>{n.label}</a>)}</nav>
-<div class="header-actions"><button id="quick-theme" disabled>{t('Light / dark','Claro / oscuro')}</button><a href={prefix+'/accessibility/'}>{t('Accessibility preferences','Preferencias de accesibilidad')}</a>{equivalent?<a class="language-link" href={equivalent} lang={es?'en':'es'}>{es?'English':'Español'}</a>:<a class="language-link" href={es?'/':'/es/explore/'} lang={es?'en':'es'}>{es?'English site':'Contenido en español'}</a>}</div>
-<details class="menu-disclosure" id="mobile-navigation"><summary id="menu-toggle">{t('Menu','Menú')}</summary><nav class="mobile-menu" aria-label={t('Expanded navigation','Navegación ampliada')}>{[...nav,...extra].map(n=><a href={n.href} aria-current={active(n.href,Astro.url.pathname)?'page':undefined}>{n.label}</a>)}</nav></details>
-</div></header>
-<main id="main" tabindex="-1"><slot/></main>
-<footer class="site-footer"><div class="shell"><div class="footer-top"><p><strong>Isaac Daroch</strong><br/>{t('Experience, self-models and the decisions that follow.','Experiencia, modelos propios y las decisiones que producen.')}</p><nav class="footer-links" aria-label={t('Content sections','Secciones de contenido')}>{extra.map(n=><a href={n.href}>{n.label}</a>)}</nav></div><div class="footer-bottom"><span>© {new Date().getFullYear()} Isaac Daroch</span><nav aria-label={t('Help and policies','Ayuda y políticas')}><a href={prefix+'/accessibility/'}>{t('Accessibility','Accesibilidad')}</a><a href="/privacy/">{t('Privacy and credits (English)','Privacidad y créditos (inglés)')}</a><a href="/engineering/">{t('How this is built (English)','Cómo se construye (inglés)')}</a><a href={prefix+'/explore/'}>{t('Site map','Mapa del sitio')}</a></nav></div></div></footer>
-<script>import '../scripts/main.js';</script>
-</body></html>
+</head><body><Fragment set:html={renderChrome(lang,path,title)}/><main id="main" tabindex="-1"><slot/></main><Fragment set:html={renderFooter(lang)}/><script>import '../scripts/main.js';</script></body></html>

@@ -1,0 +1,8 @@
+---
+import {isEnabled} from '../data/modules.mjs';
+if(!isEnabled('news'))return Astro.redirect('/explore/');
+import PortfolioPage from '../components/PortfolioPage.astro';
+---
+import {isEnabled} from '../data/modules.mjs';
+if(!isEnabled('news'))return Astro.redirect('/explore/');
+<PortfolioPage page="news" lang="en"/>

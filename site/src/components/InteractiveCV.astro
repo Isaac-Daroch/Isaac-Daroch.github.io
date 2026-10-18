@@ -1,0 +1,16 @@
+---
+import {CV_UI,CV_ENTRIES,CV_SOURCE} from '../data/cv.mjs';
+import {localize} from '../data/content.mjs';
+import {isEnabled} from '../data/modules.mjs';
+import {UI,href} from '../../public/assets/i18n.mjs';
+interface Props{lang:'en'|'de'|'nl'|'es'}
+const {lang}=Astro.props,t=localize(CV_UI,lang),ui=UI[lang],entries=CV_ENTRIES.filter(e=>!e.module||isEnabled(e.module)) as {id:string;category:string;date:string;title:Record<string,string>;institution:string;ongoing?:boolean;current?:boolean;original?:string;credentialId?:string}[];
+const categories=['all','work','education','certifications','scholarships'].filter(c=>c==='all'||entries.some(e=>e.category===c));
+---
+<section class="interactive-cv" data-cv data-count-label={t.count} data-empty-label={t.empty} aria-labelledby="cv-heading">
+<div class="cv-heading"><div><p class="eyebrow">CV / Isaac Daroch</p><h2 id="cv-heading">{t.title}</h2><p class="lead">{t.lead}</p></div><button data-cv-print disabled>{t.print}</button></div>
+<nav class="cv-journey" aria-label={t.journey}>{entries.some(e=>e.id==='engineering-degree')&&<a href="#cv-engineering-degree">{t.grounding}</a>}<a href="#cv-apsolutions">{t.practice}</a><a href="#cv-ust">{t.sharing}</a>{entries.some(e=>e.id==='doctorate')&&<a href="#cv-doctorate">{t.research}</a>}</nav>
+<div class="cv-controls"><label for="cv-filter">{t.filter}<select id="cv-filter" disabled>{categories.map(key=><option value={key}>{t[key]}</option>)}</select></label><label for="cv-query">{t.search}<input id="cv-query" type="search" disabled/></label></div><p id="cv-status" role="status">{entries.length} {t.count}</p><noscript><p>{ui.noJs}</p></noscript>
+<div class="cv-timeline">{entries.map(entry=><article id={'cv-'+entry.id} class="cv-entry" data-cv-entry data-category={entry.category}><div class="cv-date"><span>{entry.date}{entry.current?t.present:''}</span><span class="badge">{t[entry.category]}</span></div><div class="cv-entry-body"><h3>{entry.title[lang]}</h3><p>{entry.institution}</p>{entry.ongoing&&<p class="method-note">{t.ongoing}</p>}<details><summary>{t.declared}</summary>{entry.original&&<p><strong>{t.original}: </strong><span lang={entry.institution==='Università di Napoli Federico II'||entry.id==='pinns'?'en':'es'}>{entry.original}</span></p>}{entry.credentialId&&<p><strong>{t.credentialId}: </strong><span class="credential-id">{entry.credentialId}</span></p>}<a href={CV_SOURCE}>{t.source} ↗</a></details></div></article>)}</div>
+<p class="method-note cv-evidence">{t.evidence}</p><div class="actions"><a class="button" href={CV_SOURCE}>{t.source} ↗</a><a class="button button-primary" href={href(lang,'publications')}>{ui.publications} ↗</a><a class="button" href={href(lang,'contact')}>{ui.contact}</a></div></section>
+<script>import '../scripts/cv.js';</script>

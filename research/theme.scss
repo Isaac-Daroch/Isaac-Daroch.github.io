@@ -1,12 +1,6 @@
 /*-- scss:defaults --*/
-$body-bg: #08121b;
-$body-color: #eef5f4;
-$link-color: #b3f2d7;
-$navbar-bg: #10232e;
-$navbar-fg: #eef5f4;
 $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", sans-serif;
-$font-size-root: 17px;
+$font-size-root: 16px;
 /*-- scss:rules --*/
-h1, h2, h3 { letter-spacing: -.035em; }
-h1 { font-size: 2.6rem; }
-.navbar { border-bottom: 1px solid #385762; }
+/* Colors come from shared generated palette CSS, not Sass copies. */
+.navbar { border-bottom: 1px solid var(--control); }

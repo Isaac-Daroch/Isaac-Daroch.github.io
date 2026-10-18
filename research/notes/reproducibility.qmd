@@ -1,6 +1,7 @@
 ---
 title: "Reproducibility is not authenticity"
 description: "What deterministic replay, versioned source and artifact hashes can establish—and what they cannot."
+include-before-body: headers/reproducibility.html
 ---
 
 ## Three different questions

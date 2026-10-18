@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {NOTES} from '../data/notes.mjs';
+import {CONTENT,localize} from '../data/content.mjs';
+import {UI,href} from '../../public/assets/i18n.mjs';
+interface Props{lang:'en'|'de'|'nl'|'es'}
+const {lang}=Astro.props,t=UI[lang],content=localize(CONTENT.research,lang);
+---
+<BaseLayout lang={lang} title={content.title} description={content.lead}><div class="shell page-intro"><p class="eyebrow">{t.notebook}</p><h1>{content.title}</h1><p class="lead">{content.lead}</p></div><div class="shell wide-content"><section id="notebook-search"><h2>{t.search}</h2><form data-notebook-search class="archive-search" role="search"><label for="notebook-query">{t.searchWords}<input id="notebook-query" name="query" type="search" disabled/></label><button type="submit" disabled>{t.search}</button><button type="button" data-clear-search disabled>{t.clearSearch}</button></form><p id="notebook-search-status" role="status">{t.searchIdle}</p><ul id="notebook-search-results"></ul><noscript><p>{t.noJs}</p></noscript></section><div class="destination-grid">{['self-model','two-maps','demo-protocol','episode-replay','reproducibility'].map(id=>{const note=localize(NOTES[id as keyof typeof NOTES],lang);return <article class="destination-card"><h2><a href={href(lang,'research/notes/'+id+'.html')}>{note.title}</a></h2><p>{note.lead}</p></article>;})}</div></div><script is:inline type="module" src="/assets/notebook-search.mjs"></script></BaseLayout>

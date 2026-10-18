@@ -55,6 +55,8 @@ jobs:
         run: |
           set -euo pipefail
           npm run build 2>&1 | tee ../evidence/build.log
+          npm run check:palettes 2>&1 | tee ../evidence/palettes.log
+          npm run check:contrast 2>&1 | tee ../evidence/contrast.log
       - name: Parse wrappers with Windows PowerShell 5.1
         if: runner.os == 'Windows'
         shell: powershell
@@ -69,7 +71,7 @@ jobs:
       - name: Install Chromium for actual compiled-site tests
         if: runner.os == 'Linux'
         working-directory: site
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install --with-deps chromium firefox
       - name: Run browser and accessibility checks against actual dist
         if: runner.os == 'Linux'
         working-directory: site

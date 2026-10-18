@@ -1,1 +1,2 @@
-main{max-width:850px}p,li{line-height:1.8}a{text-underline-offset:.22em}a:focus-visible,button:focus-visible{outline:3px solid #b3f2d7;outline-offset:4px}.callout{border:1px solid #54747d!important}pre{overflow-x:auto}.quarto-title{padding-top:1.5rem}.quarto-title-meta{color:#b2c3cb}math{font-size:1.05em}table{font-size:.9rem}@media print{html,body,*{color:#111!important;background:transparent!important;box-shadow:none!important;text-shadow:none!important}nav,header,.quarto-navigation-tool,.code-copy-button,#quarto-search{display:none!important}a{text-decoration:underline}main{max-width:none}}
+/* Layout only; shared editorial.css supplies the visual contract. */
+.quarto-title{padding-top:1.5rem}.notebook-help{padding-block:2rem}

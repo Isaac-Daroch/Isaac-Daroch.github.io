@@ -1,8 +1,12 @@
 # Isaac Daroch — adaptive intelligence & digital worlds
 
-Integrated static portfolio, Quarto research notebook and a transparent educational agent laboratory. Product source version **1.1.0**. Governing requirements and architecture: **D2**, in `docs/d2/`.
+Integrated static portfolio, Quarto research notebook and a transparent educational agent laboratory. Product source version **1.3.0**. Governing requirements and architecture: **D2**, in `docs/d2/`.
 
 This is the complete integrated source, reconstructed against D2 and the preserved audit/patch descriptions. It is not a byte-for-byte recovery of the earlier uncommitted ZIP. Read `docs/integration/SOURCE_RECONCILIATION.md` for fixture compatibility and the explicit historical observed-cell difference.
+
+## Current multilingual version
+
+The public site is available in English, Spanish, German and Dutch. The main observatory uses a retained-experience neural self-model; historical BFS examples remain supplementary notebook material. The interactive curriculum uses sourced LinkedIn declarations. Empty personal conference, news and owned-video modules are disabled. A separate research library contains three external project videos and six related papers, with four-language written companions. Teaching covers the three owner-confirmed subjects with synthetic interactive examples. The observatory adds actual neural activations, a capability surface, training diagnostics, decision history and paired continuations. Owner editing and activation instructions: [EDITAR_CONTENIDO.md](docs/EDITAR_CONTENIDO.md). Current verification: [version 1.3 report](docs/a11y/test-report.md).
 
 ## Run locally on Windows
 
@@ -55,3 +59,16 @@ It is a fixed deterministic illustration, not a trained world model, learning be
 ## Documentation, status and rights
 
 Start with `docs/d2/README.md`, then `docs/integration/IMPLEMENTATION_MAP.md` and `TESTING.md`. Full manual accessibility testing and field/hardware performance are not certified by automated CI. The portrait is recorded from the owner's public GitHub profile; private photos and identity-document images are excluded. Original-content reuse and third-party licenses are distinct; see `LICENSE`, `THIRD_PARTY_NOTICES.md` and `/privacy/`.
+
+
+## Grafito editorial correction — branch review
+
+The 18 October 2026 correction completes missing linked sections, makes palette
+generation part of dev/build, shares preferences with Quarto, preserves the
+full-text notebook index through a native search form, and documents the supplied
+77 requirements, 55 WCAG criteria and 42 acceptance procedures. English remains
+primary; Spanish entry/map/preferences clearly identify untranslated destinations.
+
+Start the acceptance review at `docs/a11y/test-report.md`. Manual AT/voice/real zoom
+and device acceptance remain pending; no complete WCAG conformance is claimed.
+The Pages publication workflow remains an explicit separate action.

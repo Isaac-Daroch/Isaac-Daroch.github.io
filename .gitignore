@@ -16,9 +16,16 @@ site/public/schemas/
 site/public/data/
 site/public/references.bib
 site/public/sitemap.xml
+site/public/assets/paletas.css
 site/test-results/
 site/playwright-report/
 *.previous/
 *.failed/
 .env
 .env.*
+
+research/headers/
+research/notes/self-model.qmd
+site/public/es/research/
+site/public/de/research/
+site/public/nl/research/

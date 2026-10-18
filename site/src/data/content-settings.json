@@ -1,0 +1,8 @@
+{
+  "events": {"enabled": false},
+  "news": {"enabled": false},
+  "media": {"enabled": false},
+  "degrees": {"enabled": true},
+  "certifications": {"enabled": true},
+  "scholarships": {"enabled": true}
+}

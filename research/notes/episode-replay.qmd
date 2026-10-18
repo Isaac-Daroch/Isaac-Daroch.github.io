@@ -1,6 +1,7 @@
 ---
 title: "Replay and two different experiments"
 description: "Versioned local replay, model-revision comparison and a separately labeled BFS tie-break comparison."
+include-before-body: headers/episode-replay.html
 ---
 
 ## Snapshot v1 and episode v2 are not interchangeable
