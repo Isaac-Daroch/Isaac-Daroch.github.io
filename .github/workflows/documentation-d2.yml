@@ -1,0 +1,51 @@
+name: D2 documentation integrity (not product deployment)
+on:
+  push:
+    branches: [docs/d2-governance]
+    paths:
+      - 'docs/d2/**'
+      - 'tools/governance/**'
+      - 'tests/governance/**'
+      - '.github/workflows/documentation-d2.yml'
+  pull_request:
+    paths:
+      - 'docs/d2/**'
+      - 'tools/governance/**'
+      - 'tests/governance/**'
+      - '.github/workflows/documentation-d2.yml'
+permissions:
+  contents: read
+jobs:
+  documentation:
+    name: Documentary controls / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 8
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2022]
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Verify documentary control regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .d2-test-reports
+          python --version
+          python -m unittest discover -s tests/governance -p 'test*.py' -v 2>&1 | tee .d2-test-reports/unittest.log
+      - name: Generate documentation and traceability, not website
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/governance/validate_d2.py --out build-docs --test-log .d2-test-reports/unittest.log
+          python -c "import pathlib,json,hashlib; r=pathlib.Path('build-docs'); m=json.loads((r/'MANIFEST_D2.json').read_text(encoding='utf-8')); expected={f['path'] for f in m['files']}; actual={p.relative_to(r).as_posix() for p in r.rglob('*') if p.is_file() and p.name!='MANIFEST_D2.json'}; assert actual==expected, 'Manifest file set mismatch'; assert all(len((r/f['path']).read_bytes())==f['bytes'] and hashlib.sha256((r/f['path']).read_bytes()).hexdigest()==f['sha256'] for f in m['files']), 'Manifest integrity mismatch'; print('Documentation artifact integrity verified:', len(actual)+1, 'files including manifest')"
+      - name: Preserve documentation delivery
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: IsaacDaroch-D2-${{ matrix.os }}
+          path: build-docs/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30

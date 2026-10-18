@@ -1,0 +1,16 @@
+{
+  "documentVersion": "D2",
+  "statusMeaning": "Registrar una desviación no implementa su solución",
+  "items": [
+    {"id":"DEV-01","title":"Revisión del modelo sustituida por desempate BFS","status":"open","requirements":["RF-23","RF-24"],"decisions":["ADR-11"],"source":"PATCH-CORE","treatment":"Mantener ambos experimentos separados; RF-23 sigue pendiente; implementar protocolo P-REVISION o retirar alcance con aprobación explícita."},
+    {"id":"DEV-02","title":"3D pasó a opt-in sin decisión de experiencia explícita","status":"open","requirements":["RF-14","RF-26","RQ-10"],"decisions":["ADR-10"],"source":"PATCH-CORE","treatment":"Comparar opt-in y autoarranque condicional conservando escena y propósito visual; no declarar aceptado el recorte."},
+    {"id":"DEV-03","title":"Descarga de interfaz pasó de snapshot v1 a episodio v2","status":"open","requirements":["RF-11","RF-21","RF-22"],"decisions":["ADR-04"],"source":"PATCH-UI","treatment":"Documentar ambas APIs, versión visible, compatibilidad y rechazo de v1 como replay."},
+    {"id":"DEV-04","title":"Separación informal no acredita arquitectura hexagonal","status":"open","requirements":["RQ-12","RQ-17"],"decisions":["ADR-09"],"source":"PATCH-UI","treatment":"Encapsular estado; fachada de casos de uso; adaptadores y pruebas de importación/sustitución sobre árbol real."},
+    {"id":"DEV-05","title":"Presupuestos del parche aún no están validados","status":"open","requirements":["RF-22","RQ-10","RQ-11","RQ-18"],"decisions":["ADR-10","ADR-04"],"source":"PATCH-QUALITY","treatment":"Registrar origen y medir límites de bytes, comandos, memoria, render y tiempo; no confundir envío CPU con tiempo GPU."},
+    {"id":"DEV-06","title":"Esquema v2 depende de replay para validar estructura amplia","status":"open","requirements":["RQ-18","RF-22"],"decisions":["ADR-04"],"source":"PATCH-QUALITY","treatment":"Esquema estructural completo más invariantes y límites semánticos; no proclamar suficiente el JSON Schema parcial."},
+    {"id":"DEV-07","title":"Referencias de herramientas y HEAD no identifican ejecución completa","status":"open","requirements":["RQ-03","RF-25"],"decisions":["ADR-03","ADR-06"],"source":"PATCH-BUILD","treatment":"Registrar herramientas observadas y hash de fuentes efectivas/árbol limpio, con artefacto vinculado."},
+    {"id":"DEV-08","title":"Sustituciones textuales sin garantía de coincidencia","status":"open","requirements":["RF-18","RQ-03"],"decisions":["ADR-08","ADR-12"],"source":"PATCH-CORE","treatment":"Reconciliar diff contra base identificada; pre/postcondiciones; no usar generadores como instaladores."},
+    {"id":"DEV-09","title":"Estados documentales y resultados de remediación desacoplados","status":"open","requirements":["RQ-15"],"decisions":["ADR-12"],"source":"REMOTE-CHECKPOINT","treatment":"Versionar catálogo, desvíos y evidencia por alcance; conservar resultados históricos sin reatribuirlos."},
+    {"id":"DEV-10","title":"Estado editorial mezcla procedencia y nueva verificación","status":"open","requirements":["RF-04","RQ-13"],"decisions":["ADR-07"],"source":"PATCH-UI","treatment":"Separar publicación, metadatos verificados y aprobación de presentación; preservar evidencia histórica D1."}
+  ]
+}
