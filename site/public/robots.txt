@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://isaac-daroch.github.io/sitemap.xml

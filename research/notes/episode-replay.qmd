@@ -1,0 +1,36 @@
+---
+title: "Replay and two different experiments"
+description: "Versioned local replay, model-revision comparison and a separately labeled BFS tie-break comparison."
+---
+
+## Snapshot v1 and episode v2 are not interchangeable
+
+`exportSnapshot()` retains the legacy snapshot field family for the revisable baseline. A snapshot does not encode sufficient external commands for replay. Frozen-policy measurements are not mislabeled as legacy v1.
+
+The v2 episode names implementation `gridworld-d2-1.1.0`, map `corridor-16x10-d2`, revision policy, neighbor order, the initial configuration, ordered commands and final result. Incompatible earlier implementation IDs are rejected explicitly, not silently upgraded.
+
+## Bounded local replay
+
+The viewer accepts at most 1 MiB of UTF-8 JSON, nesting depth 16 and 1,001 commands. Only `step` and `change-environment` are permitted. A fresh session recomputes the episode. Unexpected fields and altered results are rejected. The live session remains untouched.
+
+Recorded frames store a compact explanation and counters, not another copy of the entire growing event history. Verification establishes internal consistency only.
+
+[Baseline example](https://isaac-daroch.github.io/examples/baseline-v2.json) · [Changed example](https://isaac-daroch.github.io/examples/changed-v2.json)
+
+## Experiment 1: revisable versus frozen model
+
+Only the update policy changes. Both conditions share map, initial prior, sensor, BFS order, costs, start/goal and physical guard. Run both policies with no intervention and with the change before the first step.
+
+The revisable model incorporates locally observed contradictions. The frozen model records disagreement but keeps its prior; if it attempts entry into a true wall, the common physical guard stops it with an explicit reason. Successful moves and prevented moves are separate.
+
+Without the intervention, both policies must share a trajectory. Before the changed cell is observed, they must not differ because of hidden knowledge. Neither crosses a wall.
+
+## Experiment 2: BFS tie-breaking
+
+This changes only the neighbor order, while both policies revise their model: east/south/west/north versus north/west/south/east. It is a different experiment and does not satisfy or replace the first one.
+
+## Interpretation
+
+Report moves, ticks, contradictions, corrections, prevented actions and terminal state. Retain the result even when it does not fit the preferred visual narrative. No statistical superiority, learned policy, trained world model or robotic generalization is inferred.
+
+[Open both experiments](https://isaac-daroch.github.io/projects/#agent-lab)

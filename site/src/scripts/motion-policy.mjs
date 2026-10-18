@@ -1,0 +1,2 @@
+/** MOT-01: one pure policy, shared by startup and changes. */
+export function resolveMotion({systemReduced=false,stored=null,storageAvailable=true,session=null}={}){if(systemReduced)return {mode:'reduced',reason:'system'};if(session==='full'||session==='reduced')return {mode:session,reason:'session'};if(!storageAvailable)return {mode:'reduced',reason:'storage-unavailable'};return {mode:stored==='reduced'?'reduced':'full',reason:stored==='full'||stored==='reduced'?'stored':'default'};}

@@ -1,0 +1,28 @@
+---
+title: "Reproducibility is not authenticity"
+description: "What deterministic replay, versioned source and artifact hashes can establish—and what they cannot."
+---
+
+## Three different questions
+
+**Is the record structurally valid?** The parser enforces known fields, versions and resource limits.
+
+**Does this implementation reproduce it?** A fresh, isolated episode executes the recorded commands and compares the complete computed result.
+
+**Who produced it, and does it establish a scientific claim?** Matching replay does not answer this question. A self-consistent file can be created by anyone. Neither a hash nor a matching simulation is a signature or evidence of generalization.
+
+## One deterministic run is not a population
+
+Repeating the same fixed map and policy is a regression check. It is not a collection of statistically independent tasks. Comparing four policy/environment conditions is an explanatory exercise, not a benchmark of artificial general intelligence.
+
+## Reproduce the software
+
+The repository includes an npm lockfile, an exact reference Quarto version, unit and contract tests, architecture checks, browser tests and release manifests. Build outputs are verified after the two generators have been integrated.
+
+A test plan states what should be checked. A result report identifies what ran, against which source and under which environment. Do not reinterpret documentation validation as proof of website behavior.
+
+## Privacy and local files
+
+The viewer does not upload episodes. It reads a selected file locally into a new session. Downloaded files remain under the visitor’s control. The site does not offer accounts, grading or cloud persistence.
+
+[Engineering and release identity](https://isaac-daroch.github.io/engineering/) · [Replay protocol](episode-replay.qmd)

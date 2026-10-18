@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'../tests/e2e',timeout:45000,expect:{timeout:10000},fullyParallel:false,workers:2,retries:0,reporter:[['list'],['json',{outputFile:'test-results/results.json'}],['html',{open:'never'}]],use:{baseURL:'http://127.0.0.1:4321',browserName:'chromium',headless:true,trace:'retain-on-failure',screenshot:'only-on-failure'},webServer:{command:'node ../tools/serve-dist.mjs',url:'http://127.0.0.1:4321',reuseExistingServer:!process.env.CI,timeout:30000}});
