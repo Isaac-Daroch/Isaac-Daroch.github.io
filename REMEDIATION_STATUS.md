@@ -1,29 +1,29 @@
-# D1 remediation — checkpoint, NOT a release
+# Integrated application status — D2 / source 1.1.0
 
-Baseline: IsaacDaroch-Web.zip, SHA-256 `7a416e7a17da6ed177952f8d0608fcffd6b545acd303090f1aa04790f9659a3e`.
+The complete application is now present in this source tree: Astro pages and animation, Quarto notebook, encapsulated agent domain, browser/headless adapters, source-package update and recovery tools, tests and governing documentation. This replaces the earlier checkpoint statement that the runtime was absent.
 
-## What this branch currently contains
+## Executed product evidence
 
-- Genuine npm-resolved dependency manifest and lockfile for Astro 7.4.0, GSAP 3.13.0 and Three.js 0.186.1; verification dependencies are pinned as well.
-- Temporary validation-tool provisioning workflows; these are not deployment workflows.
-- Notebook portfolio-link normalization adapter and four regression tests, with a separate Linux/Windows workflow.
+The first complete verification, source `3f50f63ea264f9763cfc1f2e0684d5f438aef20d`, is recorded in GitHub Actions run **39120105741**:
 
-**The full remediated application has NOT yet been transferred to this branch.** The source working copy remains separate. Do not treat this branch as the installable website or merge it as a production release.
+- Both Ubuntu 24.04 and Windows Server 2022 product jobs completed successfully.
+- JavaScript syntax, domain/contracts, architectural dependency rules and restoration fault tests ran on both systems.
+- Actual Quarto 1.10.18 rendering and Astro 7.4.0 compilation completed; the combined static artifact passed its required-route, metadata and integrity checks.
+- The Ubuntu run reported **47 unit/contract tests**, **21 compiled-site Chromium tests**, and zero errors/warnings in Astro checking.
+- Browser tests include native episode download/replay, separate policy comparisons, no-JavaScript behavior, reduced motion/storage errors, responsive layouts, active mobile navigation, print, automated axe scans and optional 3D/fallback behavior.
+- Windows PowerShell 5.1 parsed all three entry scripts. The transaction tests used temporary repositories on a real Windows runner, preserving Git sentinels and restoring local changes after injected failures.
+- The **18 D2 documentation-validator tests** ran separately. These are not additional product acceptance tests.
 
-## Changes written in the separate source working copy
+Subsequent source commits must run the same pipeline again. Use their own workflow reports, not this historical successful count, as release evidence.
 
-Aliasing-safe legacy export; v2 complete episode contract with bounded local replay and tampering checks; explicit planning outcomes and input validation; deterministic controlled tie-breaking comparison; reduced-motion policy unification; fail-safe disabled controls without JavaScript; transcript/replay UI; lazy optional 3D; print stylesheet; unique metadata and active navigation; centralized bibliographic catalogue with editorial status; fresh allowlisted Quarto staging and recoverable artifact promotion; artifact integrity verification; staged installer and recovery journal.
+## Scope and remaining human evaluation
 
-## Recorded validation before the execution environment became unavailable
+This source is an explicit D2-governed reconstruction, not a byte-identical recovery of the earlier uncommitted archive. See `docs/integration/SOURCE_RECONCILIATION.md`, including the observed-cell fixture difference. The original audit and D2 registry remain historical records; their unresolved acceptance fields are not overwritten automatically.
 
-- Last pure-JavaScript test run: 25 passed, covering original domain behaviour and added regression/contracts. Later changes still need a repeat run.
-- JavaScript syntax check completed.
-- Actual Astro type check after a metadata fix: zero errors and zero warnings; generated Quarto files produced hints.
-- Actual Quarto render and Astro static build completed, but **postbuild verification failed on three cross-site notebook links**. Therefore the complete build pipeline is NOT approved.
-- The link adapter on this branch addresses the normalization rule; integration into the working build and a repeat full build remain required.
+Manual screen-reader comprehension, performance on Isaac's specific computers, field Core Web Vitals, physical power-loss conditions and broader licensing choices remain separate evaluations. Automated verification does not certify all WCAG requirements or scientific generalization.
 
-## Required before delivery
+## Publication
 
-Recover the source working copy; integrate and verify cross-site normalization; rerun all tests and the production pipeline; run compiled-site browser/accessibility checks; parse and test recovery scripts, including a genuine Windows transaction test; update the D1 traceability matrix and user documentation; generate an exact installation manifest and ZIP; transfer verified sources to this branch; open a reviewable pull request. Public deployment and editorial approval remain separate.
+Source integration and public deployment are distinct. `publish-pages.yml` accepts an explicit workflow dispatch or an owner-only `/publish <main-commit>` command in a repository PR conversation. It verifies that the requested commit is the current main commit and has a successful complete product run, retrieves that run's already-tested artifact, checks its manifest and publishes it. A post-deploy check validates route status and release identity.
 
-No new website has been deployed by these workflows. No files on the user's Windows computer have been updated remotely.
+If Pages is not enabled in repository settings, the workflow stops with a configuration error rather than claiming a live release. No source update installs files on the owner's PC remotely.
