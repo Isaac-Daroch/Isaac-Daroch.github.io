@@ -1,14 +1,33 @@
 ---
-const {lang='en'}=Astro.props;const es=lang==='es';
-const labels={theme:es?'Tema':'Theme',appearance:es?'Superficie y contraste':'Surface and contrast',colorProfile:es?'Perfil cromático':'Color profile',scale:es?'Tamaño del texto':'Text size',font:es?'Tipografía de títulos':'Heading typeface',spacing:es?'Espaciado':'Spacing',motion:es?'Movimiento':'Motion',dataMode:es?'Uso de datos':'Data use'};
-const fields=[['theme',[['system',es?'Sistema':'System'],['light',es?'Claro':'Light'],['dark',es?'Oscuro':'Dark']]],['appearance',[['system',es?'Sistema':'System'],['editorial',es?'Grafito estándar':'Standard graphite'],['high',es?'Contraste alto':'High contrast'],['soft',es?'Luz suave':'Soft light']]],['colorProfile',[['editorial',es?'Grafito y oro':'Graphite and gold'],['redgreen',es?'Azul–ámbar':'Blue–amber'],['tritan',es?'Cian–frambuesa':'Cyan–raspberry'],['mono',es?'Monocromo':'Monochrome']]],['scale',[['1','100 %'],['1.125','112.5 %'],['1.25','125 %'],['1.5','150 %'],['2','200 %']]],['font',[['editorial',es?'Editorial':'Editorial'],['system',es?'Fuente del sistema':'System typeface']]],['spacing',[['normal',es?'Normal':'Normal'],['comfortable',es?'Amplio':'Comfortable']]],['motion',[['reduce',es?'Reducido':'Reduced'],['system',es?'Respetar el sistema':'Follow system']]],['dataMode',[['system',es?'Sistema':'System'],['standard',es?'Estándar':'Standard'],['low',es?'Reducido':'Low data']]]];
+const lang: 'en'|'es' = Astro.props.lang==='es'?'es':'en';
+const es=lang==='es';
+type Option = {value:string; label:string};
+type Field = {key:string; label:string; options:Option[]};
+type Group = {label:string; reading?:boolean; fields:Field[]};
+const option=(value:string,en:string,sp:string):Option=>({value,label:es?sp:en});
+const groups:Group[]=[
+ {label:es?'Presentación visual':'Visual presentation',fields:[
+  {key:'theme',label:es?'Tema':'Theme',options:[option('system','System','Sistema'),option('light','Light','Claro'),option('dark','Dark','Oscuro')]},
+  {key:'appearance',label:es?'Superficie y contraste':'Surface and contrast',options:[option('system','System','Sistema'),option('editorial','Standard graphite','Grafito estándar'),option('high','High contrast','Contraste alto'),option('soft','Soft light','Luz suave')]},
+  {key:'colorProfile',label:es?'Perfil cromático':'Color profile',options:[option('editorial','Graphite and gold','Grafito y oro'),option('redgreen','Blue–amber','Azul–ámbar'),option('tritan','Cyan–raspberry','Cian–frambuesa'),option('mono','Monochrome','Monocromo')]}
+ ]},
+ {label:es?'Lectura':'Reading',reading:true,fields:[
+  {key:'scale',label:es?'Tamaño del texto':'Text size',options:[{value:'1',label:'100 %'},{value:'1.125',label:'112.5 %'},{value:'1.25',label:'125 %'},{value:'1.5',label:'150 %'},{value:'2',label:'200 %'}]},
+  {key:'font',label:es?'Tipografía de títulos':'Heading typeface',options:[option('editorial','Editorial','Editorial'),option('system','System typeface','Fuente del sistema')]},
+  {key:'spacing',label:es?'Espaciado':'Spacing',options:[option('normal','Normal','Normal'),option('comfortable','Comfortable','Amplio')]}
+ ]},
+ {label:es?'Movimiento y datos':'Motion and data',fields:[
+  {key:'motion',label:es?'Movimiento':'Motion',options:[option('reduce','Reduced','Reducido'),option('system','Follow system','Respetar el sistema')]},
+  {key:'dataMode',label:es?'Uso de datos':'Data use',options:[option('system','System','Sistema'),option('standard','Standard','Estándar'),option('low','Low data','Reducido')]}
+ ]}
+];
 ---
-<p class="readable">{es?'Elige la presentación que te resulte más legible. No necesitas indicar un diagnóstico. Las opciones cromáticas no corrigen una condición visual; las imágenes científicas no se recolorean.':'Choose the presentation that is easiest for you to read. No diagnosis is needed. Color profiles do not correct a visual condition, and scientific images are not recolored.'}</p>
-<noscript><div class="notice">{es?'JavaScript está desactivado. El contenido y la navegación siguen disponibles; estas preferencias requieren JavaScript. Puedes utilizar el zoom y los colores de tu navegador o sistema.':'JavaScript is disabled. Content and navigation remain available; these preference controls require JavaScript. Browser zoom and system colors remain usable.'}</div></noscript>
-<div class="notice" data-forced-notice hidden>{es?'Los colores efectivos los está controlando tu sistema. Conservaremos tu selección para cuando desactives ese ajuste.':'Your operating system currently controls the displayed colors. Your selection is preserved for when that setting is turned off.'}</div>
-<form class="settings-form" onsubmit="return false">
- {[[es?'Presentación visual':'Visual presentation',fields.slice(0,3)],[es?'Lectura':'Reading',fields.slice(3,6)],[es?'Movimiento y datos':'Motion and data',fields.slice(6)]].map(([group,items])=><fieldset><legend>{group}</legend><div class="settings-grid">{items.map(([key,options])=><label>{labels[key]}<select data-preference={key} name={key} disabled>{options.map(([value,label])=><option value={value}>{label}</option>)}</select></label>)}</div>{group===(es?'Lectura':'Reading')&&<label class="check-label"><input type="checkbox" name="readingMode" data-preference="readingMode" disabled/>{es?'Modo lectura: una columna, sin ocultar información esencial':'Reading mode: one column without hiding essential information'}</label>}</fieldset>)}
- <p class="meta">{es?'Los cambios se aplican sin recargar. Se guardan solo en este navegador cuando es posible. El movimiento reducido del sistema siempre prevalece; no hay reproducción audiovisual automática.':'Changes apply without reloading and are saved only in this browser when possible. System reduced motion always takes precedence; audiovisual content never autoplays.'}</p>
+<p class="readable">{es?'Elige la presentación que te resulte más legible. No necesitas indicar un diagnóstico. Los perfiles cromáticos no corrigen una condición visual; las imágenes científicas no se recolorean.':'Choose the presentation that is easiest for you to read. No diagnosis is needed. Color profiles do not correct a visual condition, and scientific images are not recolored.'}</p>
+<noscript><div class="notice">{es?'JavaScript está desactivado. El contenido y la navegación siguen disponibles; estas preferencias requieren JavaScript. El zoom y los colores de tu navegador o sistema siguen funcionando.':'JavaScript is disabled. Content and navigation remain available; these preference controls require JavaScript. Browser zoom and system colors remain usable.'}</div></noscript>
+<div class="notice" data-forced-notice hidden>{es?'Tu sistema controla los colores efectivos. Conservaremos tu selección para cuando desactives ese ajuste.':'Your operating system controls the displayed colors. Your selection is preserved for when that setting is turned off.'}</div>
+<form class="settings-form" data-preferences-form>
+ {groups.map(group=><fieldset><legend>{group.label}</legend><div class="settings-grid">{group.fields.map(field=><label>{field.label}<select data-preference={field.key} name={field.key} disabled>{field.options.map(o=><option value={o.value}>{o.label}</option>)}</select></label>)}</div>{group.reading&&<label class="check-label"><input type="checkbox" name="readingMode" data-preference="readingMode" disabled/>{es?'Modo lectura: una columna sin ocultar información esencial':'Reading mode: one column without hiding essential information'}</label>}</fieldset>)}
+ <p class="meta">{es?'Los cambios se aplican sin recargar. Se guardan solo en este navegador cuando es posible. La reducción de movimiento del sistema siempre prevalece; no hay reproducción audiovisual automática.':'Changes apply without reloading and are saved only in this browser when possible. System reduced motion always takes precedence; audiovisual content never autoplays.'}</p>
  <button type="button" data-preferences-reset disabled>{es?'Restablecer preferencias':'Reset preferences'}</button>
  <p role="status" aria-live="polite" class="copy-status" data-preference-status></p>
 </form>
