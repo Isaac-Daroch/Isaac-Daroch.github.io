@@ -36,3 +36,10 @@ See `requirements.md` for every requirement, `acceptance-cases.md` for all 42 ca
 ## Still requiring human or external evidence
 
 Real browser zoom 200/400%, NVDA, VoiceOver, TalkBack, voice activation, Windows system forced colors, user comprehension, scientific translation and the meaning of alternatives. Device-level validation is not inferred from desktop automation. Publisher pages are externally controlled. No claim is made that absent video or a nonpublic clinical repository has been supplied.
+
+
+## Inventario adicional 1.3 · 18 octubre 2026
+
+La ruta de biblioteca se añade en los cuatro idiomas: seis trabajos externos y tres vídeos enlazados a páginas originales de proyecto. El reproductor de terceros se crea solo tras una pulsación. Las notas escritas traducidas no son transcripciones completas; la revisión de subtítulos, narración, audiodescripción y reproducción real queda pendiente. El archivo de vídeos propios permanece apagado.
+
+Tres ilustraciones conceptuales se conservan como PNG y se distribuyen como WebP responsive; no son datos científicos. Animación CSS y avance temporizado voluntario del observatorio se detienen mediante la preferencia visible de movimiento y concentración. La vista técnica añade activaciones, pesos, sesgos, superficie bidimensional, pérdida de entrenamiento, historial y dos continuaciones contrafactuales; figuras calculadas en SVG, controles nativos y tablas de valores. Las tres asignaturas confirmadas cuentan con ejemplos sintéticos.

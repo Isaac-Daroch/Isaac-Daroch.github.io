@@ -1,7 +1,7 @@
 /** PREF-02/03: pure, versioned resolution. No browser capabilities in this module. */
 export const KEY='isaac-visual-preferences-v2';
 export const LEGACY_KEY='isaac-grafito-visual-v1';
-export const DEFAULTS=Object.freeze({version:2,theme:'system',appearance:'system',colorProfile:'editorial',scale:1,readingMode:false,font:'system',spacing:'normal',motion:'reduce',dataMode:'system',focusMode:false,guidedReading:false});
+export const DEFAULTS=Object.freeze({version:2,theme:'system',appearance:'system',colorProfile:'editorial',scale:1,readingMode:false,font:'system',spacing:'normal',motion:'system',dataMode:'system',focusMode:false,guidedReading:false});
 export const ALLOWED=Object.freeze({theme:['system','light','dark'],appearance:['system','editorial','high','soft'],colorProfile:['editorial','redgreen','tritan','mono'],scale:[1,1.125,1.25,1.5,2],readingMode:[true,false],font:['editorial','system'],spacing:['normal','comfortable'],motion:['system','reduce'],dataMode:['system','standard','low'],focusMode:[true,false],guidedReading:[true,false]});
 export function validate(input){const out={...DEFAULTS};if(!input||typeof input!=='object'||Array.isArray(input)||input.version!==2)return out;for(const[key,values]of Object.entries(ALLOWED))if(Object.hasOwn(input,key)&&values.includes(input[key]))out[key]=input[key];return out;}
 export function parse(text){try{return validate(JSON.parse(text));}catch{return {...DEFAULTS};}}

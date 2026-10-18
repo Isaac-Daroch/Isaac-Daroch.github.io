@@ -44,3 +44,14 @@ No se inventaron vídeos ni viajes durante esta actualización. La web no rastre
 La interfaz compartida está en `site/public/assets/i18n.mjs`; los textos de páginas en `site/src/data/content.mjs`; las notas científicas en `site/src/data/notes.mjs`. El cuaderno original inglés sigue usando Quarto. Los tres idiomas adicionales se generan desde las traducciones. Los nombres de instituciones, DOI, BibTeX y código mantienen sus nombres originales, con idioma identificado donde corresponde.
 
 El correo institucional solicitado es exactamente `i.darochormeo@uandresbello.edu`, en `site/src/data/site.mjs` y el pie compartido. Las 24 paletas conservan la fuente `tokens/paletas-grafito.json`. El selector visible elige una paleta efectiva; lectura en una columna y concentración son preferencias independientes.
+
+
+## Docencia y biblioteca de investigación · versión 1.3
+
+Las asignaturas confirmadas por el propietario son exclusivamente **Minería de Datos, Econometría y Visualización de Datos**. Sus fichas están en `site/src/data/courses.mjs`. Los temas, métodos y actividades constituyen una propuesta editorial para revisión; no se atribuyen a un programa oficial ni se inventan instituciones o períodos. Los tres experimentos usan datos sintéticos definidos en `site/src/modules/teaching/index.mjs`.
+
+La biblioteca pública `/library/` y sus equivalentes traducidos se editan en `site/src/data/library.mjs`. Tiene seis artículos de otros autores y tres vídeos asociados a proyectos originales. Cada vídeo enlaza el proyecto y su artículo, con explicación escrita en cuatro idiomas. El reproductor se conecta a YouTube al pulsar el botón y se retira al cerrarlo o filtrar su tarjeta. No reproduce automáticamente. La biblioteca externa está separada de `media`, que conserva apagado el archivo de divulgación propia hasta tener material real. Antes de añadir material, verifica la fuente, los derechos, los subtítulos y la cobertura de la información visual. Las explicaciones breves actuales no equivalen a transcripciones completas.
+
+Las ilustraciones y prompts exactos están documentados en `docs/visual-assets-1.3.md`. Son arte conceptual, no evidencia científica. La animación visual sigue la preferencia del sistema por defecto y se puede reducir desde la barra visible. Concentración también la detiene. La simulación temporizada requiere una pulsación y se limita a 24 pasos; se pausa al salir de la página, ocultar la pestaña o dejar de verse el observatorio.
+
+El modo técnico expone la red calculada y los parámetros individuales, un mapa energía/fatiga, siete puntos de entropía cruzada de entrenamiento y el detalle histórico de decisiones. No presenta esa pérdida como precisión de generalización. La comparación por pares copia el historial y la semilla, cambia la influencia inicial del modelo propio (α=1 frente a α=0) y continúa 12 decisiones sin modificar el agente activo.

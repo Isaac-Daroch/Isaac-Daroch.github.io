@@ -1,3 +1,3 @@
 # Informe vigente
 
-El informe de la versión actual está en [Verificación 1.2](test-report-1.2.md). La ejecución anterior se conserva en [Historial 1.1](test-report-1.1-history.md). Los números de la versión anterior no describen la interfaz actual.
+El informe actual está en [Verificación 1.3](test-report-1.3.md). Se conservan los informes [1.2](test-report-1.2.md) y [1.1](test-report-1.1-history.md) como históricos. Sus números no describen la interfaz actual.

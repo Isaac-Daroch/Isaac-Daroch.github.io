@@ -1,0 +1,10 @@
+---
+import {Image} from 'astro:assets';
+import memory from '../assets/memory-sculpture-v13.png';
+import teaching from '../assets/teaching-sculpture-v13.png';
+import {STUDIO} from '../data/studio.mjs';import {localize} from '../data/content.mjs';import {UI,href} from '../../public/assets/i18n.mjs';
+interface Props{lang:'en'|'es'|'de'|'nl'}
+const {lang}=Astro.props,s=localize(STUDIO,lang),t=UI[lang];
+---
+<section class="shell research-manifesto section"><p class="eyebrow">01 / {t.research}</p><h2>{s.intro}</h2><p class="lead">{s.introBody}</p></section>
+<section class="shell visual-destinations" aria-label={t.onThisSite}><article class="image-destination"><Image src={memory} widths={[480,960]} sizes="(max-width: 768px) 100vw, 50vw" format="webp" quality={80} alt="" loading="lazy"/><div><p class="eyebrow">02 / {t.memory}</p><h2>{s.self}</h2><p>{t.agentIntro}</p><a class="button" href={href(lang,'self-model')}>{s.enter} ↗</a></div></article><article class="image-destination"><Image src={teaching} widths={[480,960]} sizes="(max-width: 768px) 100vw, 50vw" format="webp" quality={80} alt="" loading="lazy"/><div><p class="eyebrow">03 / {t.teaching}</p><h2>{s.teaching}</h2><p>{s.teachingLead}</p><a class="button" href={href(lang,'teaching')}>{t.teaching} ↗</a></div></article></section>

@@ -21,9 +21,9 @@ Full original procedures: `pruebas/PLAN_DE_PRUEBAS.md`. PASS here is limited to 
 | T15 | Persistencia, migración y navegación entre áreas | PASS | Automatic structure/interaction checks support this case; human reading, perception or physical-device acceptance has not been performed. |
 | T16 | Almacenamiento denegado y estado corrupto | PASS | Automatic structure/interaction checks support this case; human reading, perception or physical-device acceptance has not been performed. |
 | T17 | Restablecer y privacidad | PASS | Automatic structure/interaction checks support this case; human reading, perception or physical-device acceptance has not been performed. |
-| T18 | Vídeo con subtítulos y controles | NO_APLICA | No owned prerecorded video/audio entries or embeds in catalog/source tree. |
-| T19 | Información visual y audiodescripción | NO_APLICA | No owned recorded audiovisual content. Do not infer audiodescription quality for external links. |
-| T20 | Audio solo y vídeo sin audio | NO_APLICA | No owned audio-only or silent-video items. |
+| T18 | Vídeo con subtítulos y controles | PENDIENTE_MANUAL | Three external players load on request, without autoplay. Browser tests verify only request/unload behavior using intercepted transport; real playback and caption quality remain unreviewed. |
+| T19 | Información visual y audiodescripción | PENDIENTE_MANUAL | Four-language topic companions are present but are not complete transcripts or audio descriptions. Review external visual information and narration coverage. |
+| T20 | Audio solo y vídeo sin audio | PENDIENTE_MANUAL | No owned audio-only entries. Determine the audio/silent composition of each external project video and review its complete equivalent. |
 | T21 | Emisiones en directo | NO_APLICA | No live emission or live player. |
 | T22 | Movimiento, pausa y actualizaciones | PENDIENTE_MANUAL | Automatic structure/interaction checks support this case; human reading, perception or physical-device acceptance has not been performed. |
 | T23 | Destellos | PENDIENTE_MANUAL | Automatic structure/interaction checks support this case; human reading, perception or physical-device acceptance has not been performed. |

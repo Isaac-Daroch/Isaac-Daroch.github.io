@@ -19,3 +19,14 @@ Las peticiones directas posteriores del propietario actualizan la presentación 
 | CV, títulos, certificaciones y becas desde LinkedIn | `cv.mjs`; `InteractiveCV.astro`; `scripts/cv.js` | 18 entradas, duplicados consolidados, doctorado en curso; procedencia declarada, sin inventar documentos ni enlaces de credencial |
 
 Fuentes de diseño verificadas: [W3C Cognitive Accessibility Guidance](https://www.w3.org/TR/coga-usable/), [patrón WAI de breadcrumbs](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/), [SpeechSynthesis de MDN](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis). Estas guías informan los controles; no sustituyen evaluación humana de accesibilidad.
+
+
+## Ampliación visual, docencia y observatorio · 1.3
+
+| Petición | Implementación | Verificación y límite |
+|---|---|---|
+| Más imágenes y un lenguaje visual contemporáneo | `ResearchHero.astro`, `ResearchShowcase.astro`, `studio.css`; tres ilustraciones originales y WebP responsive | Capturas de escritorio y móvil; procedencia y prompts en `../visual-assets-1.3.md` |
+| Animaciones controlables | Movimiento escultórico, órbita y transición de decisión; selector visible | Reducción del sistema, concentración, detención voluntaria y simulación temporizada acotada |
+| Solo las tres asignaturas confirmadas | `courses.mjs`, `TeachingStudio.astro`, `modules/teaching` | Umbral de clasificación, confusión sintética y comparación gráfica; programas detallados pendientes de revisión del propietario |
+| Observatorio más comprensible y técnico | `ObservatoryStage.astro`, `ObservatoryInstruments.astro`, `observatory-studio.js` | Guía de cuatro pasos, escenarios, activaciones reales, pesos/sesgos, mapa 5×5, entrenamiento, historial y comparación por pares; límites educativos explícitos |
+| Vídeos y publicaciones del campo | `library.mjs`, `ResearchLibrary.astro`, `library.js`; ruta en cuatro idiomas | Tres reproductores bajo demanda y seis trabajos externos; fuentes primarias y explicaciones escritas, revisión audiovisual humana pendiente |

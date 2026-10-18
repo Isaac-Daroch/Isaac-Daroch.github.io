@@ -17,10 +17,12 @@ const tanh=x=>{const e=portableExp(2*Math.max(-15,Math.min(15,x)));return(e-1)/(
 const features=c=>[c.task==='precision'?1:-1,2*c.energy-1,2*c.fatigue-1,2*c.difficulty-1];
 const dot=(a,b)=>a.reduce((sum,v,i)=>sum+v*b[i],0);
 function forward(model,context){const x=features(context),a=model.w1.map((w,i)=>tanh(dot(w,x)+model.b1[i])),b=model.w2.map((w,i)=>tanh(dot(w,a)+model.b2[i]));return {x,a,b,p:sigmoid(dot(model.w3,b)+model.b3)};}
-export function fitNeural(memory){
+export function fitNeural(memory,onEpoch){
  let initial=0x19a017;const weight=()=>{initial=(Math.imul(initial,1664525)+1013904223)>>>0;return(initial/4294967296-.5)*.5;};
  const model={kind:'retained-memory-mlp-v1',layers:[4,8,6,1],w1:Array.from({length:8},()=>Array.from({length:4},weight)),b1:Array(8).fill(0),w2:Array.from({length:6},()=>Array.from({length:8},weight)),b2:Array(6).fill(0),w3:Array.from({length:6},weight),b3:0,examples:memory.length,epochs:memory.length?180:0};
  if(!memory.length)return model;
+ const trainingLoss=()=>-memory.reduce((sum,item)=>{const p=Math.max(1e-12,Math.min(1-1e-12,forward(model,item).p));return sum+item.outcome*Math.log(p)+(1-item.outcome)*Math.log(1-p);},0)/memory.length;
+ if(onEpoch)onEpoch({epoch:0,loss:trainingLoss()});
  for(let epoch=0;epoch<model.epochs;epoch++){
   const g={w1:model.w1.map(row=>row.map(v=>.003*v)),b1:Array(8).fill(0),w2:model.w2.map(row=>row.map(v=>.003*v)),b2:Array(6).fill(0),w3:model.w3.map(v=>.003*v),b3:0};
   for(const item of memory){const {x,a,b,p}=forward(model,item),e=(p-item.outcome)/memory.length,d2=b.map((v,j)=>e*model.w3[j]*(1-v*v)),d1=a.map((v,i)=>d2.reduce((sum,d,j)=>sum+d*model.w2[j][i],0)*(1-v*v));
@@ -29,8 +31,16 @@ export function fitNeural(memory){
   }
   for(const field of ['w1','w2'])for(let i=0;i<model[field].length;i++)for(let j=0;j<model[field][i].length;j++)model[field][i][j]-=.35*g[field][i][j];
   for(const field of ['b1','b2','w3'])for(let i=0;i<model[field].length;i++)model[field][i]-=.35*g[field][i];model.b3-=.35*g.b3;
+  if(onEpoch&&(epoch+1)%30===0)onEpoch({epoch:epoch+1,loss:trainingLoss()});
  }
  return model;
+}
+export function inspectNetwork(model,context){const f=forward(model,context);return clone({...f,probability:model.examples?f.p:.5,logit:dot(model.w3,f.b)+model.b3});}
+export function trainingDiagnostic(memory){const curve=[];fitNeural(memory,point=>curve.push(point));return {curve,examples:memory.length,parameters:101};}
+export function compareContinuations(record,steps=12){
+ if(!Number.isInteger(steps)||steps<1||steps>24)throw new Error('COMPARISON_LIMIT');replay(JSON.stringify(record));
+ if(record.commands.length+1+steps>MAX_COMMANDS)throw new Error('COMMAND_LIMIT');
+ const trajectories={};for(const [key,influence]of [['withSelf',1],['withoutSelf',0]]){const copy=new ExperienceAgent(record.config);for(const command of record.commands)copy.command(command);const before=copy.snapshot();copy.command({type:'situation',...before.internal,difficulty:before.difficulty,request:before.request,selfInfluence:influence});copy.run(steps);const after=copy.snapshot();trajectories[key]={snapshot:after,events:after.events.filter(e=>e.type==='decision'&&e.tick>before.tick)};}return trajectories;
 }
 export function predict(model,memory,context){
  const probability=memory.length?forward(model,context).p:.5;

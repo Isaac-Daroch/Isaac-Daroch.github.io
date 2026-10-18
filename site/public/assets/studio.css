@@ -1,0 +1,149 @@
+/* Version 1.3: visual research studio. UI colors always use the shared tokens. */
+body{font-family:Inter,'Segoe UI Variable','Segoe UI',system-ui,sans-serif}
+.site-header{background:var(--surface)}
+.header-inner{min-height:5.5rem;padding-block:.8rem}
+.access-bar{padding:.65rem 0;background:var(--surface)}
+.access-bar-inner{gap:1rem;align-items:center}
+.access-bar-inner .preset-control{flex:1 1 14rem;max-width:22rem}
+.access-bar-inner .switch-control{max-width:22ch}
+.motion-quick{max-width:12rem}
+.motion-quick select{min-height:44px}
+.orientation{padding-block:.9rem}
+.visual-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);border:1px solid var(--control);border-radius:1.75rem;overflow:hidden;background:var(--surface);margin-block:1.25rem 1.5rem;min-height:39rem}
+.visual-hero-copy{padding:clamp(1.5rem,3vw,3.5rem);align-self:center;min-width:0}
+.visual-hero h1{font-size:clamp(2.8rem,4.8vw,5rem);max-width:14ch;line-height:1.04;letter-spacing:-.045em}
+.visual-hero .lead{font-size:1.15rem;line-height:1.65}
+.visual-hero .eyebrow{font-size:1rem;letter-spacing:.06em}
+.hero-art{position:relative;overflow:hidden;min-width:0;border-inline-start:1px solid var(--border);background:var(--bg)}
+.hero-art>img{height:100%;width:100%;object-fit:cover;object-position:57% 50%;animation:sculpture-drift 18s ease-in-out infinite alternate;transform-origin:55% 50%}
+.hero-art figcaption{position:absolute;bottom:1rem;right:1rem;left:1rem;padding:.6rem 1rem;border-radius:.6rem;background:var(--surface);color:var(--text);font-size:1rem;border:1px solid var(--control);max-width:max-content}
+.art-orbit{position:absolute;inset:12% 15%;border:1px dashed var(--control);border-radius:50%;pointer-events:none;animation:orbit-research 60s linear infinite}
+.art-orbit span{position:absolute;display:grid;place-content:center;width:3rem;height:3rem;border-radius:50%;background:var(--surface);color:var(--text);border:1px solid var(--control);font-size:1rem}
+.art-orbit span:nth-child(2){right:0;top:45%}.art-orbit span:nth-child(3){bottom:0;left:30%}
+.researcher-stamp{display:flex;gap:1rem;align-items:center;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);font-size:1rem}
+.researcher-stamp img{width:4rem;height:4rem;object-fit:cover;border-radius:50%;border:1px solid var(--control)}
+.researcher-stamp span,.researcher-stamp a{display:block}
+.topic-rail{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.topic-rail a{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.25rem;min-height:4rem;border:1px solid var(--control);border-radius:1rem;background:var(--surface);font-size:1rem;gap:.7rem}
+.research-manifesto{display:grid;grid-template-columns:1fr 2fr;gap:1rem 3rem;padding-block:4rem}
+.research-manifesto h2{grid-column:2;font-size:clamp(2rem,3.8vw,3.5rem);max-width:28ch}
+.research-manifesto .lead{grid-column:2}
+.visual-destinations{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
+.image-destination{background:var(--surface);border:1px solid var(--control);border-radius:1.5rem;overflow:hidden;min-width:0}
+.image-destination>img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.image-destination>div{padding:2rem}
+.image-destination h2{font-size:2rem;max-width:30ch}
+.destination-card,.repository-card,.paper-feature,.contact-card{border-radius:1.5rem}
+.page-intro{padding-block:2.2rem 2rem}
+.page-intro h1{font-size:clamp(2.5rem,4.5vw,4.4rem);max-width:24ch}
+.research-library .section-heading h2{max-width:30ch}
+.resource-filter{max-width:30rem;margin-block:1rem}
+.video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin-bottom:3rem}
+.video-card,.reading-card{border:1px solid var(--control);border-radius:1.25rem;background:var(--surface);overflow:hidden;min-width:0}
+.video-frame{position:relative;aspect-ratio:16/10;background:var(--bg);color:var(--primary);border-bottom:1px solid var(--control);padding-bottom:3.5rem}
+.video-frame>svg{display:block;width:100%;height:100%;min-width:0}
+.video-frame>button{position:absolute;bottom:.6rem;left:.6rem;right:.6rem;width:calc(100% - 1.2rem);background:var(--surface);color:var(--text)}
+.video-frame>iframe{position:absolute;inset:0 0 3.5rem;width:100%;height:calc(100% - 3.5rem);border:0}
+.video-copy{padding:1.5rem}
+.video-copy .eyebrow{font-size:1rem;letter-spacing:0;text-transform:none}
+.video-copy p,.video-copy .actions{font-size:1rem}
+.video-copy details{margin-block:1rem}
+.paper-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
+.reading-card{padding:1.6rem;display:flex;flex-direction:column;align-items:flex-start}
+.reading-card h4{font-size:1.3rem;line-height:1.35}
+.reading-card p{font-size:1rem}
+.paper-year{width:100%;display:flex;justify-content:space-between;gap:1rem;font-weight:650}
+.paper-year span{font-weight:400}
+.teaching-art{position:relative;border:1px solid var(--control);border-radius:1.5rem;overflow:hidden;max-height:34rem;margin-bottom:1.5rem}
+.teaching-art img{width:100%;height:100%;max-height:34rem;object-fit:cover;object-position:center 52%}
+.teaching-art figcaption{position:absolute;bottom:1rem;left:1rem;right:1rem;max-width:max-content;background:var(--surface);color:var(--text);border:1px solid var(--control);border-radius:.6rem;padding:.5rem 1rem}
+.course-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-block:2rem 3rem}
+.course-card{position:relative;border:1px solid var(--control);border-radius:1.5rem;padding:2rem;background:var(--surface);min-width:0}
+.course-card h2{font-size:2rem;margin-top:2rem}
+.course-card h3{font-size:1.1rem;margin-top:1.5rem}
+.course-number{font-size:3rem;line-height:1;font-weight:700;color:var(--accent)}
+.course-question{font-size:1.25rem;font-weight:600}
+.tool-chips{display:flex;gap:.5rem;flex-wrap:wrap}.tool-chips span{border:1px solid var(--control);border-radius:2rem;padding:.2rem .65rem;font-size:1rem}
+.lesson-controls{max-width:38rem;margin-block:1.5rem}
+input[type=range]{padding:.25rem 0;accent-color:var(--primary);height:44px;min-width:0}
+.teaching-instruments{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:1.5rem;align-items:center}
+.teaching-plot{border:1px solid var(--control);border-radius:1rem;padding:1rem;min-width:0;background:var(--bg)}
+.teaching-plot svg{display:block;width:100%;height:auto;font:16px system-ui}
+.teaching-metrics{display:grid;gap:.7rem}
+.teaching-metrics>div{border:1px solid var(--control);padding:.8rem 1rem;border-radius:.75rem;background:var(--bg)}
+.teaching-metrics span{display:block;font-size:1.7rem;font-weight:650}
+.agent-signature,.agent-observatory .neural-diagram{display:none}
+.agent-heading{margin-bottom:1.5rem}
+.agent-heading h2{font-size:clamp(1.8rem,3vw,2.8rem);max-width:35ch}
+.agent-panel{border-color:var(--control);padding:1.5rem;border-radius:1.25rem}
+.agent-observatory{padding-top:1rem}
+.observatory-mode{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+.observatory-mode button[aria-pressed=true]{background:var(--primary);color:var(--on-primary)}
+.agent-stage{display:grid;grid-template-columns:minmax(0,2.8fr) minmax(0,1fr);border:1px solid var(--control);border-radius:1.5rem;overflow:hidden;background:var(--surface)}
+.agent-scene{padding:1.5rem;min-width:0;position:relative}
+.agent-scene svg{display:block;width:100%;height:auto;font:18px system-ui}
+.agent-scene figcaption{font-size:1rem;border-top:1px solid var(--border);padding-top:1rem}
+.agent-scene figcaption p{margin-bottom:0}
+.scene-grid path{stroke:var(--border);stroke-width:.6;fill:none}
+.scene-connections path{fill:none;stroke:var(--control);stroke-width:2;stroke-dasharray:6 8}
+.scene-connections path.selected-path{stroke:var(--primary);stroke-width:5;stroke-dasharray:10 7}
+.scene-station rect,.scene-agent>circle{fill:var(--surface);stroke:var(--control);stroke-width:2}
+.scene-station path,.scene-agent>path{stroke:var(--primary);stroke-width:3;fill:none}
+.scene-agent>circle:last-of-type{fill:var(--primary)}
+.scene-agent .agent-aura{fill:none;stroke:var(--primary);stroke-dasharray:4 7}
+.scene-station text,.scene-agent text{fill:var(--text)}
+.is-stepping .selected-path{animation:decision-flow .7s linear 1}
+.scenario-deck{background:var(--bg);border-inline-start:1px solid var(--control);padding:1.5rem;display:flex;flex-direction:column;gap:.7rem}
+.scenario-deck h3{font-size:1.2rem}
+.scenario-deck button{justify-content:flex-start;text-align:start}
+.scenario-deck .method-note{margin:0}
+.protocol-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.guided-protocol{padding-block:2rem}
+.protocol-grid article{padding:1.2rem;border:1px solid var(--control);border-radius:1rem;background:var(--surface)}
+.protocol-grid h4{font-size:1.1rem}.protocol-grid p{font-size:1rem}
+.agent-workspace{gap:1rem}
+.state-controls{gap:1rem}
+.state-controls label{padding:.8rem;border:1px solid var(--border);border-radius:.8rem;background:var(--bg)}
+.state-controls input[type=number]{padding:.3rem .8rem;background:var(--surface)}
+.agent-command-bar{position:relative;margin-block:1rem;padding:1rem;border-radius:1rem}
+.agent-metrics dd{font-size:1.8rem}
+.decision-alternatives{grid-template-columns:repeat(2,minmax(0,1fr))}
+.alternative-row:last-child{grid-column:1/-1}
+.alternative-head{align-items:flex-start}
+.utility-terms{grid-template-columns:1fr}.utility-terms>div{position:relative;padding-bottom:.6rem;overflow:hidden}
+.utility-bar{display:block;min-height:5px;border:1px solid var(--control);background:var(--primary);margin-top:.3rem}
+.utility-bar[data-sign=negative]{background:var(--accent);border-style:dashed}
+.timeline-panel figure>svg,.neural-instrument figure>svg,.instrument-grid figure>svg{display:block;width:100%;height:auto;font:16px system-ui}
+.decision-inspection dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:.5rem 1.5rem;padding:1rem;border:1px solid var(--control);border-radius:.8rem;background:var(--bg)}
+.decision-inspection dt{font-size:1rem}.decision-inspection dd{margin:0;overflow-wrap:anywhere}
+.paired-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.paired-results>article{border:1px solid var(--control);padding:1.25rem;border-radius:1rem;background:var(--bg)}
+.paired-results ol{padding-inline-start:1.25rem;font-size:1rem}
+.neuron-choices{display:flex;gap:.5rem;flex-wrap:wrap;margin-block:1.25rem}
+.neuron-choices button{font-family:ui-monospace,monospace;font-size:1rem;min-width:4rem}
+.neuron-choices button[aria-pressed=true]{background:var(--primary);color:var(--on-primary)}
+.neuron-inspector{padding:1.25rem;background:var(--bg);border:1px solid var(--control);border-radius:1rem;font-variant-numeric:tabular-nums}
+.neuron-inspector p{font-size:1rem;margin-bottom:.5rem}
+.instrument-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.capability-surface{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.4rem}
+.surface-scroll{overflow:auto;max-width:100%;min-width:0;padding:.4rem}
+.surface-scroll .capability-surface{min-width:18rem}
+.agent-panel{min-width:0}
+.capability-surface button{position:relative;font-size:1rem;padding:.6rem .1rem;overflow:hidden;border-bottom-width:calc(3px + 16px * var(--cell-weight));background:var(--surface);color:var(--text)}
+.equation-steps{display:grid;gap:1rem}.equation-steps code{padding:1rem;border:1px solid var(--control);border-radius:.6rem;background:var(--bg);overflow-wrap:anywhere;font-size:1rem}
+.agent-journal{font-size:1rem}
+@keyframes sculpture-drift{from{transform:scale(1.02) translateY(-.3rem)}to{transform:scale(1.07) translateY(.3rem)}}
+@keyframes orbit-research{to{transform:rotate(360deg)}}
+@keyframes decision-flow{from{stroke-dashoffset:51}to{stroke-dashoffset:0}}
+:root[data-motion=reduced] *, :root[data-focus-mode=true] *{animation:none!important;scroll-behavior:auto!important}
+:root[data-focus-mode=true] .art-orbit,:root[data-focus-mode=true] .hero-art,:root[data-focus-mode=true] .teaching-art{display:none}
+:root[data-focus-mode=true] .visual-hero{grid-template-columns:1fr}
+:root[data-reading=true] .visual-hero,:root[data-reading=true] .topic-rail,:root[data-reading=true] .visual-destinations,:root[data-reading=true] .research-manifesto,:root[data-reading=true] .course-grid,:root[data-reading=true] .video-grid,:root[data-reading=true] .paper-grid,:root[data-reading=true] .agent-stage,:root[data-reading=true] .protocol-grid,:root[data-reading=true] .instrument-grid,:root[data-reading=true] .paired-results,:root[data-reading=true] .decision-alternatives,:root[data-reading=true] .teaching-instruments{grid-template-columns:1fr}
+:root[data-reading=true] .research-manifesto h2,:root[data-reading=true] .research-manifesto p{grid-column:1}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
+@media(max-width:75rem){.visual-hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:35rem}.visual-hero h1{font-size:clamp(2.5rem,5vw,4rem)}.video-grid,.paper-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.course-grid{grid-template-columns:1fr}.course-card h2{margin-top:.6rem}.protocol-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.agent-stage{grid-template-columns:1fr}.scenario-deck{border-inline-start:0;border-top:1px solid var(--control);display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.scenario-deck h3,.scenario-deck p{grid-column:1/-1}.agent-workspace{grid-template-columns:1fr}.instrument-grid{grid-template-columns:1fr}}
+@media(max-width:48rem){.visual-hero{grid-template-columns:1fr;margin-top:.5rem;min-height:0}.visual-hero h1{font-size:clamp(2.5rem,9vw,4rem)}.visual-hero-copy{padding:1.5rem}.hero-art{border-inline-start:0;border-top:1px solid var(--control);height:24rem}.hero-art>img{object-position:center}.topic-rail,.visual-destinations,.video-grid,.paper-grid,.teaching-instruments,.paired-results,.research-manifesto,.decision-alternatives{grid-template-columns:1fr}.research-manifesto h2,.research-manifesto .lead{grid-column:1}.research-manifesto{padding-block:2.5rem}.image-destination>div{padding:1.5rem}.page-intro h1{font-size:2.5rem}.agent-scene{padding:.8rem}.agent-heading h2{font-size:2rem}.teaching-art{max-height:24rem}.teaching-art img{height:24rem}.access-bar-inner .preset-control{flex-basis:100%;max-width:none}.access-bar-inner .switch-control{flex:1 1 11rem}.motion-quick{flex:1 1 12rem;max-width:none}.protocol-grid{grid-template-columns:1fr}.scenario-deck{padding:1rem;grid-template-columns:1fr}.scenario-deck h3,.scenario-deck p{grid-column:1}.course-card{padding:1.5rem}.capability-surface{gap:.2rem}.decision-inspection dl{grid-template-columns:1fr}.hero-art figcaption{font-size:1rem}.art-orbit{inset:10% 20%}}
+@media(forced-colors:active){.hero-art figcaption,.video-frame,.agent-stage,.reading-card,.course-card,.video-card,.visual-hero,.teaching-art figcaption{forced-color-adjust:auto}.scene-station rect,.scene-agent circle{fill:Canvas;stroke:CanvasText}.scene-station text,.scene-agent text{fill:CanvasText}.scene-connections path{stroke:LinkText}}
+@media print{.visual-hero,.visual-destinations,.course-grid,.video-grid,.paper-grid,.agent-stage,.protocol-grid,.instrument-grid,.paired-results{display:block}.hero-art,.art-orbit,.video-frame iframe,.observatory-mode,.scenario-deck,.lesson-controls,.neuron-choices{display:none!important}.course-card,.reading-card,.video-card{break-inside:avoid;margin-block:1rem}.hero-art>img{animation:none}}
+
+@media(max-width:48rem){.access-bar-inner .switch-control{flex:1 1 calc(50% - 1rem);max-width:none;font-size:.9rem;align-self:center}.access-bar-inner .audio-panel,.access-bar-inner .motion-quick{flex:1 1 calc(50% - 1rem);min-width:0}.access-bar-inner .audio-panel summary{font-size:.9rem}.access-bar-inner:has(.audio-panel[open]) .audio-panel{flex-basis:100%}.status-line:empty{display:none}}

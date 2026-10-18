@@ -1,4 +1,5 @@
 import {UI,LOCALES,LANGUAGE_NAMES,ROUTE_KEYS,href} from '../../public/assets/i18n.mjs';
+import {STUDIO} from './studio.mjs';
 import {isEnabled} from './modules.mjs';
 const escape=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 export const options=(values,labels)=>values.map((v,i)=>`<option value="${escape(v)}">${escape(labels[i])}</option>`).join('');
@@ -7,7 +8,7 @@ export function renderTools(locale){const t=UI[locale];return `<section class="a
 <label class="switch-control"><input type="checkbox" data-preference="focusMode" disabled>${t.focusMode}</label>
 <label class="switch-control"><input type="checkbox" data-preference="readingMode" disabled>${t.readingMode}</label>
 <details class="audio-panel"><summary>${t.listen}</summary><div class="audio-body"><p>${t.speechNote}</p><label for="speech-voice">${t.voice}<select id="speech-voice" disabled></select></label><label for="speech-rate">${t.speed}<select id="speech-rate">${options(['.75','1','1.25'],['0,75 ×','1 ×','1,25 ×'])}</select></label><div class="actions"><button id="speech-play" disabled>${t.play}</button><button id="speech-pause" disabled>${t.pause}</button><button id="speech-stop" disabled>${t.stop}</button></div><p id="speech-status" role="status">${t.speechReady}</p></div></details>
-<a href="${href(locale,'accessibility')}">${t.preferences}</a></div><div class="guided-tools" hidden><button id="next-section">${t.nextSection}</button><a href="#page-start">${t.backTop}</a><p id="guided-status" role="status"></p></div><p id="site-status" class="shell status-line" role="status"></p></section>`;}
+<label class="motion-quick">${STUDIO.motion[locale]}<select data-preference="motion" disabled>${options(['system','reduce'],[t.system,t.reduce])}</select></label><a href="${href(locale,'accessibility')}">${t.preferences}</a></div><div class="guided-tools" hidden><button id="next-section">${t.nextSection}</button><a href="#page-start">${t.backTop}</a><p id="guided-status" role="status"></p></div><p id="site-status" class="shell status-line" role="status"></p></section>`;}
 export function renderChrome(locale,path,title,{notebook=false}={}){
  const t=UI[locale],main=[['investigation','research'],['self-model','observatory'],['publications','publications'],['explore','explore']];
  const nav=items=>items.map(([route,key])=>`<a href="${href(locale,route)}"${route===path?' aria-current="page"':''}>${t[key]}</a>`).join('');
