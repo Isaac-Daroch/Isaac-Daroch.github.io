@@ -40,10 +40,12 @@ jobs:
         run: |
           set -euo pipefail
           python tools/governance/validate_d2.py --out build-docs --test-log .d2-test-reports/unittest.log
+          python -c "import pathlib,json,hashlib; r=pathlib.Path('build-docs'); m=json.loads((r/'MANIFEST_D2.json').read_text(encoding='utf-8')); expected={f['path'] for f in m['files']}; actual={p.relative_to(r).as_posix() for p in r.rglob('*') if p.is_file() and p.name!='MANIFEST_D2.json'}; assert actual==expected, 'Manifest file set mismatch'; assert all(len((r/f['path']).read_bytes())==f['bytes'] and hashlib.sha256((r/f['path']).read_bytes()).hexdigest()==f['sha256'] for f in m['files']), 'Manifest integrity mismatch'; print('Documentation artifact integrity verified:', len(actual)+1, 'files including manifest')"
       - name: Preserve documentation delivery
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: IsaacDaroch-D2-${{ matrix.os }}
           path: build-docs/
+          include-hidden-files: true
           if-no-files-found: error
           retention-days: 30
