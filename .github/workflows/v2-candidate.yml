@@ -22,6 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
+          ref: ${{ github.sha }}
           persist-credentials: false
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
         with:
@@ -29,27 +30,37 @@ jobs:
       - uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b
         with:
           version: '1.10.18'
-      - name: Install locked dependencies
+      - name: Record exact source identity and install locked dependencies
         run: |
+          set -euo pipefail
           mkdir -p evidence
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
           git rev-parse HEAD > evidence/source-commit.txt
+          git status --short > evidence/checkout-status.txt
+          git ls-files tools site/package.json > evidence/entrypoint-inventory.txt
+          git hash-object site/package.json tools/check-js.mjs tools/run-tests.mjs > evidence/entrypoint-blob-hashes.txt
+          cat site/package.json
           node --version > evidence/environment.txt
           npm --version >> evidence/environment.txt
           quarto --version >> evidence/environment.txt
           cd site
           npm ci
-      - name: Verify existing and new source mechanisms
+      - name: Verify source syntax, recursive tests and architecture using inspected entrypoints
         run: |
           set -euo pipefail
+          node tools/check-js.mjs 2>&1 | tee evidence/v2-syntax.log
           node tools/verify-contrast.mjs 2>&1 | tee evidence/v2-contrast.log
+          node tools/check-v2-content.mjs 2>&1 | tee evidence/v2-content.log
+          node tools/run-tests.mjs 2>&1 | tee evidence/v2-unit.log
+          node tools/architecture.mjs 2>&1 | tee evidence/v2-architecture.log
+          node tools/generate-a11y-docs.mjs 2>&1 | tee evidence/v2-documentation.log
           cd site
-          npm test 2>&1 | tee ../evidence/v2-unit.log
           npm run check 2>&1 | tee ../evidence/v2-types.log
-      - name: Build actual combined site
+      - name: Build actual combined site without bypassing output verification
         run: |
           set -euo pipefail
           node tools/build-v2.mjs 2>&1 | tee evidence/v2-build.log
-      - name: Install browsers for real compiled-page checks
+      - name: Install browsers for actual compiled-page checks
         if: runner.os == 'Linux'
         run: cd site && npx playwright install --with-deps chromium firefox
       - name: Run scoped browser checks without suppressing failures
