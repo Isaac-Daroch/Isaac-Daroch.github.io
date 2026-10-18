@@ -1,0 +1,52 @@
+name: Grafito v2 immutable baseline (no deployment)
+on:
+  push:
+    branches: [feature/grafito-self-model-v2]
+    paths: [.github/workflows/v2-baseline.yml]
+permissions:
+  contents: read
+jobs:
+  baseline:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      ASTRO_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: 8cb293d4872780bec826221497f2865951c0eeaf
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24.19.0'
+      - uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b
+        with:
+          version: '1.10.18'
+      - name: Inventory exact baseline and instructions
+        run: |
+          mkdir -p evidence/baseline
+          git rev-parse HEAD | tee evidence/baseline/commit.txt
+          git status --short | tee evidence/baseline/status.txt
+          git ls-files | tee evidence/baseline/files.txt
+          find . -name AGENTS.md -not -path '*/node_modules/*' -print | tee evidence/baseline/instructions.txt
+          node --version | tee evidence/baseline/node.txt
+          quarto --version | tee evidence/baseline/quarto.txt
+      - name: Install and verify existing baseline
+        working-directory: site
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm ci
+          npm run check-js 2>&1 | tee ../evidence/baseline/syntax.log
+          npm test 2>&1 | tee ../evidence/baseline/unit.log
+          npm run check:architecture 2>&1 | tee ../evidence/baseline/architecture.log
+          npm run check 2>&1 | tee ../evidence/baseline/check.log
+          npm run build 2>&1 | tee ../evidence/baseline/build.log
+      - name: Preserve observed baseline even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: grafito-v2-baseline
+          path: evidence/baseline/
+          retention-days: 30
+          if-no-files-found: error
