@@ -1,0 +1,7 @@
+---
+import EditorialPage from '../../components/EditorialPage.astro';
+import {sections} from '../../data/editorial.mjs';
+export function getStaticPaths(){return Object.keys(sections).map(section=>({params:{slug:section==='home'?undefined:section},props:{section}}));}
+const {section}=Astro.props;
+---
+<EditorialPage section={section} lang="es"/>

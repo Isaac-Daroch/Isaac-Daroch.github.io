@@ -1,0 +1,60 @@
+name: V2 Grafito and self-model review (no deployment)
+on:
+  push:
+    branches: [feature/v2-self-model-grafito]
+    paths-ignore: ['docs/**', '.github/workflows/v2-baseline.yml']
+permissions:
+  contents: read
+concurrency:
+  group: v2-review-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  candidate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24.19.0'
+      - uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b
+        with:
+          version: '1.10.18'
+      - name: Inspect exact candidate tools and install locked dependencies
+        run: |
+          cat site/package.json
+          cat publication-policy.json
+          cat toolchain.json
+          cat site/tsconfig.json || true
+          cd site
+          npm ci
+      - name: Verify existing and new source mechanisms
+        run: |
+          set -euo pipefail
+          mkdir -p evidence
+          node --test tests/self-model.test.mjs tests/preferences.test.mjs 2>&1 | tee evidence/v2-unit.log
+          node tools/verify-contrast.mjs
+          cd site
+          npm test 2>&1 | tee ../evidence/legacy-source.log
+          npm run check 2>&1 | tee ../evidence/v2-types.log
+      - name: Build actual combined site
+        run: |
+          set -euo pipefail
+          node tools/build-v2.mjs 2>&1 | tee evidence/v2-build.log
+      - name: Preserve current source and built preview
+        if: always()
+        run: |
+          mkdir -p review-package
+          git archive --format=zip HEAD -o review-package/IsaacDaroch-v2-source.zip
+          if test -d site/dist; then (cd site/dist && zip -q -r ../../review-package/IsaacDaroch-v2-preview.zip .); fi
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v2-review
+          path: |
+            evidence/
+            review-package/
+          retention-days: 30
+          if-no-files-found: error

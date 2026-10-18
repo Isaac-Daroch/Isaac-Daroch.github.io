@@ -1,0 +1,8 @@
+---
+const {lang='en',listId='archive',topics=true}=Astro.props;const es=lang==='es';
+---
+<form data-archive-form={listId} data-status={`${listId}-status`} role="search" aria-label={es?'Buscar en este archivo':'Search this archive'}>
+ <div class="filter-row"><label>{es?'Buscar por texto':'Search by text'}<input type="search" name="q" placeholder={es?'Título, tema o autor':'Title, topic or author'}/></label><label>{es?'Año':'Year'}<select name="year"><option value="">{es?'Todos los años':'All years'}</option><option value="2026">2026</option></select></label>{topics&&<label>{es?'Tema':'Topic'}<select name="topic"><option value="">{es?'Todos los temas':'All topics'}</option><option value="agents">{es?'Agentes y memoria':'Agents and memory'}</option><option value="health">{es?'Salud digital':'Digital health'}</option><option value="software">{es?'Ingeniería de software':'Software engineering'}</option></select></label>}<button type="submit" disabled>{es?'Buscar':'Search'}</button><button type="button" data-clear-filters disabled>{es?'Limpiar filtros':'Clear filters'}</button></div>
+ <p id={`${listId}-status`} role="status" class="copy-status">{es?'El archivo completo aparece a continuación.':'The complete archive is listed below.'}</p>
+</form>
+<noscript><p>{es?'Los filtros requieren JavaScript; todos los registros siguen disponibles en esta página.':'Filters need JavaScript; all records remain available on this page.'}</p></noscript>

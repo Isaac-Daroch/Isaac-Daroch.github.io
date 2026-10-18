@@ -1,43 +1,42 @@
 project:
   type: website
   output-dir: _site
-  render:
-    - index.qmd
-    - notes/two-maps.qmd
-    - notes/demo-protocol.qmd
-    - notes/reproducibility.qmd
-    - notes/episode-replay.qmd
-  resources:
-    - references.bib
+  render: ["index.qmd", "notes/*.qmd"]
 website:
-  title: "Isaac Daroch · Research Notebook"
+  title: "Isaac Daroch · Scientific notebook"
   site-url: https://isaac-daroch.github.io/research/
-  navbar:
-    left:
-      - href: index.qmd
-        text: Notebook
-      - href: notes/two-maps.qmd
-        text: Two maps
-      - href: notes/demo-protocol.qmd
-        text: Protocol
-      - href: notes/episode-replay.qmd
-        text: Replay
-    right:
-      - href: https://isaac-daroch.github.io/
-        text: Portfolio
-      - href: https://isaac-daroch.github.io/projects/#agent-lab
-        text: Agent lab
-  search: true
-  page-footer: "Educational notes · explicit assumptions and limitations · Isaac Daroch"
-bibliography: references.bib
+  navbar: false
+  page-navigation: false
 format:
   html:
-    theme: [darkly, theme.scss]
+    theme: none
     css: notebook.css
     toc: true
+    lang: en
     html-math-method: mathml
     code-copy: true
-    lang: en
+    anchor-sections: true
+    include-in-header:
+      text: |
+        <meta name="referrer" content="strict-origin-when-cross-origin">
+        <script src="/ui/early.js"></script>
+        <script type="module" src="/ui/browser.mjs"></script>
+    include-before-body:
+      text: |
+        <a class="skip-link" href="#quarto-document-content">Skip to notebook content</a>
+        <nav class="notebook-nav" aria-label="Notebook navigation">
+          <a href="/">Isaac Daroch · Home</a>
+          <a href="/investigations/">Research</a>
+          <a href="/publications/">Publications</a>
+          <a href="/observatory/">Agent observatory</a>
+          <a href="/research/">Notebook index</a>
+          <a href="/preferences/">Accessibility preferences</a>
+        </nav>
+        <p class="meta">Notebook articles are currently in English. <a href="/es/investigations/" lang="es">Resúmenes de investigación en español</a>.</p>
+    include-after-body:
+      text: |
+        <footer class="site-footer"><a href="/accessibility/">Accessibility statement</a> · <a href="/contact/">Contact and report a barrier</a> · <a href="/sitemap/">Site map</a></footer>
+bibliography: references.bib
+link-citations: true
 execute:
-  eval: false
-  freeze: false
+  enabled: false

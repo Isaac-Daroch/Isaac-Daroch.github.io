@@ -1,0 +1,6 @@
+---
+import EditorialPage from '../components/EditorialPage.astro';
+export function getStaticPaths(){return ['investigations','observatory','events','news','preferences','accessibility','contact','sitemap'].map(section=>({params:{section},props:{section}}));}
+const {section}=Astro.props;
+---
+<EditorialPage section={section} lang="en"/>
