@@ -1,0 +1,15 @@
+{
+  "retrievedAt": "2026-10-18",
+  "profile": "https://cl.linkedin.com/in/isaac-german-daroch-ormeno",
+  "identityCheck": "Connected LinkedIn name search returned this exact profile; public search retrieval exposed the profile sections.",
+  "recordType": "public-profile-declarations",
+  "independentCredentialVerification": "NOT_PERFORMED",
+  "scope": ["5 employment entries", "4 education entries", "8 unique certification entries", "ANID National Doctoral Scholarship 2026"],
+  "deduplication": "English Intermediate B1 and B1.2 each appeared twice with the same credential ID; retained one entry per ID.",
+  "dateInterpretation": "Doctorate 2026–2029 is in progress and 2029 is expected. August 2025–present refers to the retrieval date. Ilmenau 2017–2018 is a study period, not an awarded degree.",
+  "credentials": "No credential files or credential-verification destinations were exposed by retrieval; no such URLs were invented.",
+  "notConfirmedForPublication": ["Conference participation and travel records", "Owned science-video channel URLs", "Dated news records selected by the owner"],
+  "unrelatedResults": "Profiles with other Isaac/German/Daroch identities and unrelated posts were excluded.",
+  "sourceOfResearchFraming": "The owner's direct instructions about retained experience, internal state, self-model and endogenous choice govern the research narrative; LinkedIn's robotics wording does not replace that agenda.",
+  "publication": "The existing article is separately source-confirmed in the UNAB institutional catalog; profile declarations do not constitute experimental validation."
+}

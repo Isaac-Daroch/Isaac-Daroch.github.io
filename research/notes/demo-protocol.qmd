@@ -1,6 +1,7 @@
 ---
 title: "Protocol: the deterministic gridworld"
 description: "Coordinates, prior knowledge, local observation, intervention and stopping conditions of the agent laboratory."
+include-before-body: headers/demo-protocol.html
 ---
 
 ## Scenario identity

@@ -7,6 +7,7 @@ project:
     - notes/demo-protocol.qmd
     - notes/reproducibility.qmd
     - notes/episode-replay.qmd
+    - notes/self-model.qmd
   resources:
     - references.bib
 website:
@@ -27,14 +28,8 @@ format:
         <link rel="stylesheet" href="https://isaac-daroch.github.io/assets/editorial.css">
         <script type="module" src="https://isaac-daroch.github.io/assets/preferences-runtime.mjs"></script>
         <script type="module" src="https://isaac-daroch.github.io/assets/notebook-search.mjs"></script>
-    include-before-body: header.html
-    include-after-body:
-      text: |
-        <nav class="shell notebook-help" aria-label="Portfolio help">
-          <a href="https://isaac-daroch.github.io/accessibility/">Accessibility preferences</a> ·
-          <a href="https://isaac-daroch.github.io/explore/">Site map</a> ·
-          <a href="https://isaac-daroch.github.io/contact/">Contact Isaac</a>
-        </nav>
+    include-before-body: headers/index.html
+    include-after-body: headers/footer.html
     anchor-sections: false
     toc: true
     toc-location: body

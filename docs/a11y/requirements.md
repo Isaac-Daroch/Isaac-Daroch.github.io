@@ -1,6 +1,6 @@
 # Requirement → implementation → check → evidence
 
-All 77 identifiers from the supplied specification are retained. Component names are under `site/src/` or `site/public/` unless otherwise named. Implementation is not whole-requirement acceptance: use test-report and case statuses for evidence and remaining work.
+All 77 identifiers from the supplied specification are retained. Component names are under `site/src/` or `site/public/` unless otherwise named. Version 1.2 extends this matrix with [the user-request mapping](user-request-mapping.md). Shared current chrome: `site/src/data/chrome.mjs`; current pages: `PortfolioPage.astro`; current laboratory: `ExperienceAgent.astro` and `modules/experience-agent`. Older BFS-domain references describe the preserved supplementary protocol. Implementation is not whole-requirement acceptance: use test-report and case statuses for evidence and remaining work.
 
 | ID | Requirement | Component / file | Cases | Scope / evidence / pending |
 |---|---|---|---|---|
@@ -58,7 +58,7 @@ All 77 identifiers from the supplied specification are retained. Component names
 | SCI-05 | PDF y otros descargables | publications.json; Publications; Quarto sources; laboratory adapter | T29–T32 | Published bibliography source checked; data and controls preserved; native MathML and source selectable. Clinical code/video/PDF not confirmed. |
 | SCI-06 | Mapas, congresos y fotografías | publications.json; Publications; Quarto sources; laboratory adapter | T29–T32 | Published bibliography source checked; data and controls preserved; native MathML and source selectable. Clinical code/video/PDF not confirmed. |
 | COG-01 | Claridad sin trivializar | BaseLayout; contact; investigation; native disclosures | T41 | Consistent help, explicit limitations and no timed editorial task. User comprehension review pending. |
-| LANG-01 | Idiomas | English routes; es/index, es/explore, es/accessibility; BaseLayout | T28 | English remains primary. Spanish labels identify English-only destinations; comprehensive translation not claimed. |
+| LANG-01 | Idiomas | public/assets/i18n.mjs; data/content.mjs; data/notes.mjs; components/PortfolioPage,NotePage; [lang]/[...slug]; shared chrome | T28 | All published routes, controls, statuses and notebook explanations are localized into en/es/de/nl. Original scientific titles, institutional names and code retain their language. Human proofreading remains pending. |
 | TECH-01 | Ausencia de movimiento innecesario | Static Astro/Quarto build; preference runtime; notebook-search | T22–T23, T33–T34 | No automatic media or decorative motion. No-JS fallback and network/resource checks; no fabricated offline guarantee. |
 | TECH-02 | Mejora progresiva | Static Astro/Quarto build; preference runtime; notebook-search | T22–T23, T33–T34 | No automatic media or decorative motion. No-JS fallback and network/resource checks; no fabricated offline guarantee. |
 | TECH-03 | Rendimiento y uso de datos | Static Astro/Quarto build; preference runtime; notebook-search | T22–T23, T33–T34 | No automatic media or decorative motion. No-JS fallback and network/resource checks; no fabricated offline guarantee. |

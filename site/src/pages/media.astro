@@ -1,4 +1,8 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';import {SITE} from '../data/site.mjs';
+import {isEnabled} from '../data/modules.mjs';
+if(!isEnabled('media'))return Astro.redirect('/explore/');
+import PortfolioPage from '../components/PortfolioPage.astro';
 ---
-<BaseLayout title="Science communication" description="Scientific explanations, notebook articles and public communication channels by Isaac Daroch. Recordings are listed only when a real published source is available."><section class="section"><div class="shell prose"><p class="eyebrow">SCIENCE COMMUNICATION</p><h1>Make complex ideas<br/><em>inspectable.</em></h1><p class="lead">Explanations should preserve assumptions, evidence and limits—not just make a result sound impressive.</p><h2>Read and interact</h2><p>The <a href="/research/">research notebook</a> explains representation, observation and reproducibility. The <a href="/projects/#agent-lab">interactive laboratory</a> lets you question a controlled example directly.</p><h2>Video and public talks</h2><p>This section is prepared for future scientific videos and talks. No unpublished recordings, audience counts or speaking engagements are presented as existing results.</p><a class="button button-primary" href={SITE.linkedin}>Follow on LinkedIn ↗</a></div></section></BaseLayout>
+import {isEnabled} from '../data/modules.mjs';
+if(!isEnabled('media'))return Astro.redirect('/explore/');
+<PortfolioPage page="media" lang="en"/>

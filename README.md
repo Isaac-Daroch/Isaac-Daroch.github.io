@@ -1,8 +1,12 @@
 # Isaac Daroch — adaptive intelligence & digital worlds
 
-Integrated static portfolio, Quarto research notebook and a transparent educational agent laboratory. Product source version **1.1.0**. Governing requirements and architecture: **D2**, in `docs/d2/`.
+Integrated static portfolio, Quarto research notebook and a transparent educational agent laboratory. Product source version **1.2.0**. Governing requirements and architecture: **D2**, in `docs/d2/`.
 
 This is the complete integrated source, reconstructed against D2 and the preserved audit/patch descriptions. It is not a byte-for-byte recovery of the earlier uncommitted ZIP. Read `docs/integration/SOURCE_RECONCILIATION.md` for fixture compatibility and the explicit historical observed-cell difference.
+
+## Current multilingual version
+
+The public site is available in English, Spanish, German and Dutch. The main observatory uses a retained-experience neural self-model; historical BFS examples remain supplementary notebook material. The interactive curriculum uses sourced LinkedIn declarations. Empty conference, news and video modules are disabled. Owner editing and activation instructions: [EDITAR_CONTENIDO.md](docs/EDITAR_CONTENIDO.md). Current verification: [version 1.2 report](docs/a11y/test-report.md).
 
 ## Run locally on Windows
 

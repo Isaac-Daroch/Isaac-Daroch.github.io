@@ -1,5 +1,8 @@
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import {renderChrome} from '../site/src/data/chrome.mjs';
+import {NOTES} from '../site/src/data/notes.mjs';
+import {UI} from '../site/public/assets/i18n.mjs';
 
 /**
  * Normalize only trusted, generated anchor URLs belonging to this portfolio.
@@ -20,16 +23,29 @@ export function normalizePortfolioAnchors(html, origin = 'https://isaac-daroch.g
   )).join('');
 }
 
-export function normalizeNotebookLinks(directory) {
+export function normalizeNotebookLinks(directory,prefix='') {
   for (const entry of readdirSync(directory, { withFileTypes: true })) {
     const path = join(directory, entry.name);
-    if (entry.isDirectory()) normalizeNotebookLinks(path);
+    if (entry.isDirectory()) normalizeNotebookLinks(path,prefix+entry.name+'/');
     else if (entry.isFile() && entry.name.endsWith('.html')) {
       const before = readFileSync(path, 'utf8');
-      const after = normalizeSharedAssets(normalizePortfolioAnchors(before));
+      const relative=prefix+entry.name,id=relative.startsWith('notes/')?entry.name.replace(/\.html$/,''):null;
+      const logical=relative==='index.html'?'research':'research/'+relative;
+      const title=id&&NOTES[id]?NOTES[id].title.en:UI.en.notebook;
+      const chrome=renderChrome('en',logical,title,{notebook:true});
+      const after = normalizeSharedAssets(normalizePortfolioAnchors(placeNotebookChrome(before,{chrome})));
       if (after !== before) writeFileSync(path, after);
     }
   }
+}
+
+/** Quarto puts body includes inside main. Move our marked, generated chrome to body landmarks. */
+export function placeNotebookChrome(html,replacement={}){
+ const extract=name=>{const pattern=new RegExp(`<!--portfolio-${name}-start-->([\\s\\S]*?)<!--portfolio-${name}-end-->`,'g');const matches=[...html.matchAll(pattern)];if(!matches.length)return null;if(matches.length!==1)throw new Error('Duplicate notebook chrome: '+name);html=html.replace(pattern,'');return matches[0][1];};
+ const original=extract('chrome'),chrome=original===null?null:replacement.chrome??original,footer=extract('footer');
+ if(chrome!==null){if(!/<body\b/i.test(html)||!/<main\b/i.test(html))throw new Error('Notebook body/main missing');const target='<div id="notebook-content-start" tabindex="-1"></div>';const cleaned=chrome.replace(/<div id="notebook-content-start" tabindex="-1"><\/div>/,'');html=html.replace(/<body\b[^>]*>/i,tag=>tag+cleaned);html=html.replace(/<main\b[^>]*>/i,tag=>tag+target);}
+ if(footer!==null)html=html.replace(/<\/body>/i,footer+'</body>');
+ return html;
 }
 
 /** Only these shared assets belong to the portfolio root, never the notebook root. */

@@ -31,14 +31,14 @@ Full original procedures: `pruebas/PLAN_DE_PRUEBAS.md`. PASS here is limited to 
 | T25 | Reflujo y zoom 400 % | PENDIENTE_MANUAL | 320 CSS px and combined preferences tested. Real 1280-window/400 percent browser zoom pending. Mathematical expressions use a named local scroll region. |
 | T26 | Espaciado simultáneo | PENDIENTE_MANUAL | Automatic structure/interaction checks support this case; human reading, perception or physical-device acceptance has not been performed. |
 | T27 | Modo lectura y fuente del sistema | PENDIENTE_MANUAL | Automatic structure/interaction checks support this case; human reading, perception or physical-device acceptance has not been performed. |
-| T28 | Idiomas y localización | PENDIENTE_MANUAL | English primary preserved; actual Spanish preferences/map/entry pages label English-only destinations. Scientific translation and human proofreading pending. |
+| T28 | Idiomas y localización | PENDIENTE_MANUAL | All published routes in en/es/de/nl; dictionary parity, equivalent-page links and localized runtime status/search checked. Human scientific/linguistic proofreading remains pending. |
 | T29 | Figuras, diagramas y datos | PENDIENTE_MANUAL | World/model grids have named figures and chronological HTML transcript; no clinical charts/data invented. Human alternative-quality review pending. |
-| T30 | Tablas | PENDIENTE_MANUAL | Dynamic comparison table captions, row/column headers and local scroll retained. Human screen-reader table navigation pending. |
+| T30 | Tablas | PENDIENTE_MANUAL | The main agent uses text cards and utility definitions; supplementary note tables retain semantics and local scrolling. Human screen-reader navigation pending. |
 | T31 | Matemáticas | PENDIENTE_MANUAL | Native MathML, explanatory variables and selectable LaTeX present. Actual math navigation/duplicate announcement check with screen reader pending. |
-| T32 | Documentos descargables | PENDIENTE_MANUAL | No owned PDF/CV download/source in baseline. HTML about page preserved; article publisher controlled externally. No PDF accessibility result claimed. |
+| T32 | Documentos descargables | PENDIENTE_MANUAL | Interactive sourced HTML CV and browser print/save PDF added. Filtered printing includes all published entries. PDF/UA and human document navigation are not claimed. |
 | T33 | JavaScript desactivado y error de carga | PASS | Automatic structure/interaction checks support this case; human reading, perception or physical-device acceptance has not been performed. |
 | T34 | Datos reducidos y terceros | PENDIENTE_MANUAL | No unsolicited external requests or 3D/motion bundles on home. Resource bytes and gzip size recorded; unavailable external media cannot be reviewed. |
-| T35 | Arrastre y gestos equivalentes | NO_APLICA | No mandatory drag task, multipoint gesture, map or gallery in inventory; replay uses native range plus arrow keys and native track clicks. |
+| T35 | Arrastre y gestos equivalentes | NO_APLICA | No mandatory drag task, multipoint gesture, map or gallery in inventory; the new observatory uses labeled buttons, inputs and selects. |
 | T36 | Tacto, cancelación, orientación y tamaño | PENDIENTE_MANUAL | Automated target sizes and portrait/landscape viewport checks. Physical touch and cancellation on device pending. |
 | T37 | Etiquetas y control por voz | PENDIENTE_MANUAL | Native visible labels inspected; real voice-control tool not used. |
 | T38 | Tooltips, desplegables y acordeones | PENDIENTE_MANUAL | Automatic structure/interaction checks support this case; human reading, perception or physical-device acceptance has not been performed. |

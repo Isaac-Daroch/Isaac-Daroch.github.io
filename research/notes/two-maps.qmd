@@ -1,6 +1,7 @@
 ---
 title: "Two maps: the world and its representation"
 description: "An educational distinction between environment state, local observation and the model used to plan."
+include-before-body: headers/two-maps.html
 ---
 
 ## A representation is not the environment

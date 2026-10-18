@@ -1,7 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { normalizePortfolioAnchors, normalizeSharedAssets } from '../tools/normalize-quarto-links.mjs';
+import { normalizePortfolioAnchors, normalizeSharedAssets,placeNotebookChrome } from '../tools/normalize-quarto-links.mjs';
 const origin = 'https://isaac-daroch.github.io';
+test('Generated notebook chrome sits outside main and skip target precedes article',()=>{
+ const input='<body><main><!--portfolio-chrome-start--><header>Navigation</header><div id="notebook-content-start" tabindex="-1"></div><!--portfolio-chrome-end--><h1>Article</h1><!--portfolio-footer-start--><footer>Contact</footer><!--portfolio-footer-end--></main></body>';
+ const output=placeNotebookChrome(input);assert.ok(output.startsWith('<body><header>'));assert.ok(output.includes('<main><div id="notebook-content-start"'));assert.ok(output.endsWith('</main><footer>Contact</footer></body>'));assert.equal(placeNotebookChrome(output),output);
+});
 
 test('shared includes use portfolio-root assets without changing other URLs or script contents',()=>{
  const input=`<link rel="stylesheet" href="${origin}/assets/paletas.css"><script src="${origin}/assets/preferences-runtime.mjs"></script><link rel="canonical" href="${origin}/assets/other.css"><script>const x="${origin}/assets/paletas.css";</script>`;

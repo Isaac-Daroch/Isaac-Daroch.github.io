@@ -1,4 +1,8 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import {isEnabled} from '../data/modules.mjs';
+if(!isEnabled('news'))return Astro.redirect('/explore/');
+import PortfolioPage from '../components/PortfolioPage.astro';
 ---
-<BaseLayout title="Commented news" description="Primary-source news with dates, evidence and commentary kept distinct."><div class="shell page-header"><h1>Commented news</h1></div><div class="shell prose"><p class="empty-state">No commented news items have been selected for this archive. Future entries will distinguish the event date, source publication date, verified facts and Isaac’s commentary.</p><p><a href="/research/">Read the scientific notebook</a> or <a href="/contact/">contact Isaac</a>.</p></div></BaseLayout>
+import {isEnabled} from '../data/modules.mjs';
+if(!isEnabled('news'))return Astro.redirect('/explore/');
+<PortfolioPage page="news" lang="en"/>

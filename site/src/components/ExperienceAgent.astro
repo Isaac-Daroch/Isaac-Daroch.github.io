@@ -1,0 +1,18 @@
+---
+import {UI} from '../../public/assets/i18n.mjs';
+interface Props {lang?:'en'|'de'|'nl'|'es'}
+const {lang='en'}=Astro.props,t=UI[lang];
+---
+<section id="self-observatory" class="agent-observatory" aria-labelledby="agent-heading">
+<div class="agent-heading"><div><p class="eyebrow">{t.architecture}</p><h2 id="agent-heading">{t.agentTitle}</h2><p>{t.agentIntro}</p></div><div class="agent-signature" aria-hidden="true"><span>01</span><span>SELF / MODEL</span></div></div>
+<p id="self-startup" class="notice">{t.noJs}</p>
+<div class="agent-command-bar" data-no-speech><button id="self-step" class="button-primary" disabled>{t.decision}</button><button id="self-run" disabled>{t.run}</button><button id="self-reset" disabled>{t.resetAgent}</button><span class="model-identity">MLP · 4 → 8 → 6 → 1</span></div>
+<p id="self-status" class="agent-status" role="status">{t.agentReady}</p>
+<div class="agent-workspace"><section class="agent-panel state-panel" aria-labelledby="internal-heading"><p class="panel-number">01</p><h3 id="internal-heading">{t.internal}</h3><form id="self-state-form" novalidate data-no-speech><div class="state-controls">{[['energy',t.energy,85],['fatigue',t.fatigue,15],['difficulty',t.difficulty,45],['selfInfluence',t.selfModel,100]].map(([key,label,value])=><label for={'self-'+key}>{label} (%)<input id={'self-'+key} type="number" min="0" max="100" step="1" value={value} required disabled/></label>)}</div><label for="self-request">{t.request}<select id="self-request" disabled><option value="none">{t.noRequest}</option><option value="precision">{t.precision}</option><option value="analysis">{t.analysis}</option></select></label><button type="submit" id="self-apply" disabled>{t.applyState}</button><p id="self-input-error" role="status"></p></form><dl id="self-metrics" class="agent-metrics"></dl></section>
+<section class="agent-panel model-panel" aria-labelledby="model-heading"><p class="panel-number">02</p><h3 id="model-heading">{t.selfModel}</h3><div class="neural-diagram" aria-hidden="true"><div class="neural-layer">{Array.from({length:4},()=> <i/>)}</div><span>→</span><div class="neural-layer">{Array.from({length:8},()=> <i/>)}</div><span>→</span><div class="neural-layer">{Array.from({length:6},()=> <i/>)}</div><span>→</span><div class="neural-layer"><i/></div></div><div id="self-predictions" class="prediction-list"></div><p class="model-note">{t.retentionNote}</p></section></div>
+<section class="agent-panel decision-panel" aria-labelledby="decision-heading"><p class="panel-number">03</p><h3 id="decision-heading">{t.alternatives}</h3><div id="self-alternatives" class="decision-alternatives"></div></section>
+<section class="agent-panel" aria-labelledby="compare-heading"><h3 id="compare-heading">{t.counterfactual}</h3><p>{t.counterNote}</p><div id="self-comparison" class="comparison-grid"></div></section>
+<div class="agent-workspace"><section class="agent-panel memory-panel" aria-labelledby="memory-heading"><h3 id="memory-heading">{t.memory}</h3><p>{t.retention}</p><ol id="self-memory" class="memory-list"></ol></section><section class="agent-panel journal-panel" aria-labelledby="journal-heading"><h3 id="journal-heading">{t.history}</h3><ol id="self-journal" class="journal-list" tabindex="0" aria-label={t.history}></ol></section></div>
+<details class="agent-exports" data-no-speech><summary>{t.export} / {t.import}</summary><div class="actions"><button id="self-export" disabled>{t.export}</button><label for="self-import">{t.import}<input id="self-import" type="file" accept=".json,application/json" disabled/></label></div><p id="self-import-status" role="status"></p></details>
+</section>
+<script>import '../scripts/experience-observatory.js';</script>
