@@ -1,3 +1,30 @@
 [
- {"id":"daroch2026-governed","title":"A Governed NL-to-SQL Architecture for Reliable Clinical Data Querying and Outpatient Schedule Monitoring","authors":["Isaac Daroch","Matías Rojas Cabrera","Rodrigo Muñoz Andrade","Alejandra Fernández","Juan Pablo Vásconez"],"year":2026,"journal":"Big Data and Cognitive Computing","volume":"10","number":"8","articleNumber":"258","doi":"10.3390/bdcc10080258","status":"source-recorded","evidenceUrl":"https://doi.org/10.3390/bdcc10080258","institutionalUrl":"https://researchers.unab.cl/en/publications/a-governed-nl-to-sql-architecture-for-reliable-clinical-data-quer/","recordedAt":"2026-10-17","verifiedAt":null,"provenance":"Bibliographic record retained from the audited portfolio and its D1 documentation. Software integration does not revalidate experimental results.","owner":"Isaac Daroch"}
+  {
+    "id": "daroch2026-governed",
+    "title": "A Governed NL-to-SQL Architecture for Reliable Clinical Data Querying and Outpatient Schedule Monitoring",
+    "authors": [
+      "Isaac Daroch",
+      "Matías Rojas Cabrera",
+      "Rodrigo Muñoz Andrade",
+      "Alejandra Fernández",
+      "Juan Pablo Vásconez"
+    ],
+    "year": 2026,
+    "journal": "Big Data and Cognitive Computing",
+    "volume": "10",
+    "number": "8",
+    "articleNumber": "258",
+    "doi": "10.3390/bdcc10080258",
+    "status": "verified",
+    "evidenceUrl": "https://doi.org/10.3390/bdcc10080258",
+    "institutionalUrl": "https://researchers.unab.cl/en/publications/a-governed-nl-to-sql-architecture-for-reliable-clinical-data-quer/",
+    "recordedAt": "2026-10-17",
+    "verifiedAt": "2026-10-18",
+    "provenance": "Bibliography and Published - Aug 2026 status checked against the UNAB institutional record on 2026-10-18. This is not replication or independent validation of experimental findings.",
+    "owner": "Isaac Daroch",
+    "language": "en",
+    "publicationStatus": "published",
+    "codeUrl": null,
+    "summary": "A governed, read-only natural-language-to-SQL pilot for outpatient schedule queries; see the research page for explanations and limitations."
+  }
 ]

@@ -1,6 +1,34 @@
 {
- "name":"isaac-daroch-research","version":"1.1.0","private":true,"type":"module","engines":{"node":">=22.22.0","npm":">=10"},
- "scripts":{"dev":"node ../tools/build-research.mjs && astro dev --host 127.0.0.1","build":"node ../tools/preflight.mjs && node ../tools/generate-content.mjs && node ../tools/build-research.mjs && astro build && node ../tools/verify-dist.mjs","preview":"astro preview --host 127.0.0.1","check":"astro check","test":"node ../tools/run-tests.mjs","check-js":"node ../tools/check-js.mjs","check:architecture":"node ../tools/architecture.mjs","test:e2e":"playwright test","test:all":"npm run check-js && npm test && npm run check:architecture && npm run check && npm run build && npm run test:e2e"},
- "dependencies":{"astro":"7.4.0","gsap":"3.13.0","three":"0.186.1"},
- "devDependencies":{"@astrojs/check":"0.9.10","@axe-core/playwright":"4.14.0","@playwright/test":"1.64.1","typescript":"6.0.3"}
+  "name": "isaac-daroch-research",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.0",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "dev": "node ../tools/generate-grafito.mjs && node ../tools/generate-content.mjs && node ../tools/build-research.mjs && astro dev --host 127.0.0.1",
+    "build": "node ../tools/preflight.mjs && node ../tools/generate-grafito.mjs && node ../tools/generate-content.mjs && node ../tools/build-research.mjs && astro build && node ../tools/verify-dist.mjs",
+    "preview": "astro preview --host 127.0.0.1",
+    "check": "astro check",
+    "test": "node ../tools/run-tests.mjs",
+    "check-js": "node ../tools/check-js.mjs",
+    "check:architecture": "node ../tools/architecture.mjs",
+    "check:contrast": "python -m unittest discover -s ../pruebas -p test_*.py && python ../pruebas/verificar_contrastes.py",
+    "check:palettes": "node ../tools/generate-grafito.mjs --check",
+    "test:e2e": "playwright test",
+    "test:all": "npm run check-js && npm test && npm run check:architecture && npm run check && npm run check:contrast && npm run build && npm run check:palettes && npm run test:e2e"
+  },
+  "dependencies": {
+    "astro": "7.4.0",
+    "gsap": "3.13.0",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.64.1",
+    "typescript": "6.0.3"
+  }
 }

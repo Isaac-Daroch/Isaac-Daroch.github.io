@@ -1,0 +1,7 @@
+---
+interface Props {lang?:'en'|'es'}
+const {lang='en'}=Astro.props; const es=lang==='es';
+const pages=[['/','Home','Inicio'],['/investigation/','Research questions','Preguntas de investigación'],['/publications/','Publications and citations','Publicaciones y citas'],['/projects/','Projects and code','Proyectos y código'],['/self-model/','Self-model observatory','Observatorio del modelo propio'],['/research/','Scientific notebook','Cuaderno científico'],['/about/','About Isaac and HTML background','Sobre Isaac y trayectoria en HTML'],['/events/','Conferences and field notes','Congresos y bitácora'],['/news/','Commented news','Noticias comentadas'],['/media/','Science communication','Divulgación'],['/teaching/','Teaching','Docencia'],['/contact/','Contact and professional networks','Contacto y redes profesionales'],['/accessibility/','Accessibility and preferences','Accesibilidad y preferencias'],['/privacy/','Privacy and credits','Privacidad y créditos'],['/engineering/','Engineering and verification limits','Construcción y límites de verificación']];
+---
+{es&&<p class="translation-note">La versión principal del sitio está en inglés. El mapa y las preferencias están disponibles en español; los enlaces siguientes identifican las páginas cuya traducción aún no está disponible.</p>}
+<ul class="site-map">{pages.map(([href,en,sp])=><li><a href={es&&href==='/accessibility/'?'/es/accessibility/':href}>{es?sp:en}{es&&href!=='/accessibility/'?' (inglés)':''}</a></li>)}</ul>

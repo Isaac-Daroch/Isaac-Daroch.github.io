@@ -1,26 +1,38 @@
-# Grafito editorial v2 — baseline and implementation plan
+# Observed baseline and correction scope — 18 October 2026
 
-Date: 2026-10-18. Inspected source: `8cb293d4872780bec826221497f2865951c0eeaf` (published 1.1.0). Work branch: `feature/grafito-self-model-v2`. No production deployment authorized by this revision; do not merge or publish automatically. D1/D2 remain historical requirements; this document records the new scope, not a retroactive acceptance.
+Inspected clean source: `addadb814c0c346663a0d7a99933098f6b90e2f5`, branch `main`. Work branch: `fix/grafito-accessibility-complete`. Repository cloned directly from the owner-supplied URL. No pending changes existed in this clone; no AGENTS.md was found in its tree or workspace ancestors. The former baseline remains recoverable in Git; it described an earlier, incomplete revision and remote execution rather than the current Windows evidence.
 
-## Sources and inspected state
+The supplied TXT documents are implementation references under the human request to correct the application. They do not authorize production publication, delete operations or unrelated scope. Their exact bytes and SHA-256 are preserved in `source-specification.txt`, `source-startup.txt` and `source-provenance.json`. Annex E describes preparation of those documents, not current site tests.
 
-The owner supplied `PROMPT_MAESTRO(1).txt`, specification 1.0, and `INSTRUCCION_DE_ARRANQUE(1).txt`. The complete implementation instructions, 24 palettes, 55 WCAG criteria, 42 acceptance scripts and S01–S40 references were read. The palette JSON is reconstructed exactly from Annex A; the text of those files is a specification, not test evidence.
+## Observed in source
 
-Observed in repository: Astro 7.4.0, Quarto reference 1.10.18, Node reference 24.19.0; versioned package-lock; 9 Astro page sources; 5 Quarto sources; BaseLayout shared navigation; CSS/GSAP/Three.js decorative enhancements; a deterministic BFS educational lab with v1/v2 export; D2 governance checks; explicit publication workflow. No AGENTS.md appeared in the recursive tracked tree. Existing public profile links: GitHub, ORCID, LinkedIn and email. Existing publication record had `verifiedAt:null`; the institutional record was separately inspected on 2026-10-18 and identifies an August 2026 published article.
+| Area | Initial state and consequence |
+|---|---|
+| Generators | Static Astro 7.4.0 and Quarto; locked npm dependencies; no framework migration |
+| Local tools used | Node 24.19.0, npm 12.2.0, Quarto 1.10.18, Python 3.13; Windows |
+| Pages | Eleven Astro sources including 404 and Spanish accessibility; five Quarto notes. Header linked missing investigation, observatory, site map, events, news, contact and Spanish sections |
+| Shared templates | `BaseLayout.astro`, shared preference form, legacy home/research/publication/project/contact components |
+| CSS | Generated palette file referenced but generation absent from build/dev. Astro editorial CSS already existed. Quarto used independent darkly/SCSS colors and did not load shared preferences |
+| Navigation | Native details menu, main nav and footer. Obsolete runtime expected a different custom menu contract; no site-map page existed |
+| Search | Quarto full-text search index and popup UI existed. Correction retains index generation and replaces popup access with a native, nonmodal search form on notebook home; base note links remain without JavaScript |
+| Forms | Preferences selects/check box; local JSON episode import and replay slider. No message backend or personal-data form |
+| Dialogs | No owned modal required. Native disclosure is used for preferences/citations and notebook details |
+| Scientific content | Structured MathML, bibliography and selectable code in notes; laboratory world/model figures, metrics, transcript and generated comparison tables |
+| Owned media/documents | Portrait PNG and SVG assets; no owned audio, recorded video, live stream, gallery/map, PDF or downloadable CV source in the inspected tree |
+| Data | One publication record, initially `source-recorded` with null verification date. Existing domain and tests for a separate self-model simulation, but no linked page |
+| External code | Local bundled Astro scripts, Quarto Bootstrap/Tippy/Clipboard and search dependencies; no required third-party analytics or embeds. Old GSAP/Three sources are preserved but not loaded by default |
+| Persistence | v2 local preferences module exists; early migration lost the in-memory migration when persistence failed; obsolete menu listener mismatched template |
+| Language | English primary routes; Spanish preferences only. Other Spanish links had no targets |
+| Deployment | Explicit, approval-gated Pages workflow. Build and PR do not deploy. No service worker, accounts, CMS, database or persistent server introduced |
 
-Observed limitations in code: one dark palette; no full preference form; English only; no event/news archives; internal model in the legacy lab describes the external map, not the agent's own capabilities; narrative needs replacement. Functional helpers must not be discarded with decoration. Navigation, code-copy and original lab routes remain covered by regression tests.
+## Observed in execution before changes
 
-Execution baseline: `.github/workflows/v2-baseline.yml` checks out the immutable source above and executes locked installation, original syntax/unit/architecture/type checks and real Quarto–Astro build. Its logs/artifact are execution evidence. This document does not mark the workflow as passed before it completes. Local ChatGPT container and Python failed to start during this task; compilation is performed on GitHub Actions, not represented as a local Windows run.
+`npm ci`: locked install succeeded, 273 packages installed and no reported vulnerabilities. `npm run check`: zero errors/warnings/hints. `npm test`: 72 passed. Actual `npm run build` rendered Quarto/Astro, then **FAILED** final resource verification: palette CSS and header-linked routes were missing. Logs: evidence bundle `baseline-build.log`, `baseline-check.log`, `baseline-tests.log`. Type checks and unit success did not imply a working website.
 
-## Plan tied to requirement IDs
+## Corrections and execution evidence
 
-1. AUD-01–03/GOV-05: immutable baseline, branch, record provenance and protect source/history.
-2. IA-01–03/SEM/INPUT/COMP: shared semantic layout, stable routes, descriptive links, native controls, keyboard and no-JS fallback. Add complete navigation through a site map, without a mandatory search box.
-3. VIS-01–08/PREF-01–06/READ/ARCH: one JSON for 24 palettes; generate CSS; pure resolution functions; local, session and in-document fallbacks; text scaling, reading, spacing, forced-colors. No decorative motion, WebGL background, overlay or theme-transition animation.
-4. DATA/SCI/MEDIA/LANG: structured editorial archive, truthful statuses, source-linked research summary, events/news/video schema and empty states; English primary, explicit Spanish support; Quarto shares tokens/preferences. No fabricated videos or dates; publication of new media requires its alternatives and editorial review.
-5. New `SM-*` scope: implement a separate, bounded educational self-model observatory; do not relabel BFS. Distinguish designed utility/retention rules from estimates learned online, and experiments from scientific findings.
-6. QA/CI/OUT/DONE: real build and browser checks; 384 token pairs; 55-criterion matrix and 42 cases with manual portions pending. No whole-site WCAG claim. Prepare PR and downloadable evidence without production deployment.
+See `requirements.md` for every requirement, `acceptance-cases.md` for all 42 cases, `wcag-matrix.md` for 55 criteria and `test-report.md` for actual executions. CI and local results apply to their tested tree; no older report is reused as a new PASS.
 
-## Inventory to complete during build
+## Still requiring human or external evidence
 
-Routes, scripts, dependencies and generated resources are captured by CI. No owned audio/video or PDF is added without a verified source and alternative. Native disclosure controls replace a custom preferences modal. Contact uses a verified email, not a nonfunctional send form. News is an editorial archive, not an automatic endorsement or a live feed. No authentication, database, service worker, external analytics or location collection is introduced.
+Real browser zoom 200/400%, NVDA, VoiceOver, TalkBack, voice activation, Windows system forced colors, user comprehension, scientific translation and the meaning of alternatives. Device-level validation is not inferred from desktop automation. Publisher pages are externally controlled. No claim is made that absent video or a nonpublic clinical repository has been supplied.

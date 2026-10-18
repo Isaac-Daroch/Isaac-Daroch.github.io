@@ -55,3 +55,16 @@ It is a fixed deterministic illustration, not a trained world model, learning be
 ## Documentation, status and rights
 
 Start with `docs/d2/README.md`, then `docs/integration/IMPLEMENTATION_MAP.md` and `TESTING.md`. Full manual accessibility testing and field/hardware performance are not certified by automated CI. The portrait is recorded from the owner's public GitHub profile; private photos and identity-document images are excluded. Original-content reuse and third-party licenses are distinct; see `LICENSE`, `THIRD_PARTY_NOTICES.md` and `/privacy/`.
+
+
+## Grafito editorial correction — branch review
+
+The 18 October 2026 correction completes missing linked sections, makes palette
+generation part of dev/build, shares preferences with Quarto, preserves the
+full-text notebook index through a native search form, and documents the supplied
+77 requirements, 55 WCAG criteria and 42 acceptance procedures. English remains
+primary; Spanish entry/map/preferences clearly identify untranslated destinations.
+
+Start the acceptance review at `docs/a11y/test-report.md`. Manual AT/voice/real zoom
+and device acceptance remain pending; no complete WCAG conformance is claimed.
+The Pages publication workflow remains an explicit separate action.

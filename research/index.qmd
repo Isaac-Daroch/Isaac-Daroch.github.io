@@ -5,6 +5,8 @@ description: "Questions, assumptions and transparent experiments about agents, r
 
 This notebook accompanies Isaac Daroch’s portfolio. It separates **research interests**, **educational demonstrations**, **publication records** and **long-term ambitions**.
 
+{{< include search-form.html >}}
+
 ## Start with the distinction
 
 The state of a world and the representation used by an agent need not agree. The portfolio’s local experiment makes that distinction visible without pretending to train a world model.

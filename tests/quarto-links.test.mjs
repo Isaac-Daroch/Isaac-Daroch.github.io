@@ -1,7 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { normalizePortfolioAnchors } from '../tools/normalize-quarto-links.mjs';
+import { normalizePortfolioAnchors, normalizeSharedAssets } from '../tools/normalize-quarto-links.mjs';
 const origin = 'https://isaac-daroch.github.io';
+
+test('shared includes use portfolio-root assets without changing other URLs or script contents',()=>{
+ const input=`<link rel="stylesheet" href="${origin}/assets/paletas.css"><script src="${origin}/assets/preferences-runtime.mjs"></script><link rel="canonical" href="${origin}/assets/other.css"><script>const x="${origin}/assets/paletas.css";</script>`;
+ const output=normalizeSharedAssets(input);
+ assert.ok(output.includes('href="/assets/paletas.css"'));assert.ok(output.includes('src="/assets/preferences-runtime.mjs"'));
+ assert.ok(output.includes(`href="${origin}/assets/other.css"`));assert.ok(output.includes(`const x="${origin}/assets/paletas.css"`));assert.equal(normalizeSharedAssets(output),output);
+});
 
 test('cross-site anchors resolve from the portfolio root', () => {
   assert.equal(normalizePortfolioAnchors(`<a class="back" href="${origin}/publications/">Papers</a>`), '<a class="back" href="/publications/">Papers</a>');

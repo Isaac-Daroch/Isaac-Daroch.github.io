@@ -26,8 +26,17 @@ export function normalizeNotebookLinks(directory) {
     if (entry.isDirectory()) normalizeNotebookLinks(path);
     else if (entry.isFile() && entry.name.endsWith('.html')) {
       const before = readFileSync(path, 'utf8');
-      const after = normalizePortfolioAnchors(before);
+      const after = normalizeSharedAssets(normalizePortfolioAnchors(before));
       if (after !== before) writeFileSync(path, after);
     }
   }
+}
+
+/** Only these shared assets belong to the portfolio root, never the notebook root. */
+export function normalizeSharedAssets(html) {
+  const allowed=['paletas.css','editorial.css','preferences-runtime.mjs','notebook-search.mjs'];
+  return html.replace(/<(?:link|script)\b[^>]*>/gi,tag=>tag.replace(
+    /\b(href|src)=(['"])https:\/\/isaac-daroch\.github\.io\/assets\/([^'"/]+)\2/g,
+    (attribute,name,quote,file)=>allowed.includes(file)?`${name}=${quote}/assets/${file}${quote}`:attribute,
+  ));
 }

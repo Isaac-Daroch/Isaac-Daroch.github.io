@@ -21,3 +21,27 @@ Axe is automated checking, not complete WCAG conformance. A software-rendered CI
 ## Historical comparison
 
 The first integrated domain run found 44 distinct observed cells, while D1 reported 43 for an old source fixture. This is retained in `SOURCE_RECONCILIATION.md` with the failed run ID, separate scenario identity and an independent union-of-observations oracle. Historical reports are not overwritten or relabeled as new test executions.
+
+
+## Grafito integration acceptance (18 October 2026)
+
+The current execution entrypoint is `site/npm run test:all`. For browser binaries use
+`npx playwright install chromium firefox` from `site`. The current suite covers
+all 23 named routes, 24 palette combinations across four representative rendered
+routes, every real template in base light/dark with axe, 320/375/768/1280/1920 CSS
+widths, combined text/spacing/reading, native menu/skip, preferences/tab/denial/quota,
+notebook search/history/error, clipboard refusal/success and retained lab regression.
+The Firefox project runs the explicitly marked cross-browser core subset.
+
+See `docs/a11y/test-report.md`, `acceptance-cases.md` and `wcag-matrix.md` for actual
+results and manual gaps. Full original 42 procedures live in
+`pruebas/PLAN_DE_PRUEBAS.md`. The pre-Grafito browser suite is archived under
+`tests/legacy`; assertions requiring old cinematic controls are superseded by the
+current conservative-motion specification. Meaningful laboratory and artifact
+checks are preserved in the current suite. No automatic result certifies WCAG AA.
+
+`npm run check:contrast` checks the 384 authorized opaque pairs.
+`npm run check:palettes` checks generated CSS against JSON after build.
+The exact palette values are also compared to the attached Annex A in unit tests.
+Native MathML requires a separate real-screen-reader review; a narrow browser
+viewport and site-scale 2 do not replace real browser zoom.

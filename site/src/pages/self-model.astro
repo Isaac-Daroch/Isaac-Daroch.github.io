@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="A bounded self-model observatory" description="Step through the existing educational self-model simulation: inspect internal resources, retained experience, estimated capabilities and decision terms.">
+<div class="shell page-header"><p class="eyebrow">Educational observatory</p><h1>What does an agent<br/><em>estimate about itself?</em></h1><p>A bounded illustration of capability estimates, retained experience and a designed decision rule. This is separate from the world-map laboratory.</p></div>
+<div class="shell prose"><h2>What you can inspect</h2><p>Each step chooses an action using the current internal resources and capability estimates. Observations update the model fitted to retained experience. Energy, fatigue and the retention rule are designed simulation quantities. They do not establish consciousness, biological motivation or general intelligence.</p>
+<section id="self-observatory" aria-labelledby="self-heading"><h2 id="self-heading">Inspect one decision at a time</h2><p id="self-startup" class="notice">This simulation requires JavaScript. Its explanation and <a href="https://github.com/Isaac-Daroch/Isaac-Daroch.github.io/tree/main/site/src/modules/self-model">source code</a> remain available without it.</p>
+<div class="self-toolbar"><button id="self-step" disabled>One decision</button><button id="self-reset" disabled>Reset observatory</button></div>
+<label for="self-request">External task request</label><select id="self-request" disabled><option value="none">No external request</option><option value="precision">Precision task</option><option value="analysis">Analysis task</option></select>
+<p id="self-status" role="status">No simulation started.</p><dl id="self-metrics" class="self-metrics"></dl>
+<h3>Decision terms</h3><p>The alternatives below report the same numeric terms used by the simulation. Values are illustrative utility contributions, not measured scientific performance.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Decision alternatives"><table><caption>Current alternatives and total designed utility</caption><thead><tr><th scope="col">Action</th><th scope="col">Origin</th><th scope="col">Terms</th><th scope="col">Total</th></tr></thead><tbody id="self-alternatives"></tbody></table></div>
+<h3>Retained experience and estimates</h3><pre id="self-state">No state available.</pre>
+</section><h2>Scope and limitations</h2><p>The public application module is reused here without changing its learning or decision rules. The estimator is fitted to a small, bounded memory in a synthetic environment. This illustration does not benchmark deep networks, neural coordination or autonomy outside the supplied rules.</p><p><a href="/investigation/">Return to research questions</a> · <a href="/projects/#agent-lab">Compare the world-map experiment</a></p></div>
+<script>import '../scripts/self-observatory.js';</script>
+</BaseLayout>
