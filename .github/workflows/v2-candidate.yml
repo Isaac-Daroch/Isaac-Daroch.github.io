@@ -2,7 +2,7 @@ name: V2 Grafito and self-model review (no deployment)
 on:
   push:
     branches: [feature/v2-self-model-grafito]
-    paths-ignore: ['docs/**', '.github/workflows/v2-baseline.yml']
+    paths-ignore: ['docs/**', '.github/workflows/v2-baseline.yml', '.github/workflows/v2-source-normalization.yml']
 permissions:
   contents: read
 concurrency:
@@ -10,8 +10,15 @@ concurrency:
   cancel-in-progress: true
 jobs:
   candidate:
-    runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2022]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
@@ -22,37 +29,46 @@ jobs:
       - uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b
         with:
           version: '1.10.18'
-      - name: Inspect exact candidate tools and install locked dependencies
+      - name: Install locked dependencies
         run: |
-          cat site/package.json
-          cat publication-policy.json
-          cat toolchain.json
-          cat site/tsconfig.json || true
+          mkdir -p evidence
+          git rev-parse HEAD > evidence/source-commit.txt
+          node --version > evidence/environment.txt
+          npm --version >> evidence/environment.txt
+          quarto --version >> evidence/environment.txt
           cd site
           npm ci
       - name: Verify existing and new source mechanisms
         run: |
           set -euo pipefail
-          mkdir -p evidence
-          node --test tests/self-model.test.mjs tests/preferences.test.mjs 2>&1 | tee evidence/v2-unit.log
-          node tools/verify-contrast.mjs
+          node tools/verify-contrast.mjs 2>&1 | tee evidence/v2-contrast.log
           cd site
-          npm test 2>&1 | tee ../evidence/legacy-source.log
+          npm test 2>&1 | tee ../evidence/v2-unit.log
           npm run check 2>&1 | tee ../evidence/v2-types.log
       - name: Build actual combined site
         run: |
           set -euo pipefail
           node tools/build-v2.mjs 2>&1 | tee evidence/v2-build.log
-      - name: Preserve current source and built preview
+      - name: Install browsers for real compiled-page checks
+        if: runner.os == 'Linux'
+        run: cd site && npx playwright install --with-deps chromium firefox
+      - name: Run scoped browser checks without suppressing failures
+        if: runner.os == 'Linux'
+        run: |
+          set -euo pipefail
+          cd site
+          npx playwright test --config=playwright.v2.config.mjs 2>&1 | tee ../evidence/v2-browser.log
+      - name: Preserve source, documentation and preview
         if: always()
         run: |
           mkdir -p review-package
           git archive --format=zip HEAD -o review-package/IsaacDaroch-v2-source.zip
-          if test -d site/dist; then (cd site/dist && zip -q -r ../../review-package/IsaacDaroch-v2-preview.zip .); fi
+          node --input-type=module -e 'import fs from "node:fs"; fs.writeFileSync("review-package/REVIEW-STATUS.txt",`Candidate source: ${process.env.GITHUB_SHA}\nWorkflow: ${process.env.GITHUB_RUN_ID}\nOperating system: ${process.platform}\nInspect evidence logs and workflow conclusion. Artifact availability does not mean tests passed. No production deployment.\n`);'
+          if test -d site/dist; then (cd site/dist && 7z a -tzip ../../review-package/IsaacDaroch-v2-preview.zip . >/dev/null); fi
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
-          name: v2-review
+          name: v2-review-${{ matrix.os }}
           path: |
             evidence/
             review-package/
