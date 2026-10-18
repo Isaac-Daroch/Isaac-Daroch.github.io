@@ -1,0 +1,24 @@
+name: V2 notebook integration inspection
+on:
+  push:
+    branches: [feature/v2-self-model-grafito]
+    paths: [.github/workflows/v2-inspect-notebook.yml]
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Print exact checked-out notebook and integration code
+        run: |
+          git rev-parse HEAD
+          git ls-files 'research/*' 'tools/*' 'site/public/*'
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';import {execFileSync} from 'node:child_process';
+          const files=execFileSync('git',['ls-files','research','tools','site/package.json'],{encoding:'utf8'}).trim().split('\n');
+          for(const f of files){if(f.endsWith('.qmd')||/build-site|build-research|verify-dist|generate-content|package.json$/.test(f)){console.log('\n===== '+f+' =====\n'+fs.readFileSync(f,'utf8'));}}
+          NODE
