@@ -1,0 +1,46 @@
+---
+title: "Protocol: the deterministic gridworld"
+description: "Coordinates, prior knowledge, local observation, intervention and stopping conditions of the agent laboratory."
+---
+
+## Scenario identity
+
+Implementation: `gridworld-d2-1.1.0`. Map: `corridor-16x10-d2`. This explicit fixture reconstructs the documented corridor experiment and has its own identity; old uncommitted files are not claimed to be byte-identical.
+
+The board has 16 columns and 10 rows. Coordinates start at zero; x points right and y points down. Start: `(2,5)`. Goal: `(13,5)`. The boundary is closed. A vertical wall at x = 8 covers y = 1…7, except the initial opening `(8,5)`; the lower bypass remains available.
+
+## Inputs and prior
+
+The initial true world and internal map are independent copies of a programmer-supplied map. Movement is cardinal, each successful move costs one, and the planner is breadth-first search. The default neighbor order is east, south, west, north.
+
+## Operator intervention
+
+Once per episode, before the agent reaches x ≥ 8 or terminates, the operator can close `(8,5)` and open `(8,7)`. Only the true world changes. The model is not globally synchronized.
+
+## One logical tick
+
+1. Observe the current cell and cardinal neighbors.
+2. Record occupancy contradictions.
+3. Under the revisable policy, correct only contradicted cells that were actually observed.
+4. Replan on the internal map. A correction tick does not move.
+5. Otherwise, follow the first BFS action if physically possible. A shared guard prevents entering a true wall.
+6. Finish at the goal, when no route exists, or when the physical guard stops the frozen policy. There is a finite execution limit.
+
+```javascript
+const episode = createEpisode();
+episode.intervene();
+while (!episode.snapshot().done) episode.step();
+const record = episode.exportEpisode();
+```
+
+This is a source example, not code automatically executed by Quarto.
+
+## Measurements and boundaries
+
+Moves are successful actions; ticks are logical updates, not seconds of cognition. Contradictions and corrections need not agree under the frozen policy. Prevented moves are reported separately. Counts depend on the exact map, order and observation schedule.
+
+The historical D1 document reports 11 moves without intervention and 15 moves/17 ticks with intervention. Those path/tick oracles are tested. The D2 reconstruction produces its own observed-cell fixture rather than falsely relabeling a historical count. See the source reconciliation record for the explicit difference.
+
+The baseline does not actively explore when its map has no route. No training or general learning performance is implied.
+
+[Replay and comparison protocols](episode-replay.qmd) · [Laboratory](https://isaac-daroch.github.io/projects/#agent-lab)

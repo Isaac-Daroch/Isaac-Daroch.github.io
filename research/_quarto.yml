@@ -1,0 +1,43 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - notes/two-maps.qmd
+    - notes/demo-protocol.qmd
+    - notes/reproducibility.qmd
+    - notes/episode-replay.qmd
+  resources:
+    - references.bib
+website:
+  title: "Isaac Daroch · Research Notebook"
+  site-url: https://isaac-daroch.github.io/research/
+  navbar:
+    left:
+      - href: index.qmd
+        text: Notebook
+      - href: notes/two-maps.qmd
+        text: Two maps
+      - href: notes/demo-protocol.qmd
+        text: Protocol
+      - href: notes/episode-replay.qmd
+        text: Replay
+    right:
+      - href: https://isaac-daroch.github.io/
+        text: Portfolio
+      - href: https://isaac-daroch.github.io/projects/#agent-lab
+        text: Agent lab
+  search: true
+  page-footer: "Educational notes · explicit assumptions and limitations · Isaac Daroch"
+bibliography: references.bib
+format:
+  html:
+    theme: [darkly, theme.scss]
+    css: notebook.css
+    toc: true
+    html-math-method: mathml
+    code-copy: true
+    lang: en
+execute:
+  eval: false
+  freeze: false

@@ -1,0 +1,30 @@
+---
+title: "Two maps: the world and its representation"
+description: "An educational distinction between environment state, local observation and the model used to plan."
+---
+
+## A representation is not the environment
+
+Let $W_t$ denote the true environment, $M_t$ the map used for planning, and $o_t$ the local observation. In the educational demonstration, an operator can change $W_t$ without directly changing $M_t$.
+
+$$o_t = \operatorname{observe}(W_t, p_t), \qquad M_{t+1}=\operatorname{revise}(M_t,o_t).$$
+
+These are descriptive functions for a programmed example, not learned neural networks. The initial map is supplied by the programmer; no autonomous mapping is claimed.
+
+## The knowledge boundary
+
+The visitor can see the full world in the left panel. The planner cannot use that panel’s data. It receives only its internal map. The sensor observes the current cell and its four cardinal neighbors, a Manhattan radius of one.
+
+A global view for explanation must not become hidden privileged information for the agent. That separation is tested at the domain boundary.
+
+## What a contradiction means here
+
+A contradiction is a binary occupancy mismatch: a cell thought open is observed blocked, or vice versa. The revisable policy corrects that cell and replans; a revision consumes one logical tick without a movement.
+
+The frozen policy receives observations but does not update its model. A common physical guard prevents entry into a true wall. Stopping at that wall is not an invented act of learning.
+
+## What is outside this example
+
+There is no stochastic state estimation, deep learning, reinforcement learning, semantic concept acquisition, consciousness or physical robot. These remain different research problems. A colorful grid or 3D scene does not change the algorithm’s scope.
+
+[Inspect the implementation protocol](demo-protocol.qmd) · [Try the experiment](https://isaac-daroch.github.io/projects/#agent-lab)

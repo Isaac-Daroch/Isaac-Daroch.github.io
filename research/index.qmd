@@ -1,0 +1,30 @@
+---
+title: "A notebook for inspectable intelligence"
+description: "Questions, assumptions and transparent experiments about agents, representations and adaptation."
+---
+
+This notebook accompanies Isaac Daroch’s portfolio. It separates **research interests**, **educational demonstrations**, **publication records** and **long-term ambitions**.
+
+## Start with the distinction
+
+The state of a world and the representation used by an agent need not agree. The portfolio’s local experiment makes that distinction visible without pretending to train a world model.
+
+- [Two maps: world and representation](notes/two-maps.qmd).
+- [Protocol: what the gridworld actually does](notes/demo-protocol.qmd).
+- [Deterministic replay and two distinct comparisons](notes/episode-replay.qmd).
+- [What reproducibility does—and does not—establish](notes/reproducibility.qmd).
+
+[Open the interactive laboratory](https://isaac-daroch.github.io/projects/#agent-lab) or [return to the portfolio](https://isaac-daroch.github.io/).
+
+## Publication sources
+
+The portfolio separately records the clinical NL-to-SQL publication @daroch2026-governed. Its bibliographic information is generated from the same catalog used by the portfolio. These notes do not re-audit that study and the gridworld is not an experiment from it.
+
+## Reading without extra services
+
+Equations are emitted as MathML; this notebook does not depend on a remote inference service. Code samples below are explanatory and are not executed on a visitor’s device unless the visitor runs them independently.
+
+## References
+
+::: {#refs}
+:::

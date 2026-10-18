@@ -1,0 +1,100 @@
+name: Integrated website verification
+on:
+  push:
+    branches: [release/integrated-d2, main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: integrated-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    name: Product verification / ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2022]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      ASTRO_TELEMETRY_DISABLED: '1'
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24.19.0'
+      - uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b
+        with:
+          version: '1.10.18'
+      - name: Install locked dependencies
+        working-directory: site
+        run: npm ci
+      - name: Source syntax, domain, contracts and restoration fault tests
+        run: |
+          set -euo pipefail
+          mkdir -p evidence
+          cd site
+          npm run check-js 2>&1 | tee ../evidence/syntax.log
+          npm test 2>&1 | tee ../evidence/unit-contracts.log
+          npm run check:architecture 2>&1 | tee ../evidence/architecture.log
+          npm run check 2>&1 | tee ../evidence/astro-check.log
+      - name: Validate D2 registry separately
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests/governance -p 'test*.py' -v 2>&1 | tee evidence/documentation-tests.log
+          python tools/governance/validate_d2.py --out build-docs --test-log evidence/documentation-tests.log
+      - name: Build actual Quarto and Astro output
+        working-directory: site
+        run: |
+          set -euo pipefail
+          npm run build 2>&1 | tee ../evidence/build.log
+      - name: Parse wrappers with Windows PowerShell 5.1
+        if: runner.os == 'Windows'
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          foreach($file in @('ACTUALIZAR-WEB.ps1','RESTABLECER-WEB.ps1','INICIAR-WEB.ps1')) {
+            $tokens=$null; $errors=$null
+            [System.Management.Automation.Language.Parser]::ParseFile((Join-Path $PWD $file),[ref]$tokens,[ref]$errors) | Out-Null
+            if($errors.Count -gt 0) { throw ($errors | Out-String) }
+          }
+          Write-Output 'All entry scripts parsed by Windows PowerShell 5.1.'
+      - name: Install Chromium for actual compiled-site tests
+        if: runner.os == 'Linux'
+        working-directory: site
+        run: npx playwright install --with-deps chromium
+      - name: Run browser and accessibility checks against actual dist
+        if: runner.os == 'Linux'
+        working-directory: site
+        run: npm run test:e2e
+      - name: Record resolved license inventory and source package
+        run: |
+          node tools/third-party.mjs
+          python tools/package-source.py
+      - name: Preserve verification evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: verification-${{ matrix.os }}
+          path: |
+            evidence/
+            site/test-results/
+            site/playwright-report/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Preserve verified site artifact
+        if: success() && runner.os == 'Linux'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: verified-static-site
+          path: site/dist/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
