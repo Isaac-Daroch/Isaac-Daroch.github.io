@@ -19,7 +19,10 @@
     "test:all": "npm run check-js && npm test && npm run check:architecture && npm run check && npm run build && npm run test:e2e",
     "build:v2": "node ../tools/build-v2.mjs",
     "test:v2": "node --test ../tests/self-model.test.mjs ../tests/preferences.test.mjs",
-    "test:visual-tokens": "node ../tools/verify-contrast.mjs"
+    "test:visual-tokens": "node ../tools/verify-contrast.mjs",
+    "prebuild": "node ../tools/generate-visual.mjs",
+    "predev": "node ../tools/generate-visual.mjs",
+    "test:a11y": "playwright test --config=playwright.v2.config.mjs"
   },
   "dependencies": {
     "astro": "7.4.0",

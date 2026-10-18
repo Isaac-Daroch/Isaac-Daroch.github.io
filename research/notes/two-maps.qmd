@@ -27,4 +27,4 @@ The frozen policy receives observations but does not update its model. A common 
 
 There is no stochastic state estimation, deep learning, reinforcement learning, semantic concept acquisition, consciousness or physical robot. These remain different research problems. A colorful grid or 3D scene does not change the algorithm’s scope.
 
-[Inspect the implementation protocol](demo-protocol.qmd) · [Try the experiment](https://isaac-daroch.github.io/projects/#agent-lab)
+[Inspect the implementation protocol](demo-protocol.qmd) · [Try the experiment](https://github.com/Isaac-Daroch/Isaac-Daroch.github.io/tree/main/site/src/modules/agent-lab)

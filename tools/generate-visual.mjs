@@ -1,4 +1,4 @@
-import fs from 'node:fs/promises';import path from 'node:path';import {pathToFileURL} from 'node:url';
+import fs from 'node:fs/promises';import path from 'node:path';import {pathToFileURL,fileURLToPath} from 'node:url';
 export async function generateVisual(root){
  const data=JSON.parse(await fs.readFile(path.join(root,'tokens/paletas-grafito.json'),'utf8'));
  if(Object.keys(data.palettes).length!==24)throw Error('Expected exactly 24 canonical palettes');
@@ -16,4 +16,4 @@ export async function generateVisual(root){
  await fs.writeFile(path.join(out,'early.js'),early);
  return {palettes:24,source:'tokens/paletas-grafito.json',assets:['tokens.css','editorial.css','early.js','domain.mjs','browser.mjs']};
 }
-if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)console.log(await generateVisual(path.resolve('.')));
+if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)console.log(await generateVisual(fileURLToPath(new URL('..',import.meta.url))));
