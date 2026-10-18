@@ -1,0 +1,48 @@
+name: V2 pinned baseline (no deployment)
+on:
+  push:
+    branches: [feature/v2-self-model-grafito]
+    paths: [.github/workflows/v2-baseline.yml]
+permissions:
+  contents: read
+jobs:
+  baseline:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: 8cb293d4872780bec826221497f2865951c0eeaf
+          persist-credentials: false
+      - name: Inspect instructions, inventory and integration sources
+        shell: bash
+        run: |
+          git status --short
+          git rev-parse HEAD
+          git ls-files
+          while IFS= read -r file; do echo "===== INSTRUCTIONS: $file ====="; cat "$file"; done < <(git ls-files '*AGENTS.md' '*CLAUDE.md')
+          for file in publication-policy.json toolchain.json site/astro.config.mjs site/playwright.config.mjs research/_quarto.yml research/notebook.css site/src/components/Publications.astro site/src/components/Contact.astro site/src/pages/projects.astro site/src/pages/publications.astro site/src/pages/about.astro site/src/pages/media.astro site/src/pages/teaching.astro tools/verify-dist.mjs tools/generate-content.mjs tools/architecture.mjs; do echo "===== SOURCE: $file ====="; if test -f "$file"; then cat "$file"; fi; done
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24.19.0'
+      - uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b
+        with:
+          version: '1.10.18'
+      - name: Build unchanged reference
+        shell: bash
+        env:
+          ASTRO_TELEMETRY_DISABLED: '1'
+        run: |
+          set -euo pipefail
+          mkdir -p evidence
+          cd site
+          npm ci
+          npm test 2>&1 | tee ../evidence/baseline-unit.log
+          npm run check 2>&1 | tee ../evidence/baseline-types.log
+          npm run build 2>&1 | tee ../evidence/baseline-build.log
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: v2-baseline-evidence
+          path: evidence/
+          retention-days: 30
