@@ -1,6 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {ExperienceAgent,fitNeural,predict,replay,MAX_BYTES} from '../site/src/modules/experience-agent/index.mjs';
+import {ExperienceAgent,fitNeural,predict,replay,MAX_BYTES,portableExp} from '../site/src/modules/experience-agent/index.mjs';
 const episode=(id,outcome)=>({id,tick:id,task:'precision',energy:.8,fatigue:.2,difficulty:.4,predicted:.5,outcome});
+test('Portable activation arithmetic approximates exp throughout its bounded operating range',()=>{for(let n=-300;n<=300;n++){const x=n/10;assert.ok(Math.abs(portableExp(x)/Math.exp(x)-1)<5e-15);}});
 test('Retained learned self-model changes an endogenous choice under the same current state',()=>{
  const agent=new ExperienceAgent();agent.run(2);const before=agent.snapshot(),comparison=agent.compare();assert.equal(before.request,'none');
  assert.equal(comparison.actual.selected.action,'probe-precision');assert.equal(comparison.withoutSelf.selected.action,'probe-analysis');

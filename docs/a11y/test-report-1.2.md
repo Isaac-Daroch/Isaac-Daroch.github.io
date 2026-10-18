@@ -20,14 +20,14 @@ Windows; Node 24.19.0, npm 12.2.0, Python 3.13, Quarto 1.10.18, Astro 7.4.0, Typ
 
 | Comprobación | Resultado observado | Alcance |
 |---|---|---|
-| `npm test` | 92 pruebas aprobadas | Dominios anteriores, agente neuronal, memoria, contrafactuales, importación, idiomas, CV y activación de módulos |
+| `npm test` | 93 pruebas aprobadas | Dominios anteriores, agente neuronal, memoria, contrafactuales, importación, idiomas, CV y activación de módulos |
 | `npm run check` | 0 errores, advertencias o hints | 74 archivos analizados por Astro |
 | `npm run check-js` | Sintaxis válida | Módulos, herramientas y pruebas |
 | `npm run check:architecture` | Sin infracciones | Fronteras del laboratorio histórico; agente nuevo comprobado por contratos puros |
 | `npm run build` | 77 salidas Astro, 6 páginas Quarto; 128 archivos, cero recursos internos ausentes | Cuatro páginas de error y tres redirecciones `noindex`; 76 páginas de contenido |
 | `npm run check:palettes` | 24 combinaciones iguales al JSON | Tokens de los anexos conservados |
 | `npm run check:contrast` | 384 pares, cero fallos; 3 pruebas del verificador aprobadas | Pares opacos; no certificación perceptiva |
-| `npm run test:e2e` | 55 pruebas aprobadas | Chromium y recorridos compartidos en Firefox; JSON y trazas separados de fallos anteriores |
+| `npm run test:e2e` | 56 pruebas aprobadas | Chromium y recorridos compartidos en Firefox; JSON y trazas separados de fallos anteriores |
 | axe en las 76 páginas en claro y oscuro | Cero infracciones automáticas detectadas | Criterios A/AA seleccionados por axe; sin cobertura manual completa |
 | Contraste renderizado en las 24 paletas | Cero fallos de texto en cinco tipos de página | Preferencias, artículo, agente con resultados, CV y código Quarto; mínimo 4,5:1 o 7:1 en alto contraste |
 | Reflujo | Sin desbordamiento a 320/375/768/1280/1920; combinación de texto 200 %, espaciado, oscuro, monocromo y lectura a 320 | Emulación CSS; no zoom real ni dispositivo físico |
@@ -35,7 +35,7 @@ Windows; Node 24.19.0, npm 12.2.0, Python 3.13, Quarto 1.10.18, Astro 7.4.0, Typ
 | Voz | Inicio voluntario, idioma, pausa/continuación/detención y falta de voz con API simulada | Sin audición física ni proveedor real comprobados |
 | Gobernanza documental | 18 pruebas Python y validador D2 aprobados | Registro documental separado del producto |
 
-Las pruebas iniciales detectaron colores de Bootstrap en desplegables y desbordamiento de la red decorativa bajo ampliación extrema. Se corrigieron los consumidores de tokens y la composición. Una expectativa de URL relativa se corrigió para aceptar la URL absoluta equivalente de Quarto. La inspección visual motivó la comprobación expresa de migas y equivalencias por nota.
+Las pruebas iniciales detectaron colores de Bootstrap en desplegables y desbordamiento de la red decorativa bajo ampliación extrema. Se corrigieron los consumidores de tokens y la composición. Una expectativa de URL relativa se corrigió para aceptar la URL absoluta equivalente de Quarto. La inspección visual motivó la comprobación expresa de migas y equivalencias por nota. Una prueba adicional detectó que las funciones trascendentes nativas podían amplificar diferencias entre motores durante el entrenamiento. La implementación `experience-self-mlp-1.0.1` usa pesos iniciales enteros deterministas y una aproximación exponencial de aritmética fija para las activaciones; 601 puntos del rango acotado se contrastan numéricamente. Se conserva la comparación exacta del replay, sin tolerancia añadida. La nueva prueba exporta 48 decisiones en ambos navegadores, compara todos los datos y verifica el intercambio en ambas direcciones; una alteración de un peso de 1e-10 se rechaza.
 
 ## Evidencia editorial y científica
 

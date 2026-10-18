@@ -4,16 +4,22 @@
  */
 import {retain} from '../self-model/domain/model.mjs';
 import {execute} from '../self-model/domain/environment.mjs';
-export const IMPLEMENTATION='experience-self-mlp-1.0.0';
+export const IMPLEMENTATION='experience-self-mlp-1.0.1';
 export const MAX_COMMANDS=512,MAX_BYTES=1048576;
 const clone=x=>JSON.parse(JSON.stringify(x));
 const bound=x=>typeof x==='number'&&Number.isFinite(x)&&x>=0&&x<=1;
-const sigmoid=x=>1/(1+Math.exp(-Math.max(-30,Math.min(30,x))));
+// Fixed arithmetic avoids engine-specific transcendental approximations being
+// amplified by repeated gradient updates. Replay retains exact result checks.
+const powers=[];for(let value=5.684341886080802e-14,i=0;i<89;i++,value*=2)powers.push(value);
+export function portableExp(value){const x=Math.max(-30,Math.min(30,value)),k=Math.round(x/.6931471805599453),r=x-k*.6931471805599453;let term=1,sum=1;for(let n=1;n<=16;n++){term*=r/n;sum+=term;}return sum*powers[k+44];}
+const sigmoid=x=>1/(1+portableExp(-x));
+const tanh=x=>{const e=portableExp(2*Math.max(-15,Math.min(15,x)));return(e-1)/(e+1);};
 const features=c=>[c.task==='precision'?1:-1,2*c.energy-1,2*c.fatigue-1,2*c.difficulty-1];
 const dot=(a,b)=>a.reduce((sum,v,i)=>sum+v*b[i],0);
-function forward(model,context){const x=features(context),a=model.w1.map((w,i)=>Math.tanh(dot(w,x)+model.b1[i])),b=model.w2.map((w,i)=>Math.tanh(dot(w,a)+model.b2[i]));return {x,a,b,p:sigmoid(dot(model.w3,b)+model.b3)};}
+function forward(model,context){const x=features(context),a=model.w1.map((w,i)=>tanh(dot(w,x)+model.b1[i])),b=model.w2.map((w,i)=>tanh(dot(w,a)+model.b2[i]));return {x,a,b,p:sigmoid(dot(model.w3,b)+model.b3)};}
 export function fitNeural(memory){
- const model={kind:'retained-memory-mlp-v1',layers:[4,8,6,1],w1:Array.from({length:8},(_,i)=>Array.from({length:4},(_,j)=>.28*Math.sin((i+1)*(j+2)))),b1:Array(8).fill(0),w2:Array.from({length:6},(_,i)=>Array.from({length:8},(_,j)=>.25*Math.cos((i+2)*(j+1)))),b2:Array(6).fill(0),w3:Array.from({length:6},(_,i)=>.2*Math.sin(i+1)),b3:0,examples:memory.length,epochs:memory.length?180:0};
+ let initial=0x19a017;const weight=()=>{initial=(Math.imul(initial,1664525)+1013904223)>>>0;return(initial/4294967296-.5)*.5;};
+ const model={kind:'retained-memory-mlp-v1',layers:[4,8,6,1],w1:Array.from({length:8},()=>Array.from({length:4},weight)),b1:Array(8).fill(0),w2:Array.from({length:6},()=>Array.from({length:8},weight)),b2:Array(6).fill(0),w3:Array.from({length:6},weight),b3:0,examples:memory.length,epochs:memory.length?180:0};
  if(!memory.length)return model;
  for(let epoch=0;epoch<model.epochs;epoch++){
   const g={w1:model.w1.map(row=>row.map(v=>.003*v)),b1:Array(8).fill(0),w2:model.w2.map(row=>row.map(v=>.003*v)),b2:Array(6).fill(0),w3:model.w3.map(v=>.003*v),b3:0};
@@ -28,7 +34,7 @@ export function fitNeural(memory){
 }
 export function predict(model,memory,context){
  const probability=memory.length?forward(model,context).p:.5;
- const support=memory.reduce((sum,m)=>sum+(m.task===context.task?Math.exp(-4*((m.energy-context.energy)**2+(m.fatigue-context.fatigue)**2+(m.difficulty-context.difficulty)**2)):0),0);
+ const support=memory.reduce((sum,m)=>sum+(m.task===context.task?portableExp(-4*((m.energy-context.energy)**2+(m.fatigue-context.fatigue)**2+(m.difficulty-context.difficulty)**2)):0),0);
  return {probability,uncertainty:1/Math.sqrt(1+support),support};
 }
 export function evaluate(agent,{withoutSelf=false,withoutIntrinsic=false}={}){
