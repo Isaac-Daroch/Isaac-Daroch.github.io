@@ -13,7 +13,7 @@ export function generateLocalization(root){
  writeFileSync(join(headers,'footer.html'),marked('footer',renderFooter('en')));
  for(const [id,note] of Object.entries(NOTES))writeFileSync(join(headers,id+'.html'),marked('chrome',renderChrome('en','research/notes/'+id+'.html',note.title.en,{notebook:true})));
  const note=localize(NOTES['self-model'],'en');
- writeFileSync(join(root,'research/notes/self-model.qmd'),`---\ntitle: ${JSON.stringify(note.title)}\ndescription: ${JSON.stringify(note.lead)}\ninclude-before-body: headers/self-model.html\n---\n\n`+note.sections.map(section=>'## '+section.h+'\n\n'+section.p.join('\n\n')).join('\n\n')+'\n\n[Agent observatory](https://isaac-daroch.github.io/self-model/) · [Implementation](https://isaac-daroch.github.io/projects/)\n');
+ writeFileSync(join(root,'research/notes/self-model.qmd'),`---\ntitle: ${JSON.stringify(note.title)}\ndescription: ${JSON.stringify(note.lead)}\ninclude-before-body: headers/self-model.html\n---\n\n`+note.sections.map(section=>'## '+section.h+'\n\n'+section.p.join('\n\n')).join('\n\n')+'\n\n[Agent observatory](https://isaac-daroch.github.io/self-model/)\n');
  for(const locale of LOCALES.filter(l=>l!=='en')){
   const directory=join(root,'site/public',locale,'research');mkdirSync(directory,{recursive:true});
   const items=Object.entries(NOTES).flatMap(([id,data])=>{const note=localize(data,locale);return note.sections.map((section,i)=>({href:href(locale,'research/notes/'+id+'.html')+'#note-section-'+i,title:note.title,section:section.h,text:section.p.join(' ')}));});

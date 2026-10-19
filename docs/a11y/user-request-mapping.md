@@ -30,3 +30,15 @@ Fuentes de diseño verificadas: [W3C Cognitive Accessibility Guidance](https://w
 | Solo las tres asignaturas confirmadas | `courses.mjs`, `TeachingStudio.astro`, `modules/teaching` | Umbral de clasificación, confusión sintética y comparación gráfica; programas detallados pendientes de revisión del propietario |
 | Observatorio más comprensible y técnico | `ObservatoryStage.astro`, `ObservatoryInstruments.astro`, `observatory-studio.js` | Guía de cuatro pasos, escenarios, activaciones reales, pesos/sesgos, mapa 5×5, entrenamiento, historial y comparación por pares; límites educativos explícitos |
 | Vídeos y publicaciones del campo | `library.mjs`, `ResearchLibrary.astro`, `library.js`; ruta en cuatro idiomas | Tres reproductores bajo demanda y seis trabajos externos; fuentes primarias y explicaciones escritas, revisión audiovisual humana pendiente |
+
+
+## Corrección de la web publicada · 1.4
+
+| Petición | Corrección | Evidencia |
+|---|---|---|
+| Menú invisible en teléfono | Navegación dentro del flujo móvil; botón Menú visible; anclaje al encabezado en escritorio | Antes: extremo izquierdo −134,17 px en pantalla de 375 px. Después: límites y pulsación real de enlaces en Chromium y WebKit, cuatro idiomas y ampliación |
+| Sin imágenes falsas ni rótulos de generación | Retrato real en Inicio; retirada del escaparate ilustrado y banner de docencia | Capturas y comprobación del HTML visible; los originales históricos se conservan fuera del sitio compilado |
+| Inicio mínimo y tarjetas con más carácter | Presentación breve y seis tarjetas, acentos de paleta, iconos y foco visible | Sin biblioteca ni secciones editoriales desplegadas en Inicio |
+| Biblioteca propia y visual | Publicaciones personales, cuatro trabajos recientes, nueve hitos de campo y tres vídeos | Fuentes primarias revisadas y cronología ordenada, género y estado editorial explícitos |
+| Ningún repositorio promocionado | Proyectos y construcción del sitio apagados, sin enlaces GitHub en contacto ni datos estructurados | Verificador rechaza enlaces a github.com con el módulo apagado |
+| Vídeos, observatorio e idiomas | Idioma del reproductor y preferencia de subtítulos; botón de cierre fuera del área del vídeo | Pruebas de interfaz y reproducción silenciada real en Google Chrome; no revisión humana de subtítulos |

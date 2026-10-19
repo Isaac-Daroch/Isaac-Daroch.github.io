@@ -1,12 +1,10 @@
 ---
 import {Image} from 'astro:assets';
 import portrait from '../../public/images/portrait.png';
-import sculpture from '../assets/self-sculpture-v13.png';
-import {STUDIO} from '../data/studio.mjs';
+import {MINIMAL} from '../data/minimal.mjs';
 import {CONTENT,localize} from '../data/content.mjs';
 import {UI,href} from '../../public/assets/i18n.mjs';
 interface Props{lang:'en'|'es'|'de'|'nl'}
-const {lang}=Astro.props,t=UI[lang],s=localize(STUDIO,lang),content=localize(CONTENT.home,lang);
+const {lang}=Astro.props,t=UI[lang],m=localize(MINIMAL,lang),content=localize(CONTENT.home,lang);
 ---
-<section class="visual-hero shell"><div class="visual-hero-copy"><p class="eyebrow">Isaac Daroch / {s.researchStudio}</p><h1>{content.title}</h1><p class="lead">{content.lead}</p><div class="actions"><a class="button button-primary" href={href(lang,'self-model')}>{s.enter} ↗</a><a class="button" href={href(lang,'library')}>{s.library}</a></div><div class="researcher-stamp"><Image src={portrait} width={64} height={64} widths={[64,128]} sizes="64px" format="webp" alt="Isaac Daroch"/><div><strong>Isaac Daroch</strong><span>{content.identity}</span><a href={href(lang,'cv')}>{t.cv} ↗</a></div></div></div><figure class="hero-art"><Image src={sculpture} widths={[480,960,1440]} sizes="(max-width: 768px) 100vw, 55vw" format="webp" quality={82} alt="" loading="eager" fetchpriority="high"/><figcaption>{s.visualNote}</figcaption><div class="art-orbit" aria-hidden="true"><span>01</span><span>02</span><span>03</span></div></figure></section>
-<nav class="shell topic-rail" aria-label={t.research}><a href={href(lang,'self-model')}>{s.self} <span>↗</span></a><a href={href(lang,'investigation')}>{s.memory} <span>↗</span></a><a href={href(lang,'teaching')}>{t.teaching} <span>↗</span></a><a href={href(lang,'library')}>{s.videos} <span>↗</span></a></nav>
+<section class="minimal-hero shell"><div class="minimal-hero-copy"><p class="eyebrow">Isaac Daroch</p><h1>{m.homeTitle}</h1><p class="lead">{m.homeLead}</p><p class="hero-identity">{content.identity}</p><div class="actions"><a class="button button-primary" href={href(lang,'self-model')}>{t.observatory} ↗</a><a class="button" href={href(lang,'cv')}>{t.cv}</a></div></div><figure class="real-portrait"><Image src={portrait} widths={[256,512]} sizes="(max-width: 768px) 70vw, 30vw" format="webp" alt="Isaac Daroch" loading="eager" fetchpriority="high"/></figure></section>

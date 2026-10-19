@@ -24,7 +24,7 @@ The state of a world and the representation used by an agent need not agree. The
 - [Deterministic replay and two distinct comparisons](notes/episode-replay.qmd).
 - [What reproducibility does—and does not—establish](notes/reproducibility.qmd).
 
-[Open the interactive laboratory](https://isaac-daroch.github.io/projects/#agent-lab) or [return to the portfolio](https://isaac-daroch.github.io/).
+[Open the interactive laboratory](https://isaac-daroch.github.io/self-model/) or [return to the portfolio](https://isaac-daroch.github.io/).
 
 ## Publication sources
 

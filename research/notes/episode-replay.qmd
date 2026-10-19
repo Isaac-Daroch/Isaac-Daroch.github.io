@@ -34,4 +34,4 @@ This changes only the neighbor order, while both policies revise their model: ea
 
 Report moves, ticks, contradictions, corrections, prevented actions and terminal state. Retain the result even when it does not fit the preferred visual narrative. No statistical superiority, learned policy, trained world model or robotic generalization is inferred.
 
-[Open both experiments](https://isaac-daroch.github.io/projects/#agent-lab)
+[Open both experiments](https://isaac-daroch.github.io/self-model/)

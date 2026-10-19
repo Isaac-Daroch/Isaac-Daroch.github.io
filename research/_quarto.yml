@@ -27,6 +27,7 @@ format:
         <link rel="stylesheet" href="https://isaac-daroch.github.io/assets/paletas.css">
         <link rel="stylesheet" href="https://isaac-daroch.github.io/assets/editorial.css">
         <link rel="stylesheet" href="https://isaac-daroch.github.io/assets/studio.css">
+        <link rel="stylesheet" href="https://isaac-daroch.github.io/assets/minimal.css">
         <script type="module" src="https://isaac-daroch.github.io/assets/preferences-runtime.mjs"></script>
         <script type="module" src="https://isaac-daroch.github.io/assets/notebook-search.mjs"></script>
     include-before-body: headers/index.html

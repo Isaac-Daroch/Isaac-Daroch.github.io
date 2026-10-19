@@ -55,3 +55,14 @@ La biblioteca pública `/library/` y sus equivalentes traducidos se editan en `s
 Las ilustraciones y prompts exactos están documentados en `docs/visual-assets-1.3.md`. Son arte conceptual, no evidencia científica. La animación visual sigue la preferencia del sistema por defecto y se puede reducir desde la barra visible. Concentración también la detiene. La simulación temporizada requiere una pulsación y se limita a 24 pasos; se pausa al salir de la página, ocultar la pestaña o dejar de verse el observatorio.
 
 El modo técnico expone la red calculada y los parámetros individuales, un mapa energía/fatiga, siete puntos de entropía cruzada de entrenamiento y el detalle histórico de decisiones. No presenta esa pérdida como precisión de generalización. La comparación por pares copia el historial y la semilla, cambia la influencia inicial del modelo propio (α=1 frente a α=0) y continúa 12 decisiones sin modificar el agente activo.
+
+
+## Inicio mínimo y biblioteca · versión 1.4
+
+Inicio muestra el retrato real y seis tarjetas de navegación. Las ilustraciones generadas de la revisión anterior dejaron de usarse en las páginas publicadas. `site/src/data/minimal.mjs` contiene los textos breves en los cuatro idiomas. El menú móvil se abre dentro del flujo de la página para mantener sus enlaces dentro de la pantalla; el estado abierto también se comprueba con alto contraste.
+
+Los módulos `projects` y `engineering` están apagados por instrucción del propietario. No se promociona el repositorio de esta web ni el perfil de GitHub. Las antiguas direcciones inglesas redirigen al mapa del sitio; sus equivalentes de idioma se omiten. La construcción rechaza enlaces públicos a github.com mientras repositorios permanezca apagado. No activar ni añadir repositorios sin una nueva instrucción del propietario.
+
+La biblioteca se encuentra exclusivamente en su propia página. Reúne una publicación del propietario, cuatro trabajos recientes de 2025–2026, nueve hitos cronológicos seleccionados y tres vídeos. Los datos adicionales y el orden de lectura están en `library-field.mjs`, junto al catálogo `library.mjs`. La cronología incluye líneas paralelas de memoria, modelos propios y motivación; no se presenta como genealogía exhaustiva. Cada entrada apunta a una fuente primaria y distingue el género o estado editorial disponible. No se añade una publicación al archivo personal si el propietario no figura como autor.
+
+Los vídeos se cargan al pulsar y se cierran con un botón situado debajo del reproductor, para no tapar los controles del proveedor. El idioma de los controles y la preferencia de subtítulos siguen el idioma de la página; la disponibilidad y calidad de subtítulos dependen de YouTube. Las explicaciones escritas en cuatro lenguas siguen disponibles.
