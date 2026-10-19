@@ -50,7 +50,7 @@ export function placeNotebookChrome(html,replacement={}){
 
 /** Only these shared assets belong to the portfolio root, never the notebook root. */
 export function normalizeSharedAssets(html) {
-  const allowed=['paletas.css','editorial.css','studio.css','preferences-runtime.mjs','notebook-search.mjs'];
+  const allowed=['paletas.css','editorial.css','studio.css','minimal.css','preferences-runtime.mjs','notebook-search.mjs'];
   return html.replace(/<(?:link|script)\b[^>]*>/gi,tag=>tag.replace(
     /\b(href|src)=(['"])https:\/\/isaac-daroch\.github\.io\/assets\/([^'"/]+)\2/g,
     (attribute,name,quote,file)=>allowed.includes(file)?`${name}=${quote}/assets/${file}${quote}`:attribute,

@@ -44,4 +44,4 @@ The historical D1 document reports 11 moves without intervention and 15 moves/17
 
 The baseline does not actively explore when its map has no route. No training or general learning performance is implied.
 
-[Replay and comparison protocols](episode-replay.qmd) · [Laboratory](https://isaac-daroch.github.io/projects/#agent-lab)
+[Replay and comparison protocols](episode-replay.qmd) · [Laboratory](https://isaac-daroch.github.io/self-model/)

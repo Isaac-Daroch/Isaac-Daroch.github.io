@@ -71,7 +71,7 @@ jobs:
       - name: Install Chromium for actual compiled-site tests
         if: runner.os == 'Linux'
         working-directory: site
-        run: npx playwright install --with-deps chromium firefox
+        run: npx playwright install --with-deps chromium firefox webkit
       - name: Run browser and accessibility checks against actual dist
         if: runner.os == 'Linux'
         working-directory: site

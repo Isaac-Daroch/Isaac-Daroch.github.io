@@ -26,4 +26,4 @@ A test plan states what should be checked. A result report identifies what ran, 
 
 The viewer does not upload episodes. It reads a selected file locally into a new session. Downloaded files remain under the visitor’s control. The site does not offer accounts, grading or cloud persistence.
 
-[Engineering and release identity](https://isaac-daroch.github.io/engineering/) · [Replay protocol](episode-replay.qmd)
+[Agent observatory](https://isaac-daroch.github.io/self-model/) · [Replay protocol](episode-replay.qmd)
