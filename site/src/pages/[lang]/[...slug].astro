@@ -5,9 +5,10 @@ import {NOTES} from '../../data/notes.mjs';
 import PortfolioPage from '../../components/PortfolioPage.astro';
 import NotePage from '../../components/NotePage.astro';
 import NotebookIndex from '../../components/NotebookIndex.astro';
-import {PUBLIC_PATHS} from '../../../public/assets/i18n.mjs';
-export function getStaticPaths(){return ['es','de','nl'].flatMap(lang=>[...PUBLIC_PATHS,'404'].filter(path=>isEnabled(path)&&!(lang==='es'&&['','accessibility','explore'].includes(path))).map(path=>({params:{lang,slug:path?path.replace(/\.html$/,''):undefined},props:{lang,path}})));}
+import {PUBLIC_PATHS,href} from '../../../public/assets/i18n.mjs';
+export function getStaticPaths(){return ['es','de','nl'].flatMap(lang=>[...PUBLIC_PATHS,'404'].filter(path=>(isEnabled(path)||path==='investigation')&&!(lang==='es'&&['','accessibility','explore'].includes(path))).map(path=>({params:{lang,slug:path?path.replace(/\.html$/,''):undefined},props:{lang,path}})));}
 const {lang,path}=Astro.props as {lang:'en'|'de'|'nl'|'es';path:string};
+if(path==='investigation')return Astro.redirect(href(lang,'self-model'));
 const note=path.split('/').at(-1)!.replace('.html','') as keyof typeof NOTES;
 ---
 {path==='404'?<ErrorPage lang={lang}/>:path.startsWith('research/notes/')?<NotePage lang={lang} note={note}/>:path==='research'?<NotebookIndex lang={lang}/>:<PortfolioPage lang={lang} page={path}/>}

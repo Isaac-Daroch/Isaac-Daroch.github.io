@@ -79,3 +79,25 @@ body details.menu-disclosure[open]>summary{background:var(--primary);color:var(-
 @media(forced-colors:active){.field-timeline>li::before{background:Canvas;border-color:CanvasText}.real-portrait,.card-glyph{forced-color-adjust:auto}body details.menu-disclosure[open]>summary{background:ButtonFace;color:ButtonText!important}}
 
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Two compact disclosures; panels reflow in the page rather than covering content. */
+.access-bar{padding-block:.35rem}
+.access-toolbar{display:flex;flex-wrap:wrap;align-items:flex-start;gap:.25rem 1rem}
+.access-disclosure,.access-toolbar>.audio-panel{border:0;padding:0;position:static;min-width:0}
+.access-disclosure>summary,.access-toolbar>.audio-panel>summary{display:flex;align-items:center;gap:.6rem;min-height:44px;padding:.45rem .65rem;list-style:none;border:1px solid var(--control);border-radius:.6rem;text-decoration:none}
+.access-disclosure>summary::after,.access-toolbar>.audio-panel>summary::after{content:'+';margin-inline-start:.5rem;font-weight:650}
+.access-disclosure[open]>summary::after,.access-toolbar>.audio-panel[open]>summary::after{content:'−'}
+.access-disclosure>summary::-webkit-details-marker,.access-toolbar>.audio-panel>summary::-webkit-details-marker{display:none}
+.access-disclosure[open],.access-toolbar>.audio-panel[open]{flex:1 1 100%}
+.access-disclosure[open]>summary,.access-toolbar>.audio-panel[open]>summary{width:fit-content;margin-bottom:.65rem}
+.access-disclosure .access-bar-inner{width:100%;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:1rem;align-items:center;padding:1rem;background:var(--surface);border:1px solid var(--control);border-radius:.75rem}
+.access-disclosure .preset-control{max-width:none;grid-row:span 2}
+.access-disclosure .motion-quick{grid-row:span 2}
+.access-disclosure .switch-control{max-width:none}
+.access-toolbar .audio-body{position:static;inset:auto;max-height:none;width:100%;max-width:52rem;margin-block:.6rem;padding:1rem;overflow:visible;box-sizing:border-box}
+.access-toolbar .audio-body>p{max-width:70ch}
+.access-toolbar .audio-body>label{display:inline-block;vertical-align:top;width:min(100%,19rem);margin-inline-end:1rem}
+.access-toolbar .audio-body .actions{margin-block:.6rem}
+@media(max-width:60rem){.access-disclosure .access-bar-inner{grid-template-columns:repeat(2,minmax(0,1fr))}.access-disclosure .preset-control,.access-disclosure .motion-quick{grid-row:auto}.access-disclosure .preset-control{grid-column:1/-1}}
+@media(max-width:35rem){.access-toolbar{gap:.4rem}.access-toolbar summary{font-size:1rem}.access-disclosure .access-bar-inner{grid-template-columns:1fr}.access-disclosure .preset-control{grid-column:auto}.access-toolbar .audio-body>label{display:block;width:100%;margin-inline-end:0}}
+@media print{.access-bar{display:none}}

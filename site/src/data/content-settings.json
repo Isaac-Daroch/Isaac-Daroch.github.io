@@ -22,5 +22,8 @@
   },
   "engineering": {
     "enabled": false
+  },
+  "investigation": {
+    "enabled": false
   }
 }

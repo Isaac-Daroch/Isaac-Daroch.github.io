@@ -42,3 +42,7 @@ Fuentes de diseño verificadas: [W3C Cognitive Accessibility Guidance](https://w
 | Biblioteca propia y visual | Publicaciones personales, cuatro trabajos recientes, nueve hitos de campo y tres vídeos | Fuentes primarias revisadas y cronología ordenada, género y estado editorial explícitos |
 | Ningún repositorio promocionado | Proyectos y construcción del sitio apagados, sin enlaces GitHub en contacto ni datos estructurados | Verificador rechaza enlaces a github.com con el módulo apagado |
 | Vídeos, observatorio e idiomas | Idioma del reproductor y preferencia de subtítulos; botón de cierre fuera del área del vídeo | Pruebas de interfaz y reproducción silenciada real en Google Chrome; no revisión humana de subtítulos |
+
+## Revisión 1.5
+
+La petición de revisión profunda de traducciones, barra compacta y retirada del módulo Investigación se traza en test-report-1.5.md. Las pruebas de regresión específicas están en tests/translations.test.mjs y tests/e2e/translations.spec.mjs. La biblioteca y el observatorio se conservan; no se reactiva la promoción de repositorios.
