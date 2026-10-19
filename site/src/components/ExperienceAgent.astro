@@ -8,7 +8,7 @@ interface Props {lang?:'en'|'de'|'nl'|'es'}
 const {lang='en'}=Astro.props,t=UI[lang],s=localize(STUDIO,lang);
 ---
 <section id="self-observatory" class="agent-observatory" data-studio-mode="guided" aria-labelledby="agent-heading">
-<div class="agent-heading"><div><p class="eyebrow">{t.architecture}</p><h2 id="agent-heading">{t.agentTitle}</h2><p>{t.agentIntro}</p></div><div class="agent-signature" aria-hidden="true"><span>01</span><span>SELF / MODEL</span></div></div>
+<div class="agent-heading"><div><p class="eyebrow">{t.architecture}</p><h2 id="agent-heading">{t.agentTitle}</h2><p>{t.agentIntro}</p></div><div class="agent-signature" aria-hidden="true"><span>01</span><span>{t.selfModel}</span></div></div>
 <ObservatoryStage lang={lang}/>
 <p id="self-startup" class="notice">{t.noJs}</p>
 <div class="agent-command-bar" data-no-speech><button id="self-step" class="button-primary" disabled>{t.decision}</button><button id="self-run" disabled>{t.run}</button><button id="self-reset" disabled>{t.resetAgent}</button><span class="model-identity">MLP · 4 → 8 → 6 → 1</span></div>

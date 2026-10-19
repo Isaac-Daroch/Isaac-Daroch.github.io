@@ -1,12 +1,12 @@
 # Isaac Daroch — adaptive intelligence & digital worlds
 
-Integrated static portfolio, Quarto research notebook and a transparent educational agent laboratory. Product source version **1.4.0**. Governing requirements and architecture: **D2**, in `docs/d2/`.
+Integrated static portfolio, Quarto research notebook and a transparent educational agent laboratory. Product source version **1.5.0**. Governing requirements and architecture: **D2**, in `docs/d2/`.
 
 This is the complete integrated source, reconstructed against D2 and the preserved audit/patch descriptions. It is not a byte-for-byte recovery of the earlier uncommitted ZIP. Read `docs/integration/SOURCE_RECONCILIATION.md` for fixture compatibility and the explicit historical observed-cell difference.
 
 ## Current multilingual version
 
-The public site is available in English, Spanish, German and Dutch. Version 1.4 reduces Home to a real portrait and six navigation cards, removes generated artwork from published pages, and fixes the mobile menu in the page flow. Repository and website-engineering showcases are disabled by owner request. The main observatory uses a retained-experience neural self-model; historical BFS examples remain supplementary notebook material. The interactive curriculum uses sourced LinkedIn declarations. Empty personal conference, news and owned-video modules are disabled. A separate research library contains three external project videos and six related papers, with four-language written companions. Teaching covers the three owner-confirmed subjects with synthetic interactive examples. The observatory adds actual neural activations, a capability surface, training diagnostics, decision history and paired continuations. Owner editing and activation instructions: [EDITAR_CONTENIDO.md](docs/EDITAR_CONTENIDO.md). Current verification: [version 1.4 report](docs/a11y/test-report.md).
+The public site is available in English, Spanish, German and Dutch. Version 1.5 reviews the four-language interface, translates library display titles while preserving exact original citations, and localizes the neural observatory’s formulas and inspectors. The accessibility bar uses two compact native disclosures. The separate Research module is disabled by owner request; Home has five essential cards. Repository showcases remain disabled. The library contains one owned publication, four recent readings, nine historical milestones and three external project videos. Teaching retains the three confirmed subjects and synthetic examples. See [editing instructions](docs/EDITAR_CONTENIDO.md) and the [current verification report](docs/a11y/test-report.md).
 
 ## Run locally on Windows
 

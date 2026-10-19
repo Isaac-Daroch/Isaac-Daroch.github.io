@@ -12,7 +12,6 @@ This notebook accompanies Isaac Daroch’s portfolio. It separates **research in
 The featured [neural agent observatory](https://isaac-daroch.github.io/self-model/) explores how retained experiences and internal state influence a decision. A small multilayer network learns capability estimates from retained memory. Explicit utility terms combine those estimates with exploration, risk, resources and external suggestions. This is a designed, bounded illustration, not evidence of consciousness or general intelligence.
 
 - [Mechanism: a neural model from retained experience](notes/self-model.qmd).
-- [Research questions](https://isaac-daroch.github.io/investigation/).
 
 ## Supplementary world-map baseline
 

@@ -20,7 +20,7 @@ const pageData=CONTENT as Record<string,unknown>;
 import {formatBibliography} from '../data/bibliography.mjs';
 interface Props{page?:string;lang?:'en'|'de'|'nl'|'es'}
 const {page='',lang='en'}=Astro.props,t=UI[lang],content=localize(pageData[page||'home'],lang) as PageContent,paper=localize(PAPER,lang),bib=formatBibliography(publications);
-const guidedRoutes=[['investigation','research'],['self-model','observatory'],['library','library'],['teaching','teaching'],['cv','cv'],['contact','contact']];
+const guidedRoutes=[['self-model','observatory'],['library','library'],['teaching','teaching'],['cv','cv'],['contact','contact']];
 const sections=['events','news','media','teaching','self-model','publications','library','cv','contact'].includes(page)?[]:content.sections||[];
 const m=localize(MINIMAL,lang);
 if(!page){content.title=m.homeTitle;content.lead=m.homeLead;}
@@ -30,7 +30,7 @@ if(page==='teaching'){content.title=UI[lang].teaching;content.lead=STUDIO.teachi
 <BaseLayout title={content.title} description={content.lead} lang={lang}>
 {page===''?<>
 <ResearchHero lang={lang}/>
-<section class="shell section home-directory"><div class="section-heading"><h2>{t.onThisSite}</h2><a href={href(lang,'explore')}>{t.explore} ↗</a></div><div class="destination-grid">{guidedRoutes.map(([route,key],i)=><article class="destination-card"><div class="card-top" aria-hidden="true"><span class="card-index">0{i+1}</span><span class="card-glyph">{['◎','↗','▤','⌁','↳','✉'][i]}</span></div><h3><a href={href(lang,route)}>{t[key]}</a></h3><p>{m.cards[route as keyof typeof m.cards]}</p></article>)}</div></section>
+<section class="shell section home-directory"><div class="section-heading"><h2>{t.onThisSite}</h2><a href={href(lang,'explore')}>{t.explore} ↗</a></div><div class="destination-grid">{guidedRoutes.map(([route,key],i)=><article class="destination-card"><div class="card-top" aria-hidden="true"><span class="card-index">0{i+1}</span><span class="card-glyph">{['↗','▤','⌁','↳','✉'][i]}</span></div><h3><a href={href(lang,route)}>{t[key]}</a></h3><p>{m.cards[route as keyof typeof m.cards]}</p></article>)}</div></section>
 </>:<>
 <section class="shell page-intro"><p class="eyebrow">{t[ROUTE_KEYS[page as keyof typeof ROUTE_KEYS]]}</p><h1>{content.title}</h1><p class="lead">{content.lead}</p></section>
 <div class="shell wide-content">
